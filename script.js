@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (preloader) {
         document.body.style.overflow = 'hidden';
         let pct = 0;
-        
+
         const loaderPhrases = [
             "allocating_sys_memory...",
             "npm WARN deprecated",
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (pct >= 100) {
                 pct = 100;
                 clearInterval(loaderInterval);
-                
+
                 // Final step
                 if (terminalEl) {
                     const finalLine = document.createElement('div');
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     terminalEl.appendChild(finalLine);
                 }
 
-                if(logoLarge) logoLarge.classList.add('move-to-nav');
+                if (logoLarge) logoLarge.classList.add('move-to-nav');
 
                 setTimeout(() => {
                     preloader.classList.add('fade-out');
@@ -63,18 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 percentEl.textContent = pct + '%';
                 percentEl.setAttribute('data-text', pct + '%'); // For glitch effect
             }
-            
+
             // Append a rapid-fire terminal line
-            if(terminalEl) {
-                const randHex = "0x" + Math.random().toString(16).substr(2, 6).toUpperCase();
+            if (terminalEl) {
                 const randPhrase = loaderPhrases[Math.floor(Math.random() * loaderPhrases.length)];
                 const line = document.createElement('div');
                 line.className = 'loader-terminal-line';
-                line.innerHTML = `<span style="color: #4078f2;">[${pct}.021]</span> <span style="color: var(--text-muted);">${randHex}</span> <span style="color: #98c379;">${randPhrase}</span>`;
+                // User requested: coding line should only show phrase, green color. (The white/red was for the numbers/hex that were removed)
+                line.innerHTML = `<span style="color: #00ff41;">> ${randPhrase}</span>`;
                 terminalEl.appendChild(line);
-                
-                // Keep only last 10 lines
-                if (terminalEl.children.length > 8) {
+
+                // Keep up to 50 lines to fill the screen to the top border
+                if (terminalEl.children.length > 50) {
                     terminalEl.removeChild(terminalEl.firstChild);
                 }
             }
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    if(menuToggle && navLinks) {
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             const icon = menuToggle.querySelector('i');
@@ -118,30 +118,30 @@ document.addEventListener('DOMContentLoaded', () => {
         element.innerHTML = '';
         element.style.opacity = '1';
         element.style.visibility = 'visible';
-        
+
         let currentHTML = "";
         let i = 0;
         let isTag = false;
 
         while (i < fullContent.length) {
             const char = fullContent[i];
-            
+
             if (char === '<') isTag = true;
             currentHTML += char;
             if (char === '>') isTag = false;
 
             if (!isTag) {
                 element.innerHTML = currentHTML;
-                
+
                 // Human rhythm: vary between 30ms and 100ms for commands
                 // Code block (isCode=true) is faster but still rhythmic
                 const baseDelay = isCode ? 10 : 40;
                 const variance = isCode ? 15 : 60;
                 const randomDelay = baseDelay + Math.random() * variance;
-                
+
                 // Add longer pause for commas/semicolons/braces
                 const punctuationPause = (char === ';' || char === '{' || char === '}' || char === ',') ? 200 : 0;
-                
+
                 await new Promise(resolve => setTimeout(resolve, randomDelay + punctuationPause));
             }
             i++;
@@ -151,9 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const startTerminalAnimation = async () => {
         const terminalBody = document.querySelector('.terminal-body');
         if (!terminalBody) return;
-        
+
         const lines = terminalBody.querySelectorAll(':scope > div');
-        
+
         for (let line of lines) {
             const isCode = line.innerHTML.includes('<span');
             await humanType(line, isCode);
@@ -164,12 +164,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Scroll Reveal & Intersection Observer
     const revealElements = document.querySelectorAll('.reveal, .stagger-container, .terminal-card');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                
+
                 // (Disabled scroll-type for contact as it is now manual click)
 
                 if (entry.target.classList.contains('terminal-card')) {
@@ -185,8 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Parallax Hero
     const hero = document.querySelector('.hero');
     const spheres = document.querySelectorAll('.glow-sphere');
-    
-    if(hero) {
+
+    if (hero) {
         hero.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth - 0.5) * 40;
             const y = (e.clientY / window.innerHeight - 0.5) * 40;
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const totalDuration = 2000;
                 const updateFreq = 20;
                 const inc = target / (totalDuration / updateFreq);
-                
+
                 const timer = setInterval(() => {
                     now += inc;
                     if (now >= target) {
@@ -232,9 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
         contactCard.addEventListener('click', () => {
             if (contactCard.classList.contains('contact-collapsed')) {
                 contactCard.classList.remove('contact-collapsed');
-                
+
                 // Trigger typing effect after card expands
-                if(!hasTypedContact) {
+                if (!hasTypedContact) {
                     setTimeout(() => {
                         const typingTitle = contactCard.querySelector('#typing-contact-title');
                         if (typingTitle) humanType(typingTitle, false);
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 7. Form Handler (Mailto Integration)
     const form = document.querySelector('.contact-form');
-    if(form) {
+    if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = form.querySelector('#name').value;
@@ -257,17 +257,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const subject = encodeURIComponent(`Collaboration Inquiry from ${name}`);
             const body = encodeURIComponent(`Hello Tharuki,\n\n${message}\n\n---\nName: ${name}`);
             const mailtoLink = `mailto:tharuki.fbacc@gmail.com?subject=${subject}&body=${body}`;
-            
+
             const btn = form.querySelector('.submit-btn');
             const original = btn.innerHTML;
-            
+
             btn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> redirecting...';
             btn.disabled = true;
-            
+
             setTimeout(() => {
                 window.location.href = mailtoLink;
                 btn.innerHTML = '<i class="bx bx-check"></i> Opening Mail...';
-                
+
                 form.reset();
                 setTimeout(() => {
                     btn.innerHTML = original;
@@ -285,10 +285,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let charIdx = 0;
         let isMoving = true;
         let direction = 1; // 1 for typing, -1 for deleting
-        
+
         function typeHero() {
             const current = roles[roleIdx];
-            
+
             if (direction === 1) {
                 roleTarget.textContent = current.substring(0, charIdx + 1);
                 charIdx++;
@@ -307,11 +307,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
             }
-            
+
             const speed = direction === 1 ? 120 : 60;
             setTimeout(typeHero, speed);
         }
-        
+
         typeHero();
     }
 });
