@@ -91,6 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+                
+                // (Disabled scroll-type for contact as it is now manual click)
+
                 if (entry.target.classList.contains('terminal-card')) {
                     setTimeout(startTerminalAnimation, 600);
                 }
@@ -143,26 +146,94 @@ document.addEventListener('DOMContentLoaded', () => {
 
     counters.forEach(c => countObserver.observe(c));
 
-    // 6. Form Handler
+    // 6. Contact Section Interaction (Expand Card)
+    const contactCard = document.getElementById('contact-main-card');
+    let hasTypedContact = false;
+
+    if (contactCard) {
+        contactCard.addEventListener('click', () => {
+            if (contactCard.classList.contains('contact-collapsed')) {
+                contactCard.classList.remove('contact-collapsed');
+                
+                // Trigger typing effect after card expands
+                if(!hasTypedContact) {
+                    setTimeout(() => {
+                        const typingTitle = contactCard.querySelector('#typing-contact-title');
+                        if (typingTitle) humanType(typingTitle, false);
+                        hasTypedContact = true;
+                    }, 800);
+                }
+            }
+        });
+    }
+
+    // 7. Form Handler (Mailto Integration)
     const form = document.querySelector('.contact-form');
     if(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+            const name = form.querySelector('#name').value;
+            const message = form.querySelector('#message').value;
+
+            // Construct the mailto link
+            const subject = encodeURIComponent(`Collaboration Inquiry from ${name}`);
+            const body = encodeURIComponent(`Hello Tharuki,\n\n${message}\n\n---\nName: ${name}`);
+            const mailtoLink = `mailto:tharuki.fbacc@gmail.com?subject=${subject}&body=${body}`;
+            
             const btn = form.querySelector('.submit-btn');
             const original = btn.innerHTML;
-            btn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> sending...';
+            
+            btn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> redirecting...';
             btn.disabled = true;
             
             setTimeout(() => {
-                btn.innerHTML = '<i class="bx bx-check"></i> sent';
-                btn.style.backgroundColor = '#27c93f';
+                window.location.href = mailtoLink;
+                btn.innerHTML = '<i class="bx bx-check"></i> Opening Mail...';
+                
                 form.reset();
                 setTimeout(() => {
                     btn.innerHTML = original;
-                    btn.style.backgroundColor = '';
                     btn.disabled = false;
-                }, 3000);
-            }, 1500);
+                }, 4000);
+            }, 800);
         });
+    }
+
+    // 8. Hero Role Typewriter Cycler
+    const roleTarget = document.getElementById('typing-role');
+    if (roleTarget) {
+        const roles = ["creative developer", "front end developer", "ui ux designer"];
+        let roleIdx = 0;
+        let charIdx = 0;
+        let isMoving = true;
+        let direction = 1; // 1 for typing, -1 for deleting
+        
+        function typeHero() {
+            const current = roles[roleIdx];
+            
+            if (direction === 1) {
+                roleTarget.textContent = current.substring(0, charIdx + 1);
+                charIdx++;
+                if (charIdx === current.length) {
+                    direction = -1;
+                    setTimeout(typeHero, 2000); // Pause at full word
+                    return;
+                }
+            } else {
+                roleTarget.textContent = current.substring(0, charIdx - 1);
+                charIdx--;
+                if (charIdx === 0) {
+                    direction = 1;
+                    roleIdx = (roleIdx + 1) % roles.length;
+                    setTimeout(typeHero, 500); // Pause at empty
+                    return;
+                }
+            }
+            
+            const speed = direction === 1 ? 120 : 60;
+            setTimeout(typeHero, speed);
+        }
+        
+        typeHero();
     }
 });

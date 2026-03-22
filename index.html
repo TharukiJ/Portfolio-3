@@ -21,7 +21,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <span class="code-bracket">&lt;</span>Tharuki<span class="code-bracket">/&gt;</span>
+                𝙏𝙅
             </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
@@ -38,24 +38,36 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero section-padding reveal">
-            <div class="hero-content">
-                <div class="hero-badge code-font">
-                    <i class='bx bxs-circle blink-indicator'></i> SYS.ONLINE
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge code-font">
+                        <i class='bx bxs-circle blink-indicator'></i> SYS.ONLINE
+                    </div>
+                    <h1 class="hero-title">
+                        Building <span class="accent-text">digital</span><br>
+                        experiences.
+                    </h1>
+                    <div class="hero-subtitle code-font">
+                        <span class="keyword">const</span> <span class="variable">role</span> = <span class="string">"</span><span id="typing-role" class="string"></span><span class="cursor">|</span><span class="string">"</span>;
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary code-font">init() contact</a>
+                    </div>
                 </div>
-                <h1 class="hero-title">
-                    Building <span class="accent-text">digital</span><br>
-                    experiences.
-                </h1>
-                <p class="hero-subtitle">
-                    creative developer <span class="dot-separator">&bull;</span> software engineer <span class="dot-separator">&bull;</span> minimalist
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary code-font">init() contact</a>
+                <div class="hero-image-container">
+                    <div class="hero-image-outline">
+                         <div class="hero-img-inner">
+                            <!-- Placeholder for user's photo -->
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop" alt="Tharuki Jayasuriya" class="hero-profile-img">
+                         </div>
+                         <div class="hero-image-accents">
+                            <div class="accent-line"></div>
+                            <div class="accent-line"></div>
+                         </div>
+                    </div>
                 </div>
             </div>
-            <!-- Abstract background shape -->
-            <div class="hero-graphic">
                 <div class="glow-sphere"></div>
                 <div class="glow-sphere secondary"></div>
             </div>
@@ -185,19 +197,21 @@
 
                 <!-- Project 2 -->
                 <article class="project-card-v2 reveal-item">
+                    <div class="project-card-bg" style="background-image: url('chat_app_bg.png');"></div>
                     <div class="project-card-overlay"></div>
                     <div class="project-card-inner">
                         <div class="project-card-top">
-                            <span class="project-category code-font">E-COMMERCE</span>
-                            <a href="#" target="_blank" class="project-ext-link" aria-label="View Project"><i class='bx bx-link-external'></i></a>
+                            <span class="project-category code-font">MESSAGING APP</span>
+                            <a href="https://real-time-chat-aouqhx3qv-tharukijs-projects.vercel.app/" target="_blank" class="project-ext-link" aria-label="View Project"><i class='bx bx-link-external'></i></a>
                         </div>
                         <div class="project-card-body">
-                            <h3 class="project-title-v2">AETHER STORE</h3>
-                            <p class="project-desc-v2">Headless e-commerce storefront focusing on blazing fast load times and minimal aesthetic design.</p>
+                            <h3 class="project-title-v2">REAL-TIME CHAT</h3>
+                            <p class="project-desc-v2">A sleek, modern real-time messaging web application. Features live typing indicators, instant message delivery, and secure authentication to keep conversations private and fast.</p>
                             <div class="project-tags code-font">
-                                <span>NEXT.JS</span>
-                                <span>STRIPE</span>
-                                <span>TAILWIND</span>
+                                <span>REACT</span>
+                                <span>NODE.JS</span>
+                                <span>SOCKET.IO</span>
+                                <span>CSS</span>
                             </div>
                         </div>
                     </div>
@@ -205,44 +219,61 @@
 
                 <!-- Project 3 -->
                 <article class="project-card-v2 reveal-item">
+                    <div class="project-card-bg" style="background-image: url('meme_studio_bg.png');"></div>
                     <div class="project-card-overlay"></div>
                     <div class="project-card-inner">
                         <div class="project-card-top">
-                            <span class="project-category code-font">DEVELOPER TOOL</span>
-                            <a href="#" target="_blank" class="project-ext-link" aria-label="View Project"><i class='bx bx-link-external'></i></a>
+                            <span class="project-category code-font">CREATIVE TOOL</span>
+                            <a href="https://ok-meme-studio-h43vthffx-tharukijs-projects.vercel.app/" target="_blank" class="project-ext-link" aria-label="View Project"><i class='bx bx-link-external'></i></a>
                         </div>
                         <div class="project-card-body">
-                            <h3 class="project-title-v2">CLI SCAFFOLD</h3>
-                            <p class="project-desc-v2">An open-source command line utility for scaffolding boilerplate architectural code for microservices.</p>
+                            <h3 class="project-title-v2">OK MEME STUDIO</h3>
+                            <p class="project-desc-v2">A fun, interactive web studio for creating dynamic memes. Built with canvas manipulation, drag-and-drop elements, and custom typography to bring internet humor to life in a clean UI.</p>
                             <div class="project-tags code-font">
-                                <span>RUST</span>
-                                <span>BASH</span>
+                                <span>REACT</span>
+                                <span>CANVAS API</span>
+                                <span>TAILWIND</span>
+                                <span>VERCEL</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card-v2 reveal-item">
+                    <div class="project-card-bg" style="background-image: url('learning_saas_bg.png');"></div>
+                    <div class="project-card-overlay"></div>
+                    <div class="project-card-inner">
+                        <div class="project-card-top">
+                            <span class="project-category code-font">SAAS PLATFORM</span>
+                            <a href="https://learning-saas-platform.vercel.app/" target="_blank" class="project-ext-link" aria-label="View Project"><i class='bx bx-link-external'></i></a>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title-v2">LEARNING LMS</h3>
+                            <p class="project-desc-v2">A full-stack e-learning platform providing course management, progress tracking, and interactive video modules, designed for modern cohort-based education delivery.</p>
+                            <div class="project-tags code-font">
+                                <span>NEXT.JS</span>
+                                <span>TYPESCRIPT</span>
+                                <span>POSTGRES</span>
+                                <span>PRISMA</span>
                             </div>
                         </div>
                     </div>
                 </article>
             </div>
-            <div class="projects-cta">
-                <a href="https://github.com" target="_blank" class="btn btn-secondary code-font">See more on GitHub <i class='bx bx-right-arrow-alt'></i></a>
-            </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact section-padding reveal">
-            <div class="contact-card">
+        <section id="contact" class="contact section-padding">
+            <div class="contact-card contact-collapsed" id="contact-main-card">
                 <div class="contact-header">
-                    <span class="section-tag code-font">04 // ENGAGE</span>
-                    <h2 class="section-title">LET'S BUILD SOMETHING</h2>
-                    <p>Currently open for new opportunities. Whether you have a question, a project idea, or just want to say hi, my inbox is open.</p>
+                    <h2 class="section-title" id="typing-contact-title">LET’S.CONNECT()</h2>
+                    <p>Open to collaborations, project ideas, and new opportunities. Whether you want to discuss a build, share an idea, or simply connect, my inbox is always open.</p>
                 </div>
                 <form class="contact-form" onsubmit="event.preventDefault();">
                     <div class="form-group">
                         <label for="name" class="code-font">const name =</label>
                         <input type="text" id="name" placeholder="'Your Name'" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="code-font">const email =</label>
-                        <input type="email" id="email" placeholder="'your@email.com'" required>
                     </div>
                     <div class="form-group">
                         <label for="message" class="code-font">const message =</label>
@@ -260,17 +291,16 @@
     <footer>
         <div class="footer-content">
             <div class="logo">
-                <span class="code-bracket">&lt;</span>Tharuki<span class="code-bracket">/&gt;</span>
+                𝙏𝙅
             </div>
             <div class="social-links">
-                <a href="#" aria-label="GitHub"><i class='bx bxl-github' ></i></a>
-                <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin' ></i></a>
-                <a href="#" aria-label="Twitter"><i class='bx bxl-twitter' ></i></a>
-                <a href="#" aria-label="Email"><i class='bx bxs-envelope' ></i></a>
+                <a href="https://github.com/TharukiJ" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/tharuki-jayasuriya" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a href="mailto:tharuki.fbacc@gmail.com" aria-label="Email"><i class='bx bxs-envelope'></i></a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="code-font">Designed & Built by Tharuki <span class="accent-text">© 2026</span></p>
+            <p class="code-font">Designed & Built by 𝙏𝙅 <span class="accent-text">© 2026</span></p>
         </div>
     </footer>
 
