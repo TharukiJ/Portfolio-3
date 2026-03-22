@@ -3,6 +3,84 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Preloader Logic
+    const preloader = document.getElementById('preloader');
+    const percentEl = document.getElementById('loader-percent');
+    const terminalEl = document.getElementById('loader-terminal');
+    const logoLarge = document.querySelector('.logo-large');
+
+    if (preloader) {
+        document.body.style.overflow = 'hidden';
+        let pct = 0;
+        
+        const loaderPhrases = [
+            "allocating_sys_memory...",
+            "npm WARN deprecated",
+            "fetching /api/v1/auth",
+            "resolving dependencies",
+            "compiling React components...",
+            "mounting virtual DOM",
+            "decrypting user_payload",
+            "applying cyber_shaders.wgsl",
+            "[eth0] link up, 10Gbps",
+            "establishing TCP connection...",
+            "reading buffer 0x00A1F...",
+            "bypassing firewall protocols..."
+        ];
+
+        const loaderInterval = setInterval(() => {
+            pct += Math.floor(Math.random() * 4) + 1; // Faster updates, more lines
+            if (pct >= 100) {
+                pct = 100;
+                clearInterval(loaderInterval);
+                
+                // Final step
+                if (terminalEl) {
+                    const finalLine = document.createElement('div');
+                    finalLine.className = 'loader-terminal-line';
+                    finalLine.style.color = '#fff';
+                    finalLine.innerHTML = `> [SYSTEM READY] Access Granted.`;
+                    terminalEl.appendChild(finalLine);
+                }
+
+                if(logoLarge) logoLarge.classList.add('move-to-nav');
+
+                setTimeout(() => {
+                    preloader.classList.add('fade-out');
+                    setTimeout(() => {
+                        document.body.style.overflow = '';
+                        preloader.style.display = 'none';
+                    }, 800);
+                }, 1000);
+
+                if (percentEl) {
+                    percentEl.textContent = '100%';
+                    percentEl.setAttribute('data-text', '100%');
+                }
+                return; // Stop execution so no lines append after ready
+            }
+            if (percentEl) {
+                percentEl.textContent = pct + '%';
+                percentEl.setAttribute('data-text', pct + '%'); // For glitch effect
+            }
+            
+            // Append a rapid-fire terminal line
+            if(terminalEl) {
+                const randHex = "0x" + Math.random().toString(16).substr(2, 6).toUpperCase();
+                const randPhrase = loaderPhrases[Math.floor(Math.random() * loaderPhrases.length)];
+                const line = document.createElement('div');
+                line.className = 'loader-terminal-line';
+                line.innerHTML = `<span style="color: #4078f2;">[${pct}.021]</span> <span style="color: var(--text-muted);">${randHex}</span> <span style="color: #98c379;">${randPhrase}</span>`;
+                terminalEl.appendChild(line);
+                
+                // Keep only last 10 lines
+                if (terminalEl.children.length > 8) {
+                    terminalEl.removeChild(terminalEl.firstChild);
+                }
+            }
+        }, 60);
+    }
+
     // 1. Navigation Logic
     const navbar = document.getElementById('navbar');
     const menuToggle = document.querySelector('.menu-toggle');

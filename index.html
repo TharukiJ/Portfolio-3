@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,28 @@
     <!-- Fonts: Outfit for sleek modern UI, JetBrains Mono for coding elements -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Subtle code-themed background pattern removed -->
     <div class="noise-overlay"></div>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="logo-large code-font">𝙏𝙅</div>
+        </div>
+        <div class="preloader-metadata code-font">
+            <div id="loader-terminal" class="loader-terminal"></div>
+            <div id="loader-percent">0%</div>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -40,36 +55,30 @@
         <section id="home" class="hero section-padding reveal">
             <div class="hero-container">
                 <div class="hero-content">
-                    <div class="hero-badge code-font">
-                        <i class='bx bxs-circle blink-indicator'></i> SYS.ONLINE
-                    </div>
-                    <h1 class="hero-title">
-                        Building <span class="accent-text">digital</span><br>
-                        experiences.
+                    <h1 class="hero-title" style="line-height: 1.1;">
+                        <span class="code-font"
+                            style="font-size: 1.2rem; font-weight: 400; letter-spacing: 0; color: var(--text-primary); display: block; margin-bottom: 0.5rem;">console.log("</span>
+                        <span style="color: var(--text-muted); font-size: 1.8em;">Hello,</span><br>
+                        <span style="font-size: 0.85em;">I'm Tharuki</span><br>
+                        <span class="code-font"
+                            style="font-size: 1.2rem; font-weight: 400; letter-spacing: 0; color: var(--text-primary); display: block; margin-top: 0.5rem;">");</span>
                     </h1>
-                    <div class="hero-subtitle code-font">
-                        <span class="keyword">const</span> <span class="variable">role</span> = <span class="string">"</span><span id="typing-role" class="string"></span><span class="cursor">|</span><span class="string">"</span>;
+                    <div class="hero-subtitle code-font" style="font-weight: bold; margin-top: 0.5rem;">
+                        <span class="keyword">const</span> <span class="variable">role</span> = <span
+                            class="string">"</span><span id="typing-role" class="string"
+                            style="font-weight: bold;"></span><span class="cursor">|</span><span
+                            class="string">"</span>;
                     </div>
-                    <div class="hero-cta">
+                    <div class="hero-cta" style="margin-top: 5rem;">
                         <a href="#projects" class="btn btn-primary">View Projects</a>
                         <a href="#contact" class="btn btn-secondary code-font">init() contact</a>
-                    </div>
-                </div>
-                <div class="hero-image-container">
-                    <div class="hero-image-outline">
-                         <div class="hero-img-inner">
-                            <!-- Placeholder for user's photo -->
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop" alt="Tharuki Jayasuriya" class="hero-profile-img">
-                         </div>
-                         <div class="hero-image-accents">
-                            <div class="accent-line"></div>
-                            <div class="accent-line"></div>
-                         </div>
+                        <a href="CV.pdf" class="btn btn-primary" download><i class='bx bxs-download'
+                                style="margin-right: 8px; font-size: 1.2rem;"></i> CV</a>
                     </div>
                 </div>
             </div>
-                <div class="glow-sphere"></div>
-                <div class="glow-sphere secondary"></div>
+            <div class="glow-sphere"></div>
+            <div class="glow-sphere secondary"></div>
             </div>
         </section>
 
@@ -81,9 +90,13 @@
                         <h2 class="section-title">BEHIND THE CODE</h2>
                     </div>
                     <div class="about-text">
-                        <p>I’m a computer science student with a strong passion for building modern digital experiences where design meets functionality. I enjoy transforming ideas into polished, user-centered products through thoughtful development and creative problem-solving.</p>
-                        <p>For me, development is more than writing code. It is about creating meaningful digital experiences through structure, design, and detail. I enjoy transforming concepts into modern, user-focused products that are clean, scalable, and intuitive.</p>
-                        
+                        <p>I’m a computer science student with a strong passion for building modern digital experiences
+                            where design meets functionality. I enjoy transforming ideas into polished, user-centered
+                            products through thoughtful development and creative problem-solving.</p>
+                        <p>For me, development is more than writing code. It is about creating meaningful digital
+                            experiences through structure, design, and detail. I enjoy transforming concepts into
+                            modern, user-focused products that are clean, scalable, and intuitive.</p>
+
                         <div class="stats-container">
                             <div class="stat-item">
                                 <h3 class="stat-num"><span class="count" data-target="3">0</span>+</h3>
@@ -98,7 +111,7 @@
                                 <p class="stat-label">Learning<br>by Building</p>
                             </div>
                             <div class="stat-item">
-                                <h3 class="stat-num"><i class='bx bxs-map' ></i></h3>
+                                <h3 class="stat-num"><i class='bx bxs-map'></i></h3>
                                 <p class="stat-label">Sri Lanka<br>Based</p>
                             </div>
                         </div>
@@ -113,15 +126,24 @@
                         <div class="terminal-title">guest@user: ~</div>
                     </div>
                     <div class="terminal-body code-font">
-                        <div class="terminal-line"><span class="prompt">$</span> <span class="command">print("about me")</span></div>
+                        <div class="terminal-line"><span class="prompt">$</span> <span class="command">print("about
+                                me")</span></div>
                         <div class="terminal-output text-white">Tharuki Ramasha Jayasuriya</div>
-                        <div class="terminal-line"><span class="prompt">$</span> <span class="command">show --about-me</span></div>
-                        <div class="terminal-output"><span class="code-keyword">class</span> <span class="code-type">Developer</span> {
-    <span class="code-type">String</span> role = <span class="code-string">"Creative Developer"</span>;
-    <span class="code-type">String</span>[] building = {<span class="code-string">"UI/UX Experiences"</span>, <span class="code-string">"Frontend Interfaces"</span>, <span class="code-string">"Full-Stack Products"</span>};
-    <span class="code-type">String</span> passion = <span class="code-string">"Designing bold, intuitive, and human-centered web experiences"</span>;
-    <span class="code-type">String</span> status = <span class="code-string">"Ready for the next big opportunity"</span>;
-}</div>
+                        <div class="terminal-line"><span class="prompt">$</span> <span class="command">show
+                                --about-me</span></div>
+                        <div class="terminal-output"><span class="code-keyword">class</span> <span
+                                class="code-type">Developer</span> {
+                            <span class="code-type">String</span> role = <span class="code-string">"Creative
+                                Developer"</span>;
+                            <span class="code-type">String</span>[] building = {<span class="code-string">"UI/UX
+                                Experiences"</span>, <span class="code-string">"Frontend Interfaces"</span>, <span
+                                class="code-string">"Full-Stack Products"</span>};
+                            <span class="code-type">String</span> passion = <span class="code-string">"Designing bold,
+                                intuitive, and human-centered web experiences"</span>;
+                            <span class="code-type">String</span> status = <span class="code-string">"Ready for the next
+                                big opportunity"</span>;
+                            }
+                        </div>
                         <div class="terminal-line"><span class="prompt">$</span> <span class="cursor"></span></div>
                     </div>
                 </div>
@@ -178,11 +200,15 @@
                     <div class="project-card-inner">
                         <div class="project-card-top">
                             <span class="project-category code-font">EDR PLATFORM</span>
-                            <a href="https://github.com/Techzaz-EDR/TechzazEDR_Dashboard" target="_blank" class="project-ext-link" aria-label="View Project"><i class='bx bx-link-external'></i></a>
+                            <a href="https://github.com/Techzaz-EDR/TechzazEDR_Dashboard" target="_blank"
+                                class="project-ext-link" aria-label="View Project"><i
+                                    class='bx bx-link-external'></i></a>
                         </div>
                         <div class="project-card-body">
                             <h3 class="project-title-v2">TECHZAZ EDR</h3>
-                            <p class="project-desc-v2">A modern, high-performance Endpoint Detection and Response orchestration hub. Built with a decoupled architecture, it provides real-time monitoring, threat hunting, and fleet management for the TechzazEDR ecosystem.</p>
+                            <p class="project-desc-v2">A modern, high-performance Endpoint Detection and Response
+                                orchestration hub. Built with a decoupled architecture, it provides real-time
+                                monitoring, threat hunting, and fleet management for the TechzazEDR ecosystem.</p>
                             <div class="project-tags code-font">
                                 <span>ANGULAR</span>
                                 <span>FASTAPI</span>
@@ -202,11 +228,15 @@
                     <div class="project-card-inner">
                         <div class="project-card-top">
                             <span class="project-category code-font">MESSAGING APP</span>
-                            <a href="https://real-time-chat-aouqhx3qv-tharukijs-projects.vercel.app/" target="_blank" class="project-ext-link" aria-label="View Project"><i class='bx bx-link-external'></i></a>
+                            <a href="https://real-time-chat-aouqhx3qv-tharukijs-projects.vercel.app/" target="_blank"
+                                class="project-ext-link" aria-label="View Project"><i
+                                    class='bx bx-link-external'></i></a>
                         </div>
                         <div class="project-card-body">
                             <h3 class="project-title-v2">REAL-TIME CHAT</h3>
-                            <p class="project-desc-v2">A sleek, modern real-time messaging web application. Features live typing indicators, instant message delivery, and secure authentication to keep conversations private and fast.</p>
+                            <p class="project-desc-v2">A sleek, modern real-time messaging web application. Features
+                                live typing indicators, instant message delivery, and secure authentication to keep
+                                conversations private and fast.</p>
                             <div class="project-tags code-font">
                                 <span>REACT</span>
                                 <span>NODE.JS</span>
@@ -224,11 +254,15 @@
                     <div class="project-card-inner">
                         <div class="project-card-top">
                             <span class="project-category code-font">CREATIVE TOOL</span>
-                            <a href="https://ok-meme-studio-h43vthffx-tharukijs-projects.vercel.app/" target="_blank" class="project-ext-link" aria-label="View Project"><i class='bx bx-link-external'></i></a>
+                            <a href="https://ok-meme-studio-h43vthffx-tharukijs-projects.vercel.app/" target="_blank"
+                                class="project-ext-link" aria-label="View Project"><i
+                                    class='bx bx-link-external'></i></a>
                         </div>
                         <div class="project-card-body">
                             <h3 class="project-title-v2">OK MEME STUDIO</h3>
-                            <p class="project-desc-v2">A fun, interactive web studio for creating dynamic memes. Built with canvas manipulation, drag-and-drop elements, and custom typography to bring internet humor to life in a clean UI.</p>
+                            <p class="project-desc-v2">A fun, interactive web studio for creating dynamic memes. Built
+                                with canvas manipulation, drag-and-drop elements, and custom typography to bring
+                                internet humor to life in a clean UI.</p>
                             <div class="project-tags code-font">
                                 <span>REACT</span>
                                 <span>CANVAS API</span>
@@ -246,11 +280,15 @@
                     <div class="project-card-inner">
                         <div class="project-card-top">
                             <span class="project-category code-font">SAAS PLATFORM</span>
-                            <a href="https://learning-saas-platform.vercel.app/" target="_blank" class="project-ext-link" aria-label="View Project"><i class='bx bx-link-external'></i></a>
+                            <a href="https://learning-saas-platform.vercel.app/" target="_blank"
+                                class="project-ext-link" aria-label="View Project"><i
+                                    class='bx bx-link-external'></i></a>
                         </div>
                         <div class="project-card-body">
                             <h3 class="project-title-v2">LEARNING LMS</h3>
-                            <p class="project-desc-v2">A full-stack e-learning platform providing course management, progress tracking, and interactive video modules, designed for modern cohort-based education delivery.</p>
+                            <p class="project-desc-v2">A full-stack e-learning platform providing course management,
+                                progress tracking, and interactive video modules, designed for modern cohort-based
+                                education delivery.</p>
                             <div class="project-tags code-font">
                                 <span>NEXT.JS</span>
                                 <span>TYPESCRIPT</span>
@@ -268,7 +306,8 @@
             <div class="contact-card contact-collapsed" id="contact-main-card">
                 <div class="contact-header">
                     <h2 class="section-title" id="typing-contact-title">LET’S.CONNECT()</h2>
-                    <p>Open to collaborations, project ideas, and new opportunities. Whether you want to discuss a build, share an idea, or simply connect, my inbox is always open.</p>
+                    <p>Open to collaborations, project ideas, and new opportunities. Whether you want to discuss a
+                        build, share an idea, or simply connect, my inbox is always open.</p>
                 </div>
                 <form class="contact-form" onsubmit="event.preventDefault();">
                     <div class="form-group">
@@ -294,8 +333,10 @@
                 𝙏𝙅
             </div>
             <div class="social-links">
-                <a href="https://github.com/TharukiJ" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/tharuki-jayasuriya" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/TharukiJ" target="_blank" aria-label="GitHub"><i
+                        class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/tharuki-jayasuriya" target="_blank" aria-label="LinkedIn"><i
+                        class='bx bxl-linkedin'></i></a>
                 <a href="mailto:tharuki.fbacc@gmail.com" aria-label="Email"><i class='bx bxs-envelope'></i></a>
             </div>
         </div>
@@ -306,4 +347,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
