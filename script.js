@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         document.body.style.overflow = '';
                         preloader.style.display = 'none';
+
                     }, 800);
                 }, 1000);
 
@@ -162,31 +163,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 3. Scroll Reveal & Intersection Observer
-    const revealElements = document.querySelectorAll('.reveal, .stagger-container, .terminal-card');
+    // 3. Scroll Animations (directional + legacy reveal)
+    const animTargets = document.querySelectorAll(
+        '.anim-slide-left, .anim-slide-right, .anim-fade-up, .anim-zoom-in, .reveal, .stagger-container, .terminal-card'
+    );
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                const el = entry.target;
 
-                // (Disabled scroll-type for contact as it is now manual click)
+                // New directional animations
+                if (el.classList.contains('anim-slide-left') ||
+                    el.classList.contains('anim-slide-right') ||
+                    el.classList.contains('anim-fade-up') ||
+                    el.classList.contains('anim-zoom-in')) {
+                    el.classList.add('anim-active');
+                }
 
-                if (entry.target.classList.contains('terminal-card')) {
+                // Legacy reveal
+                if (el.classList.contains('reveal') ||
+                    el.classList.contains('stagger-container')) {
+                    el.classList.add('active');
+                }
+
+                // Terminal card typing
+                if (el.classList.contains('terminal-card')) {
+                    el.classList.add('anim-active');
                     setTimeout(startTerminalAnimation, 600);
                 }
-                observer.unobserve(entry.target);
+
+                observer.unobserve(el);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.12 });
 
-    revealElements.forEach(el => observer.observe(el));
+    animTargets.forEach(el => observer.observe(el));
 
-    // 4. Parallax Hero
+    // Fire hero animations immediately on page load (no scroll needed)
+    const heroAnimEls = document.querySelectorAll('.hero .anim-slide-left, .hero .anim-slide-right');
+    setTimeout(() => {
+        heroAnimEls.forEach(el => {
+            el.classList.add('anim-active');
+            observer.unobserve(el);
+        });
+    }, 300); // slight delay so preloader doesn't block it
+
+    // 4. Parallax Hero + Scroll-Exit Effect
     const hero = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
     const spheres = document.querySelectorAll('.glow-sphere');
 
     if (hero) {
+        // Mouse parallax on glow spheres
         hero.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth - 0.5) * 40;
             const y = (e.clientY / window.innerHeight - 0.5) * 40;
@@ -195,7 +224,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 s.style.transform = `translate(calc(-50% + ${x * factor}px), calc(-50% + ${y * factor}px))`;
             });
         });
+
+        // Scroll-driven exit: hero fades as it naturally scrolls out of view
+        window.addEventListener('scroll', () => {
+            const rect = hero.getBoundingClientRect();
+            const heroHeight = hero.offsetHeight;
+
+            // How far the hero top has gone above the viewport top (negative = exiting)
+            const exitDistance = -rect.top; // 0 at top, increases as you scroll
+            const progress = Math.min(Math.max(exitDistance / (heroHeight * 0.5), 0), 1);
+
+            if (heroContent) {
+                heroContent.style.opacity = 1 - progress;
+                heroContent.style.transform = `translateY(${progress * -50}px)`;
+                heroContent.style.pointerEvents = progress > 0.9 ? 'none' : '';
+            }
+
+            spheres.forEach(s => {
+                s.style.opacity = 1 - progress;
+            });
+        }, { passive: true });
     }
+
+
 
     // 5. Counter Animation
     const counters = document.querySelectorAll('.count');
@@ -280,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 8. Hero Role Typewriter Cycler
     const roleTarget = document.getElementById('typing-role');
     if (roleTarget) {
-        const roles = ["creative developer", "front end developer", "ui ux designer"];
+        const roles = ["CREATIVE DEVELOPER", "FRONT END DEVELOPER", "UI UX DESIGNER", "PROJECT MANAGER"];
         let roleIdx = 0;
         let charIdx = 0;
         let isMoving = true;

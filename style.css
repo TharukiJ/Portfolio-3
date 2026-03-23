@@ -400,20 +400,23 @@ ul {
     overflow: hidden;
 }
 
+/* Hero container - Left Aligned */
 .hero-container {
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 5%;
+    text-align: left;
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 800px;
     z-index: 2;
+    will-change: transform, opacity;
+    transition: transform 0.05s linear, opacity 0.05s linear;
 }
 
 .hero-badge {
@@ -586,6 +589,8 @@ ul {
     }
 }
 
+
+
 /* =========================================================================
    ABOUT SECTION
    ========================================================================= */
@@ -595,6 +600,7 @@ ul {
     gap: 4rem;
     align-items: center;
 }
+
 
 .about-text p {
     font-size: 1.1rem;
@@ -1209,20 +1215,47 @@ footer {
 }
 
 /* =========================================================================
-   ANIMATIONS & RESPONSIVE
+   SCROLL ANIMATIONS
    ========================================================================= */
-/* Reveals */
+
+/* --- Base state: all animated elements start hidden --- */
+.anim-slide-left,
+.anim-slide-right,
+.anim-fade-up,
+.anim-zoom-in,
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* --- Initial positions before animation --- */
+.anim-slide-left  { transform: translateX(-70px); }
+.anim-slide-right { transform: translateX(70px); }
+.anim-fade-up     { transform: translateY(50px); }
+.anim-zoom-in     { transform: scale(0.85); }
+.reveal           { transform: translateY(40px); }
+
+/* --- Active (visible) states --- */
+.anim-slide-left.anim-active,
+.anim-slide-right.anim-active,
+.anim-fade-up.anim-active,
+.anim-zoom-in.anim-active,
 .reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
+/* --- Hero stagger delays --- */
+.hero-content.anim-slide-left { transition-delay: 0.1s; }
+.hero-image-container.anim-slide-right { transition-delay: 0.35s; }
+
+/* --- About section stagger delays --- */
+.about-info.anim-slide-left   { transition-delay: 0.05s; }
+.terminal-card.anim-slide-right { transition-delay: 0.25s; }
+
+/* --- Old stagger-container support (kept for projects) --- */
 .stagger-container .reveal-item {
     opacity: 0;
     transform: translateY(30px);
@@ -1235,29 +1268,12 @@ footer {
 }
 
 /* Staggered entry timing */
-.reveal-item:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.reveal-item:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.reveal-item:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-.reveal-item:nth-child(4) {
-    transition-delay: 0.4s;
-}
-
-.reveal-item:nth-child(5) {
-    transition-delay: 0.5s;
-}
-
-.reveal-item:nth-child(6) {
-    transition-delay: 0.6s;
-}
+.reveal-item:nth-child(1) { transition-delay: 0.1s; }
+.reveal-item:nth-child(2) { transition-delay: 0.2s; }
+.reveal-item:nth-child(3) { transition-delay: 0.3s; }
+.reveal-item:nth-child(4) { transition-delay: 0.4s; }
+.reveal-item:nth-child(5) { transition-delay: 0.5s; }
+.reveal-item:nth-child(6) { transition-delay: 0.6s; }
 
 @media (max-width: 992px) {
 
