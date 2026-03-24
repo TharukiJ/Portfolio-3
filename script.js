@@ -3,83 +3,106 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Preloader Logic
+    // 0. Preloader Logic (Boot Sequence Upgrade)
     const preloader = document.getElementById('preloader');
+    const bootTerminal = document.getElementById('boot-terminal');
     const percentEl = document.getElementById('loader-percent');
-    const terminalEl = document.getElementById('loader-terminal');
-    const logoLarge = document.querySelector('.logo-large');
 
-    if (preloader) {
+    if (preloader && bootTerminal) {
         document.body.style.overflow = 'hidden';
-        let pct = 0;
 
-        const loaderPhrases = [
-            "allocating_sys_memory...",
-            "npm WARN deprecated",
-            "fetching /api/v1/auth",
-            "resolving dependencies",
-            "compiling React components...",
-            "mounting virtual DOM",
-            "decrypting user_payload",
-            "applying cyber_shaders.wgsl",
-            "[eth0] link up, 10Gbps",
-            "establishing TCP connection...",
-            "reading buffer 0x00A1F...",
-            "bypassing firewall protocols..."
+        // Tiny Audio Engine for Terminal Sounds
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        // Browser Autoplay Policy: AudioContext must be resumed after user gesture
+        document.addEventListener('click', () => {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }, { once: true });
+
+        function playTick() {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+
+            oscillator.type = 'square'; // More mechanical terminal sound
+            oscillator.frequency.setValueAtTime(600, audioCtx.currentTime); // Slightly lower frequency
+
+            gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime); // Significantly louder
+            gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.08);
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            oscillator.start();
+            oscillator.stop(audioCtx.currentTime + 0.08);
+        }
+
+        const bootSequence = [
+            { text: "System.out.println(\"INITIALIZING_JVM...\")", accent: false },
+            { text: "JVM VERSION 21.0.2+13-LTS", accent: false },
+            { text: "LOADING_CLASS: THARUKI_JAYASURIYA...", accent: true },
+            { text: "class Portfolio { public void init() { ... } }", accent: false },
+            { text: "INSTANTIATING OBJECTS: PROJECT_CONTROLLER", accent: false },
+            { text: "CHECKING_HEAP_MEMORY... [OK]", accent: false },
+            { text: "GARBAGE_COLLECTOR: ACTIVE", accent: false },
+            { text: "IMPORTING LIB: JAVA.UTIL.CREATIVITY", accent: true },
+            { text: "SKILLSET_LOADED: NEXTJS, REACT, TYPESCRIPT", accent: false },
+            { text: "MODE: FULL_STACK_DEVELOPER", accent: true },
+            { text: "SCANNING ANNOTATIONS: @DEVELOPER", accent: false },
+            { text: "ESTABLISHING SECURE_DATA_STREAM...", accent: false },
+            { text: "COMPILING_BYTECODE_RESOURCES...", accent: true },
+            { text: "CURRENT_STATUS: BUILDING_THE_FUTURE", accent: true },
+            { text: "VERIFYING_SECURITY_POLICIES...", accent: false },
+            { text: "System.out.println(\"ACCESS_GRANTED\");", accent: true },
+            { text: "Portfolio.run();", accent: false }
         ];
 
-        const loaderInterval = setInterval(() => {
-            pct += Math.floor(Math.random() * 4) + 1; // Faster updates, more lines
-            if (pct >= 100) {
-                pct = 100;
-                clearInterval(loaderInterval);
+        let lineIdx = 0;
+        const totalLines = bootSequence.length;
 
-                // Final step
-                if (terminalEl) {
-                    const finalLine = document.createElement('div');
-                    finalLine.className = 'loader-terminal-line';
-                    finalLine.style.color = '#fff';
-                    finalLine.innerHTML = `> [SYSTEM READY] Access Granted.`;
-                    terminalEl.appendChild(finalLine);
+        const bootInterval = setInterval(() => {
+            if (lineIdx < totalLines) {
+                // Play sound for new line
+                try { playTick(); } catch (e) { }
+
+                const lineData = bootSequence[lineIdx];
+                const lineEl = document.createElement('div');
+                lineEl.className = 'boot-line';
+
+                lineEl.innerHTML = `<span class="${lineData.accent ? 'terminal-accent' : ''}">${lineData.text}</span>`;
+
+                bootTerminal.appendChild(lineEl);
+
+                // Reveal background vertical bars when class is loaded
+                if (lineData.text.includes("LOADING_CLASS")) {
+                    document.querySelectorAll('.bg-vertical-text').forEach(bar => {
+                        bar.classList.add('visible');
+                    });
                 }
 
-                if (logoLarge) logoLarge.classList.add('move-to-nav');
+                // Update percentage based on lines progress
+                const progress = Math.floor(((lineIdx + 1) / totalLines) * 100);
+                if (percentEl) percentEl.textContent = progress + '%';
 
+                lineIdx++;
+
+                // Auto-scroll terminal
+                bootTerminal.scrollTop = bootTerminal.scrollHeight;
+            } else {
+                clearInterval(bootInterval);
+
+                // Final reveal
                 setTimeout(() => {
                     preloader.classList.add('fade-out');
+                    initHeroDarkBackground(); // Start interactive dark background
                     setTimeout(() => {
                         document.body.style.overflow = '';
                         preloader.style.display = 'none';
-
-                    }, 800);
-                }, 1000);
-
-                if (percentEl) {
-                    percentEl.textContent = '100%';
-                    percentEl.setAttribute('data-text', '100%');
-                }
-                return; // Stop execution so no lines append after ready
+                    }, 1200);
+                }, 800); // Shorter final pause
             }
-            if (percentEl) {
-                percentEl.textContent = pct + '%';
-                percentEl.setAttribute('data-text', pct + '%'); // For glitch effect
-            }
-
-            // Append a rapid-fire terminal line
-            if (terminalEl) {
-                const randPhrase = loaderPhrases[Math.floor(Math.random() * loaderPhrases.length)];
-                const line = document.createElement('div');
-                line.className = 'loader-terminal-line';
-                // User requested: coding line should only show phrase, green color. (The white/red was for the numbers/hex that were removed)
-                line.innerHTML = `<span style="color: #00ff41;">> ${randPhrase}</span>`;
-                terminalEl.appendChild(line);
-
-                // Keep up to 50 lines to fill the screen to the top border
-                if (terminalEl.children.length > 50) {
-                    terminalEl.removeChild(terminalEl.firstChild);
-                }
-            }
-        }, 60);
+        }, 160); // Faster sequence speed
     }
 
     // 1. Navigation Logic
@@ -364,5 +387,65 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         typeHero();
+    }
+
+    // 10. Interactive Dark Background Logic (Hero Section)
+    function initHeroDarkBackground() {
+        const hero = document.getElementById('home');
+        const glow = document.getElementById('cursor-glow');
+        const rainContainer = document.getElementById('code-rain-container');
+        if (!hero) return;
+
+        // 10a. Cursor Glow Follow
+        hero.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            if (glow) {
+                glow.style.left = x + 'px';
+                glow.style.top = y + 'px';
+            }
+        });
+
+        // 10b. Floating Code Symbols
+        if (rainContainer) {
+            const symbols = ['{', '}', '<', '>', '/', ';', '[]', '()', '=>', '&&', '||', '!', '?;'];
+            const particles = [];
+            const count = window.innerWidth < 768 ? 20 : 45;
+
+            for (let i = 0; i < count; i++) {
+                const el = document.createElement('div');
+                el.className = 'floating-code-symbol';
+                el.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+
+                const p = {
+                    el: el,
+                    x: Math.random() * 100,
+                    y: Math.random() * 100,
+                    vx: (Math.random() - 0.5) * 0.01,
+                    vy: (Math.random() - 0.5) * 0.01,
+                    size: 0.8 + Math.random() * 0.4
+                };
+
+                rainContainer.appendChild(el);
+                particles.push(p);
+            }
+
+            function animateRain() {
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    // Wrap
+                    if (p.x < -5) p.x = 105;
+                    if (p.x > 105) p.x = -5;
+                    if (p.y < -5) p.y = 105;
+                    if (p.y > 105) p.y = -5;
+
+                    p.el.style.transform = `translate(${p.x}vw, ${p.y}vh) scale(${p.size})`;
+                });
+                requestAnimationFrame(animateRain);
+            }
+            animateRain();
+        }
     }
 });
