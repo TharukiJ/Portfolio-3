@@ -215,7 +215,7 @@ export default function HeroSection({ isVisible }) {
           <div className={`hero-image-container anim-slide-right ${isVisible ? "anim-active" : ""}`}>
             <div className="hero-image-wrapper">
               <img
-                src="/images/hero_person.png"
+                src="/images/hero_person_transparent.png"
                 alt="Tharuki Jayasuriya"
                 className="hero-person-img"
               />

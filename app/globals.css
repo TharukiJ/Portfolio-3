@@ -728,7 +728,7 @@ ul {
     height: 100%;
     border-radius: 12px;
     overflow: hidden;
-    background: #e9e9e1;
+    background: transparent;
 }
 
 .hero-person-img {
@@ -737,7 +737,6 @@ ul {
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
-    filter: grayscale(100%) contrast(110%);
 }
 
 .hero-person-img:hover {
