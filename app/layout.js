@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${outfitFont.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable}`}>
+    <html lang="en" className={`${outfitFont.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable}`} suppressHydrationWarning>
       <head>
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" precedence="default" />
       </head>

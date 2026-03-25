@@ -141,79 +141,60 @@ export default function HeroSection({ isVisible }) {
         <div id="code-rain-container" className="code-rain-container" ref={rainContainerRef}></div>
       </div>
       <div className="hero-container">
-        <div className="hero-grid-container">
-          {/* ALL TEXT COMPONENTS ABOVE IMAGE */}
-          <div className={`hero-content anim-slide-up ${isVisible ? "anim-active" : ""}`} ref={contentRef}>
-            <h1 className="hero-title" style={{ lineHeight: 1.1 }}>
-              <span
-                className="code-font"
-                style={{
-                  fontSize: "1.2rem",
-                  fontWeight: 400,
-                  color: "var(--text-primary)",
-                  display: "block",
-                  marginBottom: "0.5rem",
-                }}
-              >
-                console.log("
-              </span>
-              <span
-                style={{
-                  fontFamily: "var(--font-playfair), serif",
-                  fontStyle: "italic",
-                  fontWeight: 700,
-                  fontSize: "clamp(4.5rem, 10vw, 6rem)",
-                  color: "#c8c8bf",
-                  letterSpacing: "-2px",
-                  display: "inline-block",
-                  lineHeight: 0.9,
-                }}
-              >
-                Hello,
-              </span>
-              <br />
-              <span style={{ fontSize: "0.9em", fontWeight: 700, color: "var(--text-primary)" }}>I'm Tharuki</span>
-              <br />
-              <span
-                className="code-font"
-                style={{
-                  fontSize: "1.2rem",
-                  fontWeight: 400,
-                  letterSpacing: 0,
-                  color: "var(--text-primary)",
-                  display: "block",
-                  marginTop: "0.2rem",
-                }}
-              >
-                ");
-              </span>
-            </h1>
-            <div
-              className="hero-subtitle code-font"
-              style={{ fontSize: "1.1rem", fontWeight: 500, color: "#666", marginTop: "0.5rem" }}
-            >
-              <span className="keyword">const</span> <span className="variable">role</span> = <span className="string">"</span>
-              <span id="typing-role" className="string" style={{ fontWeight: 500 }}>
-                {typedRole}
-              </span>
-              <span className="cursor">|</span>
-              <span className="string">"</span>;
+          <div className="hero-flex-container">
+            {/* TEXT CONTENT (LEFT) */}
+            <div className={`hero-content anim-slide-up ${isVisible ? "anim-active" : ""}`} ref={contentRef}>
+              <h1 className="hero-title">
+                <div className="code-line">
+                  <span className="code-font syntax-bracket">console.log("</span>
+                </div>
+                <div className="hero-main-text">
+                  <span className="hero-hello">Hello,</span>
+                  <br />
+                  <span className="hero-name">I'm Tharuki</span>
+                </div>
+                <div className="code-line">
+                  <span className="code-font syntax-bracket">");</span>
+                </div>
+              </h1>
+
+              <div className="hero-subtitle code-font">
+                <span className="keyword">const</span> <span className="variable">role</span> = <span className="string">"</span>
+                <span id="typing-role" className="string">
+                  {typedRole}
+                </span>
+                <span className="cursor">|</span>
+                <span className="string">"</span>;
+              </div>
+
+              <div className="hero-cta">
+                <button className="btn btn-primary">View Projects</button>
+                <button className="btn btn-outline">init() contact</button>
+                <button className="btn btn-primary cv-btn">
+                  <svg className="cv-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M14 2V8H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M16 13H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M16 17H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M10 9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  CV
+                </button>
+              </div>
+            </div>
+
+            {/* PERSONA IMAGE (RIGHT) */}
+            <div className={`hero-image-container anim-slide-up ${isVisible ? "anim-active" : ""}`}>
+              <div className="hero-image-wrapper">
+                <img
+                  src="/images/hero_person_transparent.png"
+                  alt="Tharuki Jayasuriya"
+                  className="hero-person-img"
+                />
+                <div className="image-accent-glow"></div>
+              </div>
             </div>
           </div>
-
-          {/* PERSONA IMAGE (CENTERED) */}
-          <div className={`hero-image-container anim-slide-up ${isVisible ? "anim-active" : ""}`}>
-            <div className="hero-image-wrapper">
-              <img
-                src="/images/hero_person_transparent.png"
-                alt="Tharuki Jayasuriya"
-                className="hero-person-img"
-              />
-              <div className="image-accent-glow"></div>
-            </div>
-          </div>
-
-        </div>
       </div>
       <div className="glow-sphere" ref={sphere1Ref}></div>
       <div className="glow-sphere secondary" ref={sphere2Ref}></div>
