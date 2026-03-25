@@ -694,7 +694,7 @@ ul {
 }
 
 .hero-main-text {
-    margin: 1.5rem 0; /* More space */
+    margin: 1.5rem 0 0.5rem 0; /* Reduced bottom margin */
     line-height: 0.95;
 }
 
@@ -708,23 +708,43 @@ ul {
 }
 
 .hero-name {
-    font-size: clamp(4rem, 9vw, 6.5rem); /* Upscaled */
     font-weight: 800;
     color: var(--text-primary);
     letter-spacing: -2px;
-    margin-top: -1.5rem;
+    margin-top: 0.5rem; /* Replaced negative margin with a small gap */
     display: block;
 }
 
-.hero-subtitle {
-    font-size: 1.4rem; /* Upscaled */
-    color: var(--text-muted);
-    margin-bottom: 3.5rem;
+.hero-im {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); 
+    opacity: 0.8;
+    font-weight: 400;
+    margin-right: -0.2rem; /* Minimized gap */
 }
 
-.hero-subtitle .keyword { color: #a626a4; }
-.hero-subtitle .variable { color: #4078f2; }
-.hero-subtitle .string { color: #50a14f; }
+.hero-tharuki {
+    font-size: clamp(5rem, 12vw, 8.5rem); 
+    letter-spacing: -4.5px; /* Tighter letter spacing */
+}
+
+.hero-name .syntax-bracket {
+    font-size: 0.45em; /* Slightly larger for better visibility when tight */
+    margin-left: -1rem; /* Maximum minimize gap */
+    vertical-align: middle;
+    opacity: 0.6;
+}
+
+.hero-subtitle {
+    font-size: 0.95rem; /* Further minimized */
+    color: var(--text-muted);
+    margin-top: -0.5rem; /* Bring closer to name */
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+}
+
+.hero-subtitle .keyword { color: var(--text-primary); font-weight: 600; }
+.hero-subtitle .variable { color: var(--text-muted); }
+.hero-subtitle .string { color: #000000; }
 .hero-subtitle .cursor {
     color: var(--accent);
     animation: cursor-blink 1.2s infinite;
@@ -1126,6 +1146,27 @@ ul {
     background-color: transparent;
 }
 
+.github-contribution-wrapper {
+    width: 100%;
+    max-width: 180px; /* Narrow width to show only ~last month */
+    height: 110px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.github-chart-img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    object-position: right center; /* Focus on the most recent weeks (right side) */
+    filter: grayscale(1) contrast(1.1); /* Match monochromatic theme */
+}
+
 /* =========================================================================
    PROJECTS SECTION
    ========================================================================= */
@@ -1368,8 +1409,8 @@ ul {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #ff5f56;
-    box-shadow: 14px 0 0 #ffbd2e, 28px 0 0 #27c93f;
+    background: #848484; /* Gray */
+    box-shadow: 14px 0 0 #bdbdbc, 28px 0 0 #505050; /* Light & Dark Gray */
 }
 
 .form-group {

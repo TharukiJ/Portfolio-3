@@ -64,7 +64,7 @@ export default function SkillsSection() {
 
         <div className="skills-side-right anim-slide-right anim-active">
           <div className="section-header">
-            <h2 className="section-title">GITHUB.CONTRIBUTIONS.2026</h2>
+            <h2 className="section-title">GITHUB.ACTIVITY.MONTHLY</h2>
           </div>
           <div className="github-contribution-wrapper">
             <img
