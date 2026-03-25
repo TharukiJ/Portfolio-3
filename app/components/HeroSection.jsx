@@ -142,14 +142,14 @@ export default function HeroSection({ isVisible }) {
       </div>
       <div className="hero-container">
         <div className="hero-grid-container">
-          <div className={`hero-content anim-slide-left ${isVisible ? "anim-active" : ""}`} ref={contentRef}>
+          {/* ALL TEXT COMPONENTS ABOVE IMAGE */}
+          <div className={`hero-content anim-slide-up ${isVisible ? "anim-active" : ""}`} ref={contentRef}>
             <h1 className="hero-title" style={{ lineHeight: 1.1 }}>
               <span
                 className="code-font"
                 style={{
                   fontSize: "1.2rem",
                   fontWeight: 400,
-                  letterSpacing: 0,
                   color: "var(--text-primary)",
                   display: "block",
                   marginBottom: "0.5rem",
@@ -162,17 +162,17 @@ export default function HeroSection({ isVisible }) {
                   fontFamily: "var(--font-playfair), serif",
                   fontStyle: "italic",
                   fontWeight: 700,
-                  fontSize: "2.2em",
+                  fontSize: "clamp(4.5rem, 10vw, 6rem)",
                   color: "#c8c8bf",
                   letterSpacing: "-2px",
                   display: "inline-block",
-                  marginBottom: "0.2rem",
+                  lineHeight: 0.9,
                 }}
               >
                 Hello,
               </span>
               <br />
-              <span style={{ fontSize: "0.85em" }}>I'm Tharuki</span>
+              <span style={{ fontSize: "0.9em", fontWeight: 700, color: "var(--text-primary)" }}>I'm Tharuki</span>
               <br />
               <span
                 className="code-font"
@@ -182,7 +182,7 @@ export default function HeroSection({ isVisible }) {
                   letterSpacing: 0,
                   color: "var(--text-primary)",
                   display: "block",
-                  marginTop: "0.5rem",
+                  marginTop: "0.2rem",
                 }}
               >
                 ");
@@ -190,7 +190,7 @@ export default function HeroSection({ isVisible }) {
             </h1>
             <div
               className="hero-subtitle code-font"
-              style={{ fontSize: "1rem", fontWeight: 500, color: "#666", marginTop: "0.5rem" }}
+              style={{ fontSize: "1.1rem", fontWeight: 500, color: "#666", marginTop: "0.5rem" }}
             >
               <span className="keyword">const</span> <span className="variable">role</span> = <span className="string">"</span>
               <span id="typing-role" className="string" style={{ fontWeight: 500 }}>
@@ -199,20 +199,10 @@ export default function HeroSection({ isVisible }) {
               <span className="cursor">|</span>
               <span className="string">"</span>;
             </div>
-            <div className="hero-cta" style={{ marginTop: "5rem" }}>
-              <a href="#projects" className="btn btn-primary">
-                View Projects
-              </a>
-              <a href="#contact" className="btn btn-secondary code-font">
-                init() contact
-              </a>
-              <a href="/tharuki_cv.pdf" className="btn btn-primary" target="_blank">
-                <i className="bx bx-file" style={{ marginRight: "8px", fontSize: "1.2rem" }}></i> CV
-              </a>
-            </div>
           </div>
 
-          <div className={`hero-image-container anim-slide-right ${isVisible ? "anim-active" : ""}`}>
+          {/* PERSONA IMAGE (CENTERED) */}
+          <div className={`hero-image-container anim-slide-up ${isVisible ? "anim-active" : ""}`}>
             <div className="hero-image-wrapper">
               <img
                 src="/images/hero_person_transparent.png"
@@ -222,6 +212,7 @@ export default function HeroSection({ isVisible }) {
               <div className="image-accent-glow"></div>
             </div>
           </div>
+
         </div>
       </div>
       <div className="glow-sphere" ref={sphere1Ref}></div>
