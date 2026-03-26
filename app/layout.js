@@ -20,6 +20,10 @@ const playfairDisplay = Playfair_Display({
 export const metadata = {
   title: "Tharuki | Software Engineer & Creative Developer",
   description: "Portfolio of a creative, modern, aesthetic software engineer.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

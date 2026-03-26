@@ -7,7 +7,7 @@ const PROJECTS = [
     category: "EDR PLATFORM",
     desc: "A modern, high-performance Endpoint Detection and Response orchestration hub. Built with a decoupled architecture, it provides real-time monitoring, threat hunting, and fleet management for the TechzazEDR ecosystem.",
     bg: "/images/techzaz_dashboard.png",
-    link: "https://github.com/Techzaz-EDR/TechzazEDR_Dashboard",
+    link: "https://techzazedrdashboard-frontend-production.up.railway.app/",
     tags: ["ANGULAR", "FASTAPI", "PYTHON", "FIREBASE", "GSAP", "FIRESTORE"],
   },
   {
@@ -15,7 +15,7 @@ const PROJECTS = [
     category: "MESSAGING APP",
     desc: "A sleek, modern real-time messaging web application. Features live typing indicators, instant message delivery, and secure authentication to keep conversations private and fast.",
     bg: "/images/chat_app_bg.png",
-    link: "https://real-time-chat-aouqhx3qv-tharukijs-projects.vercel.app/",
+    link: "https://real-time-chat-app-six-rho.vercel.app/",
     tags: ["REACT", "NODE.JS", "SOCKET.IO", "CSS"],
   },
   {
@@ -25,14 +25,6 @@ const PROJECTS = [
     bg: "/images/meme_studio_bg.png",
     link: "https://ok-meme-studio-h43vthffx-tharukijs-projects.vercel.app/",
     tags: ["REACT", "CANVAS API", "TAILWIND", "VERCEL"],
-  },
-  {
-    title: "LEARNING LMS",
-    category: "SAAS PLATFORM",
-    desc: "A full-stack e-learning platform providing course management, progress tracking, and interactive video modules, designed for modern cohort-based education delivery.",
-    bg: "/images/learning_saas_bg.png",
-    link: "https://learning-saas-platform.vercel.app/",
-    tags: ["NEXT.JS", "TYPESCRIPT", "POSTGRES", "PRISMA"],
   },
 ];
 
