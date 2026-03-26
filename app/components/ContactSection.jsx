@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const humanType = async (element, isCode = false) => {
   const fullContent = element.getAttribute("data-original") || element.innerHTML.trim();
@@ -33,27 +33,40 @@ const humanType = async (element, isCode = false) => {
 };
 
 export default function ContactSection() {
-  const [collapsed, setCollapsed] = useState(true);
+  const [animActive, setAnimActive] = useState(false);
   const [hasTyped, setHasTyped] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitText, setSubmitText] = useState("await send()");
+  const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const nameRef = useRef(null);
   const messageRef = useRef(null);
 
-  const handleCardClick = () => {
-    if (collapsed) {
-      setCollapsed(false);
-      if (!hasTyped) {
-        setHasTyped(true);
-        setTimeout(() => {
-          if (titleRef.current) {
-            humanType(titleRef.current, false);
+  // Intersection Observer to trigger typing animation when scrolled into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setAnimActive(true);
+            if (!hasTyped) {
+              setHasTyped(true);
+              setTimeout(() => {
+                if (titleRef.current) {
+                  humanType(titleRef.current, false);
+                }
+              }, 600);
+            }
+            observer.unobserve(entry.target);
           }
-        }, 800);
-      }
-    }
-  };
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, [hasTyped]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -83,11 +96,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="contact section-padding">
+    <section id="contact" className="contact section-padding" ref={sectionRef}>
       <div
-        className={`contact-card ${collapsed ? "contact-collapsed" : ""}`}
+        className={`contact-card anim-fade-up ${animActive ? "anim-active" : ""}`}
         id="contact-main-card"
-        onClick={handleCardClick}
       >
         <div className="contact-header">
           <h2 className="section-title" id="typing-contact-title" ref={titleRef}>
