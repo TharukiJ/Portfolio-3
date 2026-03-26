@@ -188,14 +188,14 @@ body::-webkit-scrollbar-thumb {
 .status-dot {
     width: 8px;
     height: 8px;
-    background-color: #d4c84c;
-    /* Pastel/Muted Yellow Accent */
+    background-color: #ffffff;
+    /* Clean White Accent */
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(212, 200, 76, 0.4);
-    animation: status-pulse-yellow 1.5s infinite alternate;
+    box-shadow: 0 0 10px rgba(189, 189, 188, 0.4);
+    animation: status-pulse-gray 1.5s infinite alternate;
 }
 
-@keyframes status-pulse-yellow {
+@keyframes status-pulse-gray {
     from {
         opacity: 0.4;
         transform: scale(0.8);
@@ -231,8 +231,8 @@ body::-webkit-scrollbar-thumb {
 
 /* Pastel Yellow accents in preloader terminal lines */
 .terminal-accent {
-    color: #bfa800;
-    /* Darker pastel yellow for readability */
+    color: #bdbdbc;
+    /* Light gray for monochromatic theme */
     font-weight: 500;
 }
 
@@ -414,12 +414,12 @@ ul {
     width: 100%;
     height: auto;
     display: block;
-    filter: grayscale(100%) opacity(0.8);
+    filter: grayscale(1) opacity(0.8);
     transition: var(--transition-smooth);
 }
 
 .github-contribution-wrapper:hover .github-chart-img {
-    filter: grayscale(0%) opacity(1);
+    filter: grayscale(1) brightness(1.2) opacity(1);
 }
 
 @media (max-width: 1024px) {
@@ -624,7 +624,7 @@ ul {
     position: absolute;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(212, 200, 76, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -984,15 +984,15 @@ ul {
 }
 
 .dot-red {
-    background-color: #ff5f56;
+    background-color: #848484;
 }
 
 .dot-yellow {
-    background-color: #ffbd2e;
+    background-color: #bdbdbc;
 }
 
 .dot-green {
-    background-color: #27c93f;
+    background-color: #1f1f1f;
 }
 
 .terminal-title {
