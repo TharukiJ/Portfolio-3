@@ -146,8 +146,8 @@ body::-webkit-scrollbar-thumb {
 /* Preloader Central Header Icon */
 .preloader-icon {
     font-size: 1.5rem;
-    color: #a8a8a8;
-    /* Muted gray for subtlety */
+    color: #d4c84c;
+    /* Yellow Icon */
     display: block;
     margin-bottom: 2rem;
     letter-spacing: 0.1em;
@@ -189,7 +189,7 @@ body::-webkit-scrollbar-thumb {
     width: 8px;
     height: 8px;
     background-color: #d4c84c;
-    /* Pastel/Muted Yellow Accent */
+    /* Reintroduced Yellow Accent */
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(212, 200, 76, 0.4);
     animation: status-pulse-yellow 1.5s infinite alternate;
@@ -229,10 +229,10 @@ body::-webkit-scrollbar-thumb {
     /* Keep text centered vertically */
 }
 
-/* Pastel Yellow accents in preloader terminal lines */
+/* Yellowish accents in preloader terminal lines */
 .terminal-accent {
     color: #bfa800;
-    /* Darker pastel yellow for readability */
+    /* Reintroduced yellow for pop */
     font-weight: 500;
 }
 
@@ -246,7 +246,8 @@ body::-webkit-scrollbar-thumb {
 .loader-percent-v3 {
     margin-top: 1.5rem;
     font-size: 0.8rem;
-    color: #888;
+    color: #d4c84c;
+    /* Yellow percentage text */
     letter-spacing: 0.1em;
 }
 
