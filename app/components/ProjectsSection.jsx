@@ -7,8 +7,11 @@ const PROJECTS = [
     category: "EDR PLATFORM",
     type: "main",
     desc: "A modern, high-performance Endpoint Detection and Response orchestration hub. Built with a decoupled architecture, it provides real-time monitoring, threat hunting, and fleet management for the TechzazEDR ecosystem.",
-    bg: "/images/techzaz_premium.png",
-    link: "https://techzazedr-frontend-production.up.railway.app/",
+
+
+    bg: "/images/techzaz_dashboard.png",
+    link: "https://techzazedrdashboard-frontend-production.up.railway.app/",
+
     tags: ["ANGULAR", "FASTAPI", "PYTHON", "FIREBASE", "GSAP", "FIRESTORE"],
   },
   {
@@ -65,6 +68,7 @@ const PROJECTS = [
     link: "https://flux-audit-roan.vercel.app/",
     tags: ["TYPESCRIPT", "D3.JS"],
   },
+
 ];
 
 export default function ProjectsSection() {
@@ -127,7 +131,7 @@ export default function ProjectsSection() {
 
       <div className="drilldown-container">
         {/* STEP 0: ROOT NODE */}
-        <div 
+        <div
           className={`drill-node yellow-node ${activeStep >= 1 ? "node-small node-left" : "node-large"}`}
           onClick={handleRootClick}
         >
@@ -141,13 +145,13 @@ export default function ProjectsSection() {
         {/* STEP 1: CATEGORY BUTTONS */}
         {activeStep >= 1 && (
           <div className={`step-column category-column ${activeStep >= 2 ? "column-shrunk" : ""}`}>
-            <div 
+            <div
               className={`drill-node gray-node ${selectedCategory === 'main' ? "node-active" : ""} ${activeStep >= 2 ? "node-tiny" : ""}`}
               onClick={() => handleCategoryClick('main')}
             >
               <h4 className="node-title">MAIN PROJECTS</h4>
             </div>
-            <div 
+            <div
               className={`drill-node green-node ${selectedCategory === 'mini' ? "node-active" : ""} ${activeStep >= 2 ? "node-tiny" : ""}`}
               onClick={() => handleCategoryClick('mini')}
             >
@@ -160,7 +164,7 @@ export default function ProjectsSection() {
         {activeStep >= 2 && selectedCategory && (
           <div className={`step-column project-column ${activeStep >= 3 ? "column-shrunk" : ""}`}>
             {PROJECTS.filter(p => p.type === selectedCategory).map((p, idx) => (
-              <div 
+              <div
                 key={idx}
                 className={`drill-node project-node ${selectedProject?.title === p.title ? "node-active" : ""} ${activeStep >= 3 ? "node-tiny" : ""}`}
                 onClick={() => handleProjectClick(p)}
@@ -180,10 +184,10 @@ export default function ProjectsSection() {
                 <i className="bx bx-link-external"></i>
               </a>
             </div>
-            
+
             <h3 className="detail-project-title">{selectedProject.title}</h3>
             <p className="detail-project-description">{selectedProject.desc}</p>
-            
+
             <div className="detail-pill-tags">
               {selectedProject.tags.map((tag, idx) => (
                 <span key={tag} className={`pill-tag tag-color-${idx % 5}`}>
@@ -191,10 +195,10 @@ export default function ProjectsSection() {
                 </span>
               ))}
             </div>
-            
+
             <div className="detail-image-wrapper">
-              <div 
-                className="detail-image-preview" 
+              <div
+                className="detail-image-preview"
                 style={{ backgroundImage: `url(${selectedProject.bg})` }}
               >
                 <div className="live-preview-overlay">
