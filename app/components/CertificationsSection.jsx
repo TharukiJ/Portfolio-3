@@ -77,9 +77,9 @@ const CERTIFICATIONS = [
     skills: "",
     link: "",
   }, , {
-    title: " ",
-    issuer: "Linkdhin Learning",
-    skills: "",
+    title: " Modern Data Engineering Essentials",
+    issuer: "pearson",
+    skills: "Data Engineering",
     link: "",
   }, , {
     title: " ",
