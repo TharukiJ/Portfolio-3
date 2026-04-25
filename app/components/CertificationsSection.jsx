@@ -41,9 +41,9 @@ const CERTIFICATIONS = [
     skills: "Artificial Intelligence (AI),Digital Marketing,Marketing Strategy,AI for Marketing",
     link: "https://www.linkedin.com/learning/certificates/275028a7e0552187cf0a3a8247aedcb23332b639ce957ba69839af21d69f2499?u=76664938",
   }, {
-    title: "",
-    issuer: "",
-    skills: "t",
+    title: "Advanced code challenges in React",
+    issuer: "LINKEDIN LEARNING",
+    skills: "React,Redux,JavaScript",
     link: "#",
   }, {
     title: "",
