@@ -7,7 +7,7 @@ const PROJECTS = [
     category: "EDR PLATFORM",
     type: "main",
     desc: "A modern, high-performance EDR orchestration hub. Provides real-time monitoring and threat hunting.",
-    bg: "/images/techzaz_dashboard.png",
+    bg: "/images/techzaz_premium.png",
     link: "https://techzazedr-frontend-production.up.railway.app/",
     tags: ["ANGULAR", "FASTAPI", "PYTHON"],
   },
@@ -16,7 +16,7 @@ const PROJECTS = [
     category: "BOOKING SYSTEM",
     type: "main",
     desc: "Customizable appointment scheduling system for flexible booking workflows.",
-    bg: "/images/flex_slot_bg.png",
+    bg: "/images/flex_slot_premium.png",
     link: "https://flex-slot-custom.vercel.app/",
     tags: ["SUPABASE", "NEXT.JS", "CLERK"],
   },
@@ -162,29 +162,38 @@ export default function ProjectsSection() {
           </div>
         )}
 
-        {/* STEP 3: PROJECT DETAIL BOX - REDESIGNED */}
+        {/* STEP 3: PROJECT DETAIL BOX (REDESIGNED) */}
         {activeStep >= 3 && selectedProject && (
-          <div className="project-detail-box-premium reveal-right">
-            <div className="detail-top-bar">
-              <span className="premium-badge code-font">IT COMPANY</span>
-              <a href={selectedProject.link} className="premium-link-circle" target="_self">
-                <i className="bx bx-up-arrow-alt"></i>
+          <div className="project-detail-box-right reveal-right">
+            <div className="detail-header-row">
+              <span className="detail-category-label code-font">{selectedProject.category}</span>
+              <a href={selectedProject.link} className="detail-external-link" target="_self">
+                <i className="bx bx-link-external"></i>
               </a>
             </div>
             
-            <div className="premium-content-center">
-              <div className="premium-logo-area">
-                 {/* Large logo or background text placeholder */}
-                 <div className="bg-text-overlay">{selectedProject.title}</div>
-              </div>
-              <h3 className="premium-title">{selectedProject.title}</h3>
-              <p className="premium-desc">{selectedProject.desc}</p>
-            </div>
-
-            <div className="premium-tags-bottom">
-              {selectedProject.tags.map(tag => (
-                <span key={tag} className="premium-tag code-font">{tag}</span>
+            <h3 className="detail-project-title">{selectedProject.title}</h3>
+            <p className="detail-project-description">{selectedProject.desc}</p>
+            
+            <div className="detail-pill-tags">
+              {selectedProject.tags.map((tag, idx) => (
+                <span key={tag} className={`pill-tag tag-color-${idx % 5}`}>
+                  {tag}
+                </span>
               ))}
+            </div>
+            
+            <div className="detail-image-wrapper">
+              <div 
+                className="detail-image-preview" 
+                style={{ backgroundImage: `url(${selectedProject.bg})` }}
+              >
+                <div className="live-preview-overlay">
+                  <span className="live-preview-btn">
+                    LIVE PREVIEW <i className="bx bx-right-arrow-alt"></i>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         )}
