@@ -82,10 +82,10 @@ const CERTIFICATIONS = [
     skills: "Data Engineering",
     link: "https://www.linkedin.com/learning/certificates/5c3375f582e95ae780fd27a7a29137ac8a6c27b8e36d99c09b84c1add6a3cb6b?u=76664938",
   }, , {
-    title: " ",
+    title: "Applied Machine Learning: Foundations",
     issuer: "Linkdhin Learning",
     skills: "",
-    link: "",
+    link: "https://www.linkedin.com/learning/certificates/b47e3cb0c3d7672126869dbd7e15989c08014a1a66870269a74b0406b5bbf032?u=76664938",
   },
 
 ];
