@@ -57,10 +57,10 @@ const CERTIFICATIONS = [
     skills: "C#",
     link: "https://www.linkedin.com/learning/certificates/a7ff22a255468a4249e8e9d264f0c6b7e827219f294224846cb7b4c121dbf2bc?u=76664938",
   }, , {
-    title: " ",
+    title: " Practice Exam 1 for GitHub Copilot",
     issuer: "Linkdhin Learning",
-    skills: "",
-    link: "",
+    skills: "GitHub Copilot,Artificial Intelligence (AI),AI Software Development,GitHub",
+    link: "https://www.linkedin.com/learning/certificates/175acdadf82793ee16941da62309b3ebaac03abb8b08ca244dc046569a699835?u=76664938",
   }, , {
     title: " ",
     issuer: "Linkdhin Learning",
