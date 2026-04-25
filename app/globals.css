@@ -1866,4 +1866,47 @@ footer {
         align-items: center;
         gap: 2rem;
     }
-}
+}
+
+/* =========================================================================
+   HOME PROJECT VIDEO STYLES
+   ========================================================================= */
+.project-home-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.home-video-wrapper {
+    flex: 1;
+    max-width: 500px;
+    background-color: var(--bg-main);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-project-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply; /* Helps blend if video has a light background */
+    filter: contrast(1.1);
+}
+
+@media (max-width: 992px) {
+    .project-home-layout {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    
+    .home-video-wrapper {
+        max-width: 100%;
+    }
+}
+
