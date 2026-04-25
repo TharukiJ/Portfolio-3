@@ -51,21 +51,7 @@ const CERTIFICATIONS = [
     skills: "GIT,Version control",
     link: "https://www.linkedin.com/learning/certificates/d0a8dedc04a3acff7e09aa8fce9840c0c002aa5e56adb3f53389654c64000834?u=76664938",
   }
-    title: "",
-  issuer: "",
-  skills: "t",
-  link: "#",
-  {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  },
+
 ];
 
 export default function CertificationsSection() {
