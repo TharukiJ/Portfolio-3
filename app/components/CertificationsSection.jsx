@@ -30,7 +30,7 @@ const CERTIFICATIONS = [
     multi: true,
     exams: [
       { name: "Exam 1", link: "https://www.linkedin.com/learning/certificates/dd968d52a40b9618bea04d87768d878360a667d5579a6c41adaf4f54d1c63946?u=76664938" },
-      { name: "Exam 2", link: "" },
+      { name: "Exam 2", link: "https://www.linkedin.com/learning/certificates/960fdee2798fa6ee85ef9f291abafc682d7ddce0532a7f6f72dc76f660892200?u=76664938" },
       { name: "Exam 3", link: "" },
       { name: "Exam 4", link: "" },
     ]
