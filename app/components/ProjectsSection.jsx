@@ -81,14 +81,23 @@ export default function ProjectsSection() {
   }, []);
 
   const renderHome = () => (
-    <div className="project-tree-container">
+    <div className="project-home-layout">
       <div className="tree-node yellow-node clickable" onClick={() => setCurrentView("categories")}>
         <div className="node-content">
           <span className="node-date code-font">DIRECTORY</span>
           <h3 className="node-title">MY PROJECTS</h3>
           <p className="node-desc">Click to explore curated work and side projects.</p>
         </div>
-        <div className="node-connector"></div>
+      </div>
+      <div className="home-video-wrapper">
+        <video 
+          src="/ex.mp4" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="home-project-video"
+        />
       </div>
     </div>
   );
