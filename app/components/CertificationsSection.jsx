@@ -3,18 +3,18 @@ import { useEffect, useRef, useState } from "react";
 
 const CERTIFICATIONS = [
   {
-    title: "PYTHON CODE CHALLENGES FOR DATA ANALYSIS",
+    title: "PYTHON ",
     issuer: "PMI (PROJECT MANAGEMENT INSTITUTE)",
-    skills: "Python, Data Analysis, Pandas, NumPy",
+    skills: "Python, Data Analysis",
     id: "LI-PY-92837",
     link: "https://www.linkedin.com/learning/certificates/0ebefe00bcee57a02c0dcbd5c11c9ccf665c571b8c0306e7bd79673026fa75c9?u=76664938",
   },
   {
-    title: "AWS CERTIFIED SOLUTIONS ARCHITECT",
-    issuer: "AMAZON WEB SERVICES",
-    skills: "Cloud Architecture, EC2, S3, RDS, Serverless",
+    title: "PYTHON CODE CHALLENGES FOR DATA ANALYSIS",
+    issuer: "NASBA Continuing Professional Education (CPE)",
+    skills: "Python",
     id: "AWS-SA-12345",
-    link: "#",
+    link: "https://www.linkedin.com/learning/certificates/616287ff7465a2c202b0969f62c903ff69e6abcee4ddeadac8bd5bd2221a16da?u=76664938",
   },
   {
     title: "META FRONT-END DEVELOPER PROFESSIONAL",
@@ -59,35 +59,33 @@ export default function CertificationsSection() {
         <h2 className="cert-section-label">CERTIFICATION & CREDENTIALS</h2>
       </div>
 
-      <div className="cert-pill-list">
+      <div className="cert-stack">
         {CERTIFICATIONS.map((cert, idx) => (
           <a
             key={idx}
             href={cert.link}
             target="_self"
-            className="cert-pill-link"
+            className="cert-card-modern"
           >
-            <div className="cert-pill-content">
-              <div className="cert-pill-left">
-                <span className="cert-accent-dot"></span>
-                <div className="cert-info-stack">
-                  <div className="cert-title-row">
-                    <span className="cert-pill-title">{cert.title}</span>
-                    <span className="cert-pill-divider">·</span>
-                    <span className="cert-pill-issuer">{cert.issuer}</span>
-                  </div>
-                  <div className="cert-skills-row">
-                    {cert.skills.split(',').map((skill, sIdx) => (
-                      <span key={sIdx} className="cert-skill-item">
-                        {skill.trim()}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+            <div className="cert-card-inner">
+              <div className="cert-title-row">
+                <h3 className="cert-modern-title">{cert.title}</h3>
               </div>
-              <div className="cert-pill-right">
-                <i className="bx bx-up-arrow-alt cert-arrow-icon"></i>
+
+              <div className="cert-issuer-row">
+                <span className="cert-modern-issuer">Issued by {cert.issuer}</span>
               </div>
+
+              <div className="cert-tags-row">
+                {cert.skills.split(',').map((skill, sIdx) => (
+                  <span key={sIdx} className="cert-modern-tag">
+                    {skill.trim()}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="cert-card-arrow">
+              <i className="bx bx-chevron-right"></i>
             </div>
           </a>
         ))}
