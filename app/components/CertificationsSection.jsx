@@ -26,14 +26,45 @@ const CERTIFICATIONS = [
   {
     title: "PMP PRACTICE EXAMS (1-4)",
     issuer: "PROJECT MANAGEMENT PROFESSIONAL (PMP)",
-    skills: "Project Management, Agile, Exam Prep",
+    skills: "Project Management,Project Management Trainee",
     multi: true,
     exams: [
       { name: "Exam 1", link: "https://www.linkedin.com/learning/certificates/dd968d52a40b9618bea04d87768d878360a667d5579a6c41adaf4f54d1c63946?u=76664938" },
-      { name: "Exam 2", link: "#" },
-      { name: "Exam 3", link: "#" },
-      { name: "Exam 4", link: "#" },
+      { name: "Exam 2", link: "" },
+      { name: "Exam 3", link: "" },
+      { name: "Exam 4", link: "" },
     ]
+  },
+  {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
   },
 ];
 
@@ -74,11 +105,11 @@ export default function CertificationsSection() {
               <div className="cert-title-row">
                 <h3 className="cert-modern-title">{cert.title}</h3>
               </div>
-              
+
               <div className="cert-issuer-row">
                 <span className="cert-modern-issuer">Issued by {cert.issuer}</span>
               </div>
-              
+
               <div className="cert-tags-row">
                 {cert.skills.split(',').map((skill, sIdx) => (
                   <span key={sIdx} className="cert-modern-tag">
@@ -91,9 +122,9 @@ export default function CertificationsSection() {
               {cert.multi && (
                 <div className="cert-multi-grid">
                   {cert.exams.map((exam, eIdx) => (
-                    <a 
-                      key={eIdx} 
-                      href={exam.link} 
+                    <a
+                      key={eIdx}
+                      href={exam.link}
                       className="exam-verify-btn"
                       target="_self"
                     >
