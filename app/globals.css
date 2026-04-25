@@ -1726,7 +1726,7 @@ footer {
 .project-tree-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
     animation: fadeIn 0.5s ease-out;
 }
@@ -1734,7 +1734,7 @@ footer {
 .tree-nodes-split {
     display: flex;
     gap: 3rem;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     position: relative;
     padding-top: 2rem;
