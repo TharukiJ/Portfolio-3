@@ -6,10 +6,10 @@ const PROJECTS = [
     title: "TECHZAZ EDR",
     category: "EDR PLATFORM",
     type: "main",
-    desc: "A modern, high-performance EDR orchestration hub. Provides real-time monitoring and threat hunting.",
+    desc: "A modern, high-performance Endpoint Detection and Response orchestration hub. Built with a decoupled architecture, it provides real-time monitoring, threat hunting, and fleet management for the TechzazEDR ecosystem.",
     bg: "/images/techzaz_premium.png",
     link: "https://techzazedr-frontend-production.up.railway.app/",
-    tags: ["ANGULAR", "FASTAPI", "PYTHON"],
+    tags: ["ANGULAR", "FASTAPI", "PYTHON", "FIREBASE", "GSAP", "FIRESTORE"],
   },
   {
     title: "FLEX-SLOT CUSTOM",
@@ -28,6 +28,15 @@ const PROJECTS = [
     bg: "/images/it_wadura_bg.png",
     link: "https://www.itwadura.com/",
     tags: ["WORDPRESS", "AWS", "PHP"],
+  },
+  {
+    title: "REAL-TIME CHAT",
+    category: "MESSAGING APP",
+    type: "main",
+    desc: "A sleek, modern real-time messaging web application. Features live typing indicators, instant message delivery, and secure authentication to keep conversations private and fast.",
+    bg: "/images/chat_app_bg.png",
+    link: "https://real-time-chat-app-six-rho.vercel.app/",
+    tags: ["REACT", "NODE.JS", "SOCKET.IO", "CSS"],
   },
   {
     title: "OK MEME STUDIO",
