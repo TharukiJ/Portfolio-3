@@ -11,14 +11,6 @@ const PROJECTS = [
     tags: ["ANGULAR", "FASTAPI", "PYTHON", "FIREBASE", "GSAP", "FIRESTORE"],
   },
   {
-    title: "REAL-TIME CHAT",
-    category: "MESSAGING APP",
-    desc: "A sleek, modern real-time messaging web application. Features live typing indicators, instant message delivery, and secure authentication to keep conversations private and fast.",
-    bg: "/images/chat_app_bg.png",
-    link: "https://real-time-chat-aouqhx3qv-tharukijs-projects.vercel.app/",
-    tags: ["REACT", "NODE.JS", "SOCKET.IO", "CSS"],
-  },
-  {
     title: "OK MEME STUDIO",
     category: "CREATIVE TOOL",
     desc: "A fun, interactive web studio for creating dynamic memes. Built with canvas manipulation, drag-and-drop elements, and custom typography to bring internet humor to life in a clean UI.",
