@@ -43,19 +43,19 @@ const CERTIFICATIONS = [
   }, {
     title: "Advanced code challenges in React",
     issuer: "LINKEDIN LEARNING",
-    skills: "React,Redux,JavaScript",
-    link: "#",
+    skills: "React.js",
+    link: "https://www.linkedin.com/learning/certificates/9f34fc4cecd08e5c27fe66a578149237c16763dd6f85beedd436f47d4744370c?u=76664938",
   }, {
+    title: " Programming Foundations: Version Control with Git",
+    issuer: "Linkdhin Learning",
+    skills: "GIT,Version control",
+    link: "https://www.linkedin.com/learning/certificates/d0a8dedc04a3acff7e09aa8fce9840c0c002aa5e56adb3f53389654c64000834?u=76664938",
+  }
     title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
+  issuer: "",
+  skills: "t",
+  link: "#",
+  {
     title: "",
     issuer: "",
     skills: "t",
