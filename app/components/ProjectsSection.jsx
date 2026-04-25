@@ -26,6 +26,38 @@ const PROJECTS = [
     link: "https://ok-meme-studio-h43vthffx-tharukijs-projects.vercel.app/",
     tags: ["REACT", "CANVAS API", "TAILWIND", "VERCEL"],
   },
+  {
+    title: "SEO-LENS",
+    category: "SEO ANALYTICS",
+    desc: "A comprehensive SEO auditing tool designed to provide deep insights into website performance, keyword rankings, and technical health for optimized search visibility.",
+    bg: "/images/seo_lens_bg.png",
+    link: "https://seo-lens-ud2o.vercel.app/",
+    tags: ["REACT", "NEXT.JS", "TAILWIND", "SEO API"],
+  },
+  {
+    title: "FLUX-AUDIT",
+    category: "FINANCIAL DASHBOARD",
+    desc: "A specialized financial auditing platform that streamlines transaction tracking and compliance monitoring with intuitive data visualization and automated reporting.",
+    bg: "/images/flux_audit_bg.png",
+    link: "https://flux-audit-roan.vercel.app/",
+    tags: ["TYPESCRIPT", "D3.JS", "NODE.JS", "POSTGRES"],
+  },
+  {
+    title: "FLEX-SLOT CUSTOM",
+    category: "BOOKING SYSTEM",
+    desc: "A highly customizable appointment scheduling and slot management system designed for businesses requiring flexible booking workflows and real-time availability.",
+    bg: "/images/flex_slot_bg.png",
+    link: "https://flex-slot-custom.vercel.app/",
+    tags: ["SUPABASE", "NEXT.JS", "CLERK", "PRISMA"],
+  },
+  {
+    title: "IT WADURA",
+    category: "TECH SOLUTIONS",
+    desc: "An enterprise-grade technology consultancy platform providing managed IT services, cloud infrastructure solutions, and digital transformation strategies for global clients.",
+    bg: "/images/it_wadura_bg.png",
+    link: "https://www.itwadura.com/",
+    tags: ["WORDPRESS", "PHP", "AWS", "UI/UX"],
+  },
 ];
 
 export default function ProjectsSection() {
