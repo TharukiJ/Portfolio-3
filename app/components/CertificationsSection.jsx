@@ -67,10 +67,10 @@ const CERTIFICATIONS = [
     skills: "Generative AI Tools,Generative AI",
     link: "https://www.linkedin.com/learning/certificates/f0c1f308f00aa8b15ccfb0c3902f35b8d31a86c92066e1d054c6cb0507c7c76d?u=76664938",
   }, , {
-    title: " ",
+    title: "Succeeding in Web Development: Full Stack and Front End",
     issuer: "Linkdhin Learning",
-    skills: "",
-    link: "",
+    skills: "Full-Stack Development,Front-End Development",
+    link: "https://www.linkedin.com/learning/certificates/ccceacd93ba62ba5b863b98465975d050552146dad7ccd582965e3590a192027?u=76664938",
   }, , {
     title: " ",
     issuer: "Linkdhin Learning",
