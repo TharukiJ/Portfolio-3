@@ -31,7 +31,7 @@ const CERTIFICATIONS = [
     exams: [
       { name: "Exam 1", link: "https://www.linkedin.com/learning/certificates/dd968d52a40b9618bea04d87768d878360a667d5579a6c41adaf4f54d1c63946?u=76664938" },
       { name: "Exam 2", link: "https://www.linkedin.com/learning/certificates/960fdee2798fa6ee85ef9f291abafc682d7ddce0532a7f6f72dc76f660892200?u=76664938" },
-      { name: "Exam 3", link: "" },
+      { name: "Exam 3", link: "https://www.linkedin.com/learning/certificates/bb533516be86a87b104a002ff16c5b45986dcea70f24a11d70f1557184b3a254?u=76664938" },
       { name: "Exam 4", link: "" },
     ]
   },
