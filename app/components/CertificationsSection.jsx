@@ -4,29 +4,29 @@ import { useEffect, useRef, useState } from "react";
 const CERTIFICATIONS = [
   {
     title: "PYTHON CODE CHALLENGES FOR DATA ANALYSIS",
-    issuer: "LINKEDIN LEARNING",
-    date: "APR 2026",
+    issuer: "PMI (PROJECT MANAGEMENT INSTITUTE)",
+    skills: "Python, Data Analysis, Pandas, NumPy",
     id: "LI-PY-92837",
     link: "https://www.linkedin.com/learning/certificates/0ebefe00bcee57a02c0dcbd5c11c9ccf665c571b8c0306e7bd79673026fa75c9?u=76664938",
   },
   {
     title: "AWS CERTIFIED SOLUTIONS ARCHITECT",
     issuer: "AMAZON WEB SERVICES",
-    date: "2025",
+    skills: "Cloud Architecture, EC2, S3, RDS, Serverless",
     id: "AWS-SA-12345",
     link: "#",
   },
   {
     title: "META FRONT-END DEVELOPER PROFESSIONAL",
     issuer: "META / COURSERA",
-    date: "2024",
+    skills: "React, JavaScript, HTML5, CSS3, UX/UI",
     id: "META-FE-67890",
     link: "#",
   },
   {
     title: "GOOGLE CYBERSECURITY PROFESSIONAL",
     issuer: "GOOGLE / COURSERA",
-    date: "2024",
+    skills: "Network Security, SIEM Tools, Python, Risk Management",
     id: "GCP-SEC-11223",
     link: "#",
   },
@@ -55,26 +55,41 @@ export default function CertificationsSection() {
 
   return (
     <section id="certifications" className={`certifications section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
-      <div className="section-header">
-        <h2 className="section-title">CERTIFICATION & CREDENTIALS</h2>
+      <div className="cert-section-header">
+        <h2 className="cert-section-label">CERTIFICATION & CREDENTIALS</h2>
       </div>
 
-      <div className="cert-grid">
+      <div className="cert-pill-list">
         {CERTIFICATIONS.map((cert, idx) => (
-          <div key={idx} className="cert-card">
-            <div className="cert-accent-bar"></div>
-            <div className="cert-header">
-              <span className="cert-date code-font">{cert.date}</span>
-              <a href={cert.link} className="cert-external-link" aria-label="Verify Certificate">
-                <i className="bx bx-badge-check"></i>
-              </a>
+          <a
+            key={idx}
+            href={cert.link}
+            target="_self"
+            className="cert-pill-link"
+          >
+            <div className="cert-pill-content">
+              <div className="cert-pill-left">
+                <span className="cert-accent-dot"></span>
+                <div className="cert-info-stack">
+                  <div className="cert-title-row">
+                    <span className="cert-pill-title">{cert.title}</span>
+                    <span className="cert-pill-divider">·</span>
+                    <span className="cert-pill-issuer">{cert.issuer}</span>
+                  </div>
+                  <div className="cert-skills-row">
+                    {cert.skills.split(',').map((skill, sIdx) => (
+                      <span key={sIdx} className="cert-skill-item">
+                        {skill.trim()}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="cert-pill-right">
+                <i className="bx bx-up-arrow-alt cert-arrow-icon"></i>
+              </div>
             </div>
-            <h3 className="cert-title">{cert.title}</h3>
-            <div className="cert-footer">
-              <span className="cert-issuer">{cert.issuer}</span>
-              <span className="cert-id code-font">{cert.id}</span>
-            </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
