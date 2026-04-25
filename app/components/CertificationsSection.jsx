@@ -51,6 +51,42 @@ const CERTIFICATIONS = [
     skills: "GIT,Version control",
     link: "https://www.linkedin.com/learning/certificates/d0a8dedc04a3acff7e09aa8fce9840c0c002aa5e56adb3f53389654c64000834?u=76664938",
   }
+  , {
+    title: "C# Coding Exersice",
+    issuer: "Linkdhin Learning",
+    skills: "C#",
+    link: "https://www.linkedin.com/learning/certificates/a7ff22a255468a4249e8e9d264f0c6b7e827219f294224846cb7b4c121dbf2bc?u=76664938",
+  }, , {
+    title: " ",
+    issuer: "Linkdhin Learning",
+    skills: "",
+    link: "",
+  }, , {
+    title: " ",
+    issuer: "Linkdhin Learning",
+    skills: "",
+    link: "",
+  }, , {
+    title: " ",
+    issuer: "Linkdhin Learning",
+    skills: "",
+    link: "",
+  }, , {
+    title: " ",
+    issuer: "Linkdhin Learning",
+    skills: "",
+    link: "",
+  }, , {
+    title: " ",
+    issuer: "Linkdhin Learning",
+    skills: "",
+    link: "",
+  }, , {
+    title: " ",
+    issuer: "Linkdhin Learning",
+    skills: "",
+    link: "",
+  },
 
 ];
 
