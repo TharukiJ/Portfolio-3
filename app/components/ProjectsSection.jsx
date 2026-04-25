@@ -162,23 +162,30 @@ export default function ProjectsSection() {
           </div>
         )}
 
-        {/* STEP 3: PROJECT DETAIL BOX */}
+        {/* STEP 3: PROJECT DETAIL BOX - REDESIGNED */}
         {activeStep >= 3 && selectedProject && (
-          <div className="project-detail-box-right reveal-right">
-            <div className="detail-header">
-              <span className="detail-category code-font">{selectedProject.category}</span>
-              <a href={selectedProject.link} className="detail-link" target="_self">
-                <i className="bx bx-link-external"></i>
+          <div className="project-detail-box-premium reveal-right">
+            <div className="detail-top-bar">
+              <span className="premium-badge code-font">IT COMPANY</span>
+              <a href={selectedProject.link} className="premium-link-circle" target="_self">
+                <i className="bx bx-up-arrow-alt"></i>
               </a>
             </div>
-            <h3 className="detail-title">{selectedProject.title}</h3>
-            <p className="detail-desc">{selectedProject.desc}</p>
-            <div className="detail-tags">
+            
+            <div className="premium-content-center">
+              <div className="premium-logo-area">
+                 {/* Large logo or background text placeholder */}
+                 <div className="bg-text-overlay">{selectedProject.title}</div>
+              </div>
+              <h3 className="premium-title">{selectedProject.title}</h3>
+              <p className="premium-desc">{selectedProject.desc}</p>
+            </div>
+
+            <div className="premium-tags-bottom">
               {selectedProject.tags.map(tag => (
-                <span key={tag} className="tag code-font">{tag}</span>
+                <span key={tag} className="premium-tag code-font">{tag}</span>
               ))}
             </div>
-            <div className="detail-image-preview" style={{ backgroundImage: `url(${selectedProject.bg})` }}></div>
           </div>
         )}
       </div>
