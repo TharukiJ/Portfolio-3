@@ -38,7 +38,7 @@ const CERTIFICATIONS = [
   {
     title: "AI and Digital Marketing Trends",
     issuer: "LINKEDIN LEARNING",
-    skills: "",
+    skills: "Artificial Intelligence (AI),Digital Marketing,Marketing Strategy,AI for Marketing",
     link: "#",
   }, {
     title: "",
