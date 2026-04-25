@@ -24,10 +24,10 @@ const CERTIFICATIONS = [
     link: "https://www.linkedin.com/learning/certificates/fc8e63732385afb2b82c84ae7ca34e806fe1d0c7bfa0ab682b6128b64068abb6?u=76664938",
   },
   {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
+    title: "Practice Exam 1 for PMI",
+    issuer: "Project Management Professional (PMP)",
+    skills: "Project Management",
+    link: "https://www.linkedin.com/learning/certificates/dd968d52a40b9618bea04d87768d878360a667d5579a6c41adaf4f54d1c63946?u=76664938",
   },
   {
     title: "",
