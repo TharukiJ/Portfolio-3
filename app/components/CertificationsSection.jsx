@@ -75,7 +75,7 @@ const CERTIFICATIONS = [
     title: "AI in Project Management",
     issuer: "Linkdhin Learning",
     skills: "Artificial Intelligence (AI),AI for Business,AI for Project Management",
-    link: "",
+    link: "https://www.linkedin.com/learning/certificates/a0f1ff7aa0a3489a071771d23e738fa9648ab3235df8137cc3d2ae5401c7a102?u=76664938",
   }, , {
     title: " Modern Data Engineering Essentials",
     issuer: "pearson",
