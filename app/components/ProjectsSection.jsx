@@ -7,7 +7,7 @@ const PROJECTS = [
     category: "EDR PLATFORM",
     desc: "A modern, high-performance Endpoint Detection and Response orchestration hub. Built with a decoupled architecture, it provides real-time monitoring, threat hunting, and fleet management for the TechzazEDR ecosystem.",
     bg: "/images/techzaz_dashboard.png",
-    link: "https://github.com/Techzaz-EDR/TechzazEDR_Dashboard",
+    link: "https://techzazedr-frontend-production.up.railway.app/",
     tags: ["ANGULAR", "FASTAPI", "PYTHON", "FIREBASE", "GSAP", "FIRESTORE"],
   },
   {
@@ -25,14 +25,6 @@ const PROJECTS = [
     bg: "/images/meme_studio_bg.png",
     link: "https://ok-meme-studio-h43vthffx-tharukijs-projects.vercel.app/",
     tags: ["REACT", "CANVAS API", "TAILWIND", "VERCEL"],
-  },
-  {
-    title: "LEARNING LMS",
-    category: "SAAS PLATFORM",
-    desc: "A full-stack e-learning platform providing course management, progress tracking, and interactive video modules, designed for modern cohort-based education delivery.",
-    bg: "/images/learning_saas_bg.png",
-    link: "https://learning-saas-platform.vercel.app/",
-    tags: ["NEXT.JS", "TYPESCRIPT", "POSTGRES", "PRISMA"],
   },
 ];
 
@@ -70,7 +62,7 @@ export default function ProjectsSection() {
             <div className="project-card-inner">
               <div className="project-card-top">
                 <span className="project-category code-font">{p.category}</span>
-                <a href={p.link} target="_blank" rel="noopener noreferrer" className="project-ext-link" aria-label="View Project">
+                <a href={p.link} className="project-ext-link" aria-label="View Project">
                   <i className="bx bx-link-external"></i>
                 </a>
               </div>
