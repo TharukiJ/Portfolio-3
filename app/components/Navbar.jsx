@@ -40,6 +40,11 @@ export default function Navbar() {
             </a>
           </li>
           <li>
+            <a href="#certifications" onClick={closeMenu}>
+              Credentials
+            </a>
+          </li>
+          <li>
             <a href="#contact" onClick={closeMenu}>
               Contact
             </a>

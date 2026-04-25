@@ -1,5 +1,10 @@
-import { Outfit, JetBrains_Mono, Playfair_Display } from "next/font/google";
+import { Outfit, JetBrains_Mono, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 
 const outfitFont = Outfit({
   variable: "--font-outfit",
@@ -28,7 +33,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${outfitFont.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${outfitFont.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable}`} suppressHydrationWarning>
       <head>
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" precedence="default" />
       </head>
