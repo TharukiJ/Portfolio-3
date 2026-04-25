@@ -36,9 +36,9 @@ const CERTIFICATIONS = [
     ]
   },
   {
-    title: "",
-    issuer: "",
-    skills: "t",
+    title: "AI and Digital Marketing Trends",
+    issuer: "LINKEDIN LEARNING",
+    skills: "",
     link: "#",
   }, {
     title: "",
