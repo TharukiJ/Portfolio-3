@@ -72,9 +72,9 @@ const CERTIFICATIONS = [
     skills: "Full-Stack Development,Front-End Development",
     link: "https://www.linkedin.com/learning/certificates/ccceacd93ba62ba5b863b98465975d050552146dad7ccd582965e3590a192027?u=76664938",
   }, , {
-    title: " ",
+    title: "AI in Project Management",
     issuer: "Linkdhin Learning",
-    skills: "",
+    skills: "Artificial Intelligence (AI),AI for Business,AI for Project Management",
     link: "",
   }, , {
     title: " Modern Data Engineering Essentials",
