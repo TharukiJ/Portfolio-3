@@ -73,6 +73,16 @@ export default function SkillsSection() {
               className="github-chart-img"
             />
           </div>
+          <div className="skills-video-container">
+            <video
+              src="/ex.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="skills-small-video"
+            />
+          </div>
         </div>
       </div>
     </section>
