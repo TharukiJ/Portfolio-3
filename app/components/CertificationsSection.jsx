@@ -17,11 +17,11 @@ const CERTIFICATIONS = [
     link: "https://www.linkedin.com/learning/certificates/616287ff7465a2c202b0969f62c903ff69e6abcee4ddeadac8bd5bd2221a16da?u=76664938",
   },
   {
-    title: "META FRONT-END DEVELOPER PROFESSIONAL",
-    issuer: "META / COURSERA",
-    skills: "React, JavaScript, HTML5, CSS3, UX/UI",
+    title: "JavaScript Code Challenges: Creating Web Apps",
+    issuer: "LINKEDIN LEARNING",
+    skills: "Java Script",
     id: "META-FE-67890",
-    link: "#",
+    link: "https://www.linkedin.com/learning/certificates/fc8e63732385afb2b82c84ae7ca34e806fe1d0c7bfa0ab682b6128b64068abb6?u=76664938",
   },
   {
     title: "GOOGLE CYBERSECURITY PROFESSIONAL",
