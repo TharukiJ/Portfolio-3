@@ -20,82 +20,20 @@ const CERTIFICATIONS = [
     title: "JavaScript Code Challenges: Creating Web Apps",
     issuer: "LINKEDIN LEARNING",
     skills: "Java Script",
-    id: "META-FE-67890",
+    id: "LI-JS-99001",
     link: "https://www.linkedin.com/learning/certificates/fc8e63732385afb2b82c84ae7ca34e806fe1d0c7bfa0ab682b6128b64068abb6?u=76664938",
   },
   {
-    title: "Practice Exam 1 for PMI",
-    issuer: "Project Management Professional (PMP)",
-    skills: "Project Management",
-    link: "https://www.linkedin.com/learning/certificates/dd968d52a40b9618bea04d87768d878360a667d5579a6c41adaf4f54d1c63946?u=76664938",
-  },
-  {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  },
-  {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  },
-  {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
-  }, {
-    title: "",
-    issuer: "",
-    skills: "t",
-    link: "#",
+    title: "PMP PRACTICE EXAMS (1-4)",
+    issuer: "PROJECT MANAGEMENT PROFESSIONAL (PMP)",
+    skills: "Project Management, Agile, Exam Prep",
+    multi: true,
+    exams: [
+      { name: "Exam 1", link: "https://www.linkedin.com/learning/certificates/dd968d52a40b9618bea04d87768d878360a667d5579a6c41adaf4f54d1c63946?u=76664938" },
+      { name: "Exam 2", link: "#" },
+      { name: "Exam 3", link: "#" },
+      { name: "Exam 4", link: "#" },
+    ]
   },
 ];
 
@@ -128,21 +66,19 @@ export default function CertificationsSection() {
 
       <div className="cert-stack">
         {CERTIFICATIONS.map((cert, idx) => (
-          <a
+          <div
             key={idx}
-            href={cert.link}
-            target="_self"
-            className="cert-card-modern"
+            className={`cert-card-modern ${cert.multi ? "multi-card" : ""}`}
           >
             <div className="cert-card-inner">
               <div className="cert-title-row">
                 <h3 className="cert-modern-title">{cert.title}</h3>
               </div>
-
+              
               <div className="cert-issuer-row">
                 <span className="cert-modern-issuer">Issued by {cert.issuer}</span>
               </div>
-
+              
               <div className="cert-tags-row">
                 {cert.skills.split(',').map((skill, sIdx) => (
                   <span key={sIdx} className="cert-modern-tag">
@@ -150,11 +86,30 @@ export default function CertificationsSection() {
                   </span>
                 ))}
               </div>
+
+              {/* Multi-exam links rendered as clean pills */}
+              {cert.multi && (
+                <div className="cert-multi-grid">
+                  {cert.exams.map((exam, eIdx) => (
+                    <a 
+                      key={eIdx} 
+                      href={exam.link} 
+                      className="exam-verify-btn"
+                      target="_self"
+                    >
+                      {exam.name} <i className="bx bx-right-top-arrow-circle"></i>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
-            <div className="cert-card-arrow">
-              <i className="bx bx-chevron-right"></i>
-            </div>
-          </a>
+
+            {!cert.multi && (
+              <a href={cert.link} className="cert-card-arrow" target="_self">
+                <i className="bx bx-chevron-right"></i>
+              </a>
+            )}
+          </div>
         ))}
       </div>
     </section>
