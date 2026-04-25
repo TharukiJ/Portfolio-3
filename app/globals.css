@@ -2215,105 +2215,144 @@ footer {
 }
 
 /* =========================================================================
-   CERTIFICATIONS SECTION
+   CERTIFICATIONS SECTION - MINIMALIST PILL REDESIGN
    ========================================================================= */
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+.certifications {
+    max-width: 900px; /* Keep it focused and elegant */
 }
 
-.cert-card {
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 28px;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+.cert-section-header {
+    margin-bottom: 1.5rem;
+}
+
+.cert-section-label {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #94a3b8; /* Muted color */
+    margin: 0;
+}
+
+.cert-pill-list {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    border-radius: 4px;
+    gap: 10px; /* Tight vertical gap as requested */
 }
 
-.cert-accent-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: #6366f1;
-    transition: width 0.4s ease;
-}
-
-.cert-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(99, 102, 241, 0.2);
-}
-
-.cert-card:hover .cert-accent-bar {
+.cert-pill-link {
+    display: block;
     width: 100%;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+    border-radius: 999px; /* Pill shape */
+    padding: 18px 28px; /* Slightly more padding for the double row */
+    transition: all 0.2s ease;
 }
 
-.cert-header {
+.cert-pill-link:hover {
+    background: rgba(99, 102, 241, 0.06);
+    border-color: rgba(99, 102, 241, 0.15);
+    transform: translateX(4px);
+}
+
+.cert-pill-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.cert-date {
-    font-family: var(--font-inter), sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: #64748b;
-    text-transform: uppercase;
+.cert-pill-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
-.cert-external-link {
-    font-size: 1.2rem;
-    color: #6366f1;
-    opacity: 0.4;
-    transition: all 0.3s ease;
+.cert-accent-dot {
+    width: 6px;
+    height: 6px;
+    background: #6366f1;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
-.cert-card:hover .cert-external-link {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.cert-title {
-    font-family: var(--font-inter), sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #1e293b;
-    line-height: 1.2;
-    margin: 0;
-    letter-spacing: -0.01em;
-}
-
-.cert-footer {
-    margin-top: auto;
+.cert-info-stack {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(0,0,0,0.03);
+    gap: 4px;
 }
 
-.cert-issuer {
+.cert-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cert-pill-title {
     font-family: var(--font-inter), sans-serif;
-    font-size: 10px;
-    font-weight: 800;
-    color: #475569;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.1;
 }
 
-.cert-id {
-    font-family: var(--font-code), monospace;
-    font-size: 10px;
+.cert-pill-divider {
+    color: #cbd5e1;
+    font-weight: 400;
+}
+
+.cert-pill-issuer {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #64748b;
+}
+
+.cert-skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cert-skill-item {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 11px;
+    font-weight: 500;
     color: #94a3b8;
-    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.cert-pill-right {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cert-arrow-icon {
+    font-size: 20px;
+    color: #6366f1;
+    opacity: 0;
+    transform: translateX(-10px) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cert-pill-link:hover .cert-arrow-icon {
+    opacity: 1;
+    transform: translateX(0) rotate(45deg);
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
