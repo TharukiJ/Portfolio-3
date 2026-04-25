@@ -80,7 +80,7 @@ const CERTIFICATIONS = [
     title: " Modern Data Engineering Essentials",
     issuer: "pearson",
     skills: "Data Engineering",
-    link: "",
+    link: "https://www.linkedin.com/learning/certificates/5c3375f582e95ae780fd27a7a29137ac8a6c27b8e36d99c09b84c1add6a3cb6b?u=76664938",
   }, , {
     title: " ",
     issuer: "Linkdhin Learning",
