@@ -84,7 +84,7 @@ const CERTIFICATIONS = [
   }, , {
     title: "Applied Machine Learning: Foundations",
     issuer: "Linkdhin Learning",
-    skills: "",
+    skills: "Machine Learning",
     link: "https://www.linkedin.com/learning/certificates/b47e3cb0c3d7672126869dbd7e15989c08014a1a66870269a74b0406b5bbf032?u=76664938",
   },
 
