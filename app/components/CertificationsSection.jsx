@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 const CERTIFICATIONS = [
   {
-    title: "PYTHON ",
+    title: "PYTHON",
     issuer: "PMI (PROJECT MANAGEMENT INSTITUTE)",
     skills: "Python, Data Analysis",
     id: "LI-PY-92837",
@@ -19,14 +19,14 @@ const CERTIFICATIONS = [
   {
     title: "JavaScript Code Challenges: Creating Web Apps",
     issuer: "LINKEDIN LEARNING",
-    skills: "Java Script",
+    skills: "JavaScript",
     id: "LI-JS-99001",
     link: "https://www.linkedin.com/learning/certificates/fc8e63732385afb2b82c84ae7ca34e806fe1d0c7bfa0ab682b6128b64068abb6?u=76664938",
   },
   {
     title: "PMP PRACTICE EXAMS (1-4)",
     issuer: "PROJECT MANAGEMENT PROFESSIONAL (PMP)",
-    skills: "Project Management,Project Management Trainee",
+    skills: "Project Management, Project Management Trainee",
     multi: true,
     exams: [
       { name: "Exam 1", link: "https://www.linkedin.com/learning/certificates/dd968d52a40b9618bea04d87768d878360a667d5579a6c41adaf4f54d1c63946?u=76664938" },
@@ -38,56 +38,63 @@ const CERTIFICATIONS = [
   {
     title: "AI and Digital Marketing Trends",
     issuer: "LINKEDIN LEARNING",
-    skills: "Artificial Intelligence (AI),Digital Marketing,Marketing Strategy,AI for Marketing",
+    skills: "Artificial Intelligence (AI), Digital Marketing, Marketing Strategy",
     link: "https://www.linkedin.com/learning/certificates/275028a7e0552187cf0a3a8247aedcb23332b639ce957ba69839af21d69f2499?u=76664938",
-  }, {
+  },
+  {
     title: "Advanced code challenges in React",
     issuer: "LINKEDIN LEARNING",
     skills: "React.js",
     link: "https://www.linkedin.com/learning/certificates/9f34fc4cecd08e5c27fe66a578149237c16763dd6f85beedd436f47d4744370c?u=76664938",
-  }, {
-    title: " Programming Foundations: Version Control with Git",
-    issuer: "Linkdhin Learning",
-    skills: "GIT,Version control",
+  },
+  {
+    title: "Programming Foundations: Version Control with Git",
+    issuer: "LINKEDIN LEARNING",
+    skills: "GIT, Version control",
     link: "https://www.linkedin.com/learning/certificates/d0a8dedc04a3acff7e09aa8fce9840c0c002aa5e56adb3f53389654c64000834?u=76664938",
-  }
-  , {
-    title: "C# Coding Exersice",
-    issuer: "Linkdhin Learning",
+  },
+  {
+    title: "C# Coding Exercise",
+    issuer: "LINKEDIN LEARNING",
     skills: "C#",
     link: "https://www.linkedin.com/learning/certificates/a7ff22a255468a4249e8e9d264f0c6b7e827219f294224846cb7b4c121dbf2bc?u=76664938",
-  }, , {
-    title: " Practice Exam 1 for GitHub Copilot",
-    issuer: "Linkdhin Learning",
-    skills: "GitHub Copilot,Artificial Intelligence (AI),AI Software Development,GitHub",
+  },
+  {
+    title: "Practice Exam 1 for GitHub Copilot",
+    issuer: "LINKEDIN LEARNING",
+    skills: "GitHub Copilot, Artificial Intelligence (AI), GitHub",
     link: "https://www.linkedin.com/learning/certificates/175acdadf82793ee16941da62309b3ebaac03abb8b08ca244dc046569a699835?u=76664938",
-  }, , {
+  },
+  {
     title: "What Is Generative AI?",
-    issuer: "Microsoft",
-    skills: "Generative AI Tools,Generative AI",
+    issuer: "MICROSOFT",
+    skills: "Generative AI Tools, Generative AI",
     link: "https://www.linkedin.com/learning/certificates/f0c1f308f00aa8b15ccfb0c3902f35b8d31a86c92066e1d054c6cb0507c7c76d?u=76664938",
-  }, , {
+  },
+  {
     title: "Succeeding in Web Development: Full Stack and Front End",
-    issuer: "Linkdhin Learning",
-    skills: "Full-Stack Development,Front-End Development",
+    issuer: "LINKEDIN LEARNING",
+    skills: "Full-Stack Development, Front-End Development",
     link: "https://www.linkedin.com/learning/certificates/ccceacd93ba62ba5b863b98465975d050552146dad7ccd582965e3590a192027?u=76664938",
-  }, , {
+  },
+  {
     title: "AI in Project Management",
-    issuer: "Linkdhin Learning",
-    skills: "Artificial Intelligence (AI),AI for Business,AI for Project Management",
+    issuer: "LINKEDIN LEARNING",
+    skills: "Artificial Intelligence (AI), AI for Project Management",
     link: "https://www.linkedin.com/learning/certificates/a0f1ff7aa0a3489a071771d23e738fa9648ab3235df8137cc3d2ae5401c7a102?u=76664938",
-  }, , {
-    title: " Modern Data Engineering Essentials",
-    issuer: "pearson",
+  },
+  {
+    title: "Modern Data Engineering Essentials",
+    issuer: "PEARSON",
     skills: "Data Engineering",
     link: "https://www.linkedin.com/learning/certificates/5c3375f582e95ae780fd27a7a29137ac8a6c27b8e36d99c09b84c1add6a3cb6b?u=76664938",
-  }, , {
+  },
+  {
     title: "Applied Machine Learning: Foundations",
-    issuer: "Linkdhin Learning",
+    issuer: "LINKEDIN LEARNING",
     skills: "Machine Learning",
     link: "https://www.linkedin.com/learning/certificates/b47e3cb0c3d7672126869dbd7e15989c08014a1a66870269a74b0406b5bbf032?u=76664938",
   },
-
 ];
 
 export default function CertificationsSection() {

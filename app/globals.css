@@ -2218,11 +2218,11 @@ footer {
    CERTIFICATIONS SECTION - MODERN CARD REDESIGN
    ========================================================================= */
 .certifications {
-    max-width: 900px;
+    max-width: 1200px; /* Increased to fit two columns comfortably */
 }
 
 .cert-section-header {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .cert-section-label {
@@ -2236,9 +2236,15 @@ footer {
 }
 
 .cert-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* Gap between cards */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns (7 per side) */
+    gap: 16px;
+}
+
+@media (max-width: 900px) {
+    .cert-stack {
+        grid-template-columns: 1fr; /* Single column on mobile/smaller screens */
+    }
 }
 
 .cert-card-modern {
