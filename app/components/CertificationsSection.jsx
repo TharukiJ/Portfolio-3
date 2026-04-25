@@ -24,10 +24,77 @@ const CERTIFICATIONS = [
     link: "https://www.linkedin.com/learning/certificates/fc8e63732385afb2b82c84ae7ca34e806fe1d0c7bfa0ab682b6128b64068abb6?u=76664938",
   },
   {
-    title: "GOOGLE CYBERSECURITY PROFESSIONAL",
-    issuer: "GOOGLE / COURSERA",
-    skills: "Network Security, SIEM Tools, Python, Risk Management",
-    id: "GCP-SEC-11223",
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  },
+  {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  },
+  {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  },
+  {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
+    link: "#",
+  }, {
+    title: "",
+    issuer: "",
+    skills: "t",
     link: "#",
   },
 ];
