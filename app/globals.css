@@ -1953,6 +1953,8 @@ footer {
     width: 100%;
 }
 
+
+
 .section-title-group {
     display: flex;
     flex-direction: column;
@@ -2386,8 +2388,7 @@ footer {
    CERTIFICATIONS SECTION - MODERN CARD REDESIGN
    ========================================================================= */
 .certifications {
-    max-width: 1200px;
-    /* Increased to fit two columns comfortably */
+    /* inherits max-width and centering from .section-padding */
 }
 
 .cert-section-header {
@@ -2407,15 +2408,9 @@ footer {
 .cert-stack {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Two columns (7 per side) */
-    gap: 16px;
-    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    /* Increased gap to cut the length of cards */
-    max-width: 900px;
-    /* Narrower section width */
-    margin: 0 auto;
-    /* Center the grid */
+    width: 100%;
+    /* align to left edge of section like other sections */
 }
 
 @media (max-width: 900px) {
