@@ -31,7 +31,7 @@ export default function GithubSection() {
           <div className="section-executing-functions">FETCHING CONTRIBUTIONS [ANNUAL]</div>
         </div>
       </div>
-      
+
       <div className="github-content-grid">
         <div className="github-contribution-wrapper">
           <img
@@ -40,7 +40,7 @@ export default function GithubSection() {
             className="github-chart-img"
           />
         </div>
-        
+
         <div className="skills-video-container">
           <video
             src="/ex.mp4"
