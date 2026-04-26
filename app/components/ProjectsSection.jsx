@@ -94,11 +94,11 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className={`projects reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
-      <div className="selected-work-header">
-        <div className="selected-work-title-group">
-          <h2 className="selected-work-title-main">SELECTED</h2>
-          <h2 className="selected-work-title-sub">WORK</h2>
-          <div className="executing-functions">EXECUTING FUNCTIONS [{PROJECTS.length}]</div>
+      <div className="section-header-modern">
+        <div className="section-title-group">
+          <h2 className="section-title-main">SELECTED</h2>
+          <h2 className="section-title-sub">WORK</h2>
+          <div className="section-executing-functions">EXECUTING FUNCTIONS [{PROJECTS.length}]</div>
         </div>
       </div>
 
