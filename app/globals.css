@@ -1941,54 +1941,54 @@ footer {
 }
 
 /* =========================================================================
-   PROJECTS SECTION - FUTURISTIC GRID (DESIGN INSPIRED BY DEEGHAYUARANDARA.COM)
+   REUSABLE MODERN SECTION HEADERS (TWO-TONE TYPOGRAPHY)
    ========================================================================= */
-.projects {
-    background-color: #0a0a0a !important; /* Force dark background */
-    padding: 120px 5%;
-    color: #ffffff;
-}
-
-.selected-work-header {
+.section-header-modern {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 80px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     padding-bottom: 30px;
+    width: 100%;
 }
 
-.selected-work-title-group {
+.section-title-group {
     display: flex;
     flex-direction: column;
 }
 
-.selected-work-title-main {
+.section-title-main {
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 900;
     line-height: 0.9;
     letter-spacing: -3px;
-    color: #ffffff;
+    color: #000000;
     margin: 0;
     text-transform: uppercase;
 }
 
-.selected-work-title-sub {
+.section-title-sub {
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 900;
     line-height: 0.9;
     letter-spacing: -3px;
-    color: rgba(255, 255, 255, 0.15); /* Muted gray text */
+    color: rgba(0, 0, 0, 0.08); /* Muted gray text for light bg */
     margin: 0;
     text-transform: uppercase;
 }
 
-.executing-functions {
+.section-executing-functions {
     font-family: var(--font-mono);
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 0.4);
     letter-spacing: 0.2em;
     margin-top: 20px;
+}
+
+/* Update Projects Section to use global classes */
+.projects {
+    padding: 120px 5%;
 }
 
 .projects-grid-modern {
