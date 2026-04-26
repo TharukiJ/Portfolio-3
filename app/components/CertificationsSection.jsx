@@ -150,6 +150,10 @@ export default function CertificationsSection() {
                 ))}
               </div>
             </div>
+
+            <div className="cert-card-action">
+              <span className="cert-verify-pill">VERIFY</span>
+            </div>
           </a>
         ))}
       </div>
