@@ -146,8 +146,7 @@ body::-webkit-scrollbar-thumb {
 /* Preloader Central Header Icon */
 .preloader-icon {
     font-size: 1.5rem;
-    color: #d4c84c;
-    /* Yellow Icon */
+    color: #D391B0;
     display: block;
     margin-bottom: 2rem;
     letter-spacing: 0.1em;
@@ -188,10 +187,9 @@ body::-webkit-scrollbar-thumb {
 .status-dot {
     width: 8px;
     height: 8px;
-    background-color: #d4c84c;
-    /* Reintroduced Yellow Accent */
+    background-color: #D391B0;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(212, 200, 76, 0.4);
+    box-shadow: 0 0 10px rgba(211, 145, 176, 0.5);
     animation: status-pulse-yellow 1.5s infinite alternate;
 }
 
@@ -210,34 +208,29 @@ body::-webkit-scrollbar-thumb {
 .status-text {
     font-size: 0.75rem;
     letter-spacing: 0.2em;
-    color: #888;
+    color: #BA6E8F;
 }
 
 /* Main Terminal Logic Area */
 .boot-terminal {
     font-size: 0.85rem;
-    color: #444;
-    /* Darker text for visibility on ash */
+    color: #BA6E8F;
     line-height: 1.8;
     height: 450px;
-    /* Increased to prevent cropping */
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Keep text centered vertically */
 }
 
-/* Yellowish accents in preloader terminal lines */
 .terminal-accent {
-    color: #bfa800;
-    /* Reintroduced yellow for pop */
+    color: #D391B0;
     font-weight: 500;
 }
 
 .terminal-index {
-    color: #bbb;
+    color: #9F6496;
     margin-right: 1.2rem;
     display: inline-block;
     width: 30px;
@@ -246,8 +239,7 @@ body::-webkit-scrollbar-thumb {
 .loader-percent-v3 {
     margin-top: 1.5rem;
     font-size: 0.8rem;
-    color: #d4c84c;
-    /* Yellow percentage text */
+    color: #D391B0;
     letter-spacing: 0.1em;
 }
 
@@ -259,8 +251,7 @@ body::-webkit-scrollbar-thumb {
 
     .bg-vertical-text {
         font-size: 15vw;
-        color: rgba(0, 0, 0, 0.08);
-        /* Slightly more subtle on small screens */
+        color: rgba(211, 145, 176, 0.08);
     }
 
     .preloader-terminal-container {
@@ -1975,7 +1966,8 @@ footer {
     font-weight: 900;
     line-height: 0.9;
     letter-spacing: -3px;
-    color: rgba(0, 0, 0, 0.08); /* Muted gray text for light bg */
+    color: rgba(0, 0, 0, 0.08);
+    /* Muted gray text for light bg */
     margin: 0;
     text-transform: uppercase;
 }
@@ -2067,7 +2059,8 @@ footer {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1.5px solid #800020; /* Maroon border */
+    border: 1.5px solid #800020;
+    /* Maroon border */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2077,7 +2070,8 @@ footer {
 }
 
 .project-card-premium:hover .project-arrow-btn {
-    background: #a52a2a; /* Vibrant Maroon */
+    background: #a52a2a;
+    /* Vibrant Maroon */
     border-color: #a52a2a;
     box-shadow: 0 0 20px rgba(165, 42, 42, 0.6);
     transform: rotate(45deg);
