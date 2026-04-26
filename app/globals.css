@@ -2256,22 +2256,22 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    text-decoration: none;
+    text-decoration: none !important; /* Ensure no underline */
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    border-left: 3px solid #000000; /* Slightly thinner accent */
-    border-radius: 12px; /* Smaller radius */
-    padding: 10px 14px; /* Ultra-compact padding */
+    border-radius: 12px;
+    padding: 10px 14px;
     position: relative;
     transition: all 0.3s ease;
-    cursor: default;
+    cursor: pointer; /* Whole card is clickable */
     overflow: hidden;
 }
 
 .cert-card-modern:hover {
-    border-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.15);
     background: #fafafa;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .cert-card-inner {
