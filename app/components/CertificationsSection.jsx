@@ -118,10 +118,20 @@ export default function CertificationsSection() {
     return () => observer.disconnect();
   }, []);
 
+  const getIssuerBadge = (issuer) => {
+    const lower = issuer.toLowerCase();
+    if (lower.includes("linkedin")) return <i className="bx bxl-linkedin"></i>;
+    if (lower.includes("microsoft")) return <i className="bx bxl-microsoft"></i>;
+    if (lower.includes("pmi")) return <i className="bx bx-shield-quarter"></i>;
+    if (lower.includes("nasba")) return <i className="bx bx-award"></i>;
+    if (lower.includes("pearson")) return <i className="bx bx-book-open"></i>;
+    return <i className="bx bx-certification"></i>;
+  };
+
   return (
     <section id="certifications" className={`certifications section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
-      <div className="cert-section-header">
-        <h2 className="cert-section-label">CERTIFICATION & CREDENTIALS</h2>
+      <div className="section-header">
+        <h2 className="section-title">CERTIFICATION & CREDENTIALS</h2>
       </div>
 
       <div className="cert-stack">
@@ -133,6 +143,10 @@ export default function CertificationsSection() {
             rel="noopener noreferrer"
             className="cert-card-modern"
           >
+            <div className="cert-issuer-badge">
+              {getIssuerBadge(cert.issuer)}
+            </div>
+
             <div className="cert-card-inner">
               <div className="cert-title-row">
                 <h3 className="cert-modern-title">{cert.title}</h3>
