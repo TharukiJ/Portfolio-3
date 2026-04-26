@@ -2239,6 +2239,10 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two columns (7 per side) */
     gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Increased gap to cut the length of cards */
+    max-width: 900px; /* Narrower section width */
+    margin: 0 auto; /* Center the grid */
 }
 
 @media (max-width: 900px) {
@@ -2255,12 +2259,9 @@ footer {
     text-decoration: none;
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    border-left: 4px solid #000000; /* Black Accent */
-    border-radius: 16px;
-    padding: 20px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-left: 3px solid #000000; /* Slightly thinner accent */
+    border-radius: 12px; /* Smaller radius */
+    padding: 10px 14px; /* Ultra-compact padding */
     position: relative;
     transition: all 0.3s ease;
     cursor: default;
@@ -2270,28 +2271,28 @@ footer {
 .cert-card-modern:hover {
     border-color: rgba(0, 0, 0, 0.2);
     background: #fafafa;
-    transform: translateX(4px);
+    transform: translateY(-2px);
 }
 
 .cert-card-inner {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Spacing between title, issuer, tags */
+    gap: 4px; /* Tight spacing */
     flex: 1;
 }
 
 .cert-modern-title {
     font-family: var(--font-inter), sans-serif;
-    font-size: 15px;
+    font-size: 12.5px; /* Ultra-small title */
     font-weight: 600;
     color: #1e293b;
     margin: 0;
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
 .cert-modern-issuer {
     font-family: var(--font-inter), sans-serif;
-    font-size: 13px;
+    font-size: 10.5px; /* Ultra-small issuer */
     font-weight: 400;
     color: #64748b;
 }
@@ -2305,14 +2306,14 @@ footer {
 
 .cert-modern-tag {
     font-family: var(--font-inter), sans-serif;
-    font-size: 11px;
+    font-size: 8.5px; /* Smaller than buttons (9.5px) */
     font-weight: 500;
     color: #000000;
-    background: rgba(0, 0, 0, 0.06);
-    padding: 3px 10px;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 8px;
     border-radius: 999px;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
 }
 
 .cert-card-arrow {
@@ -2330,8 +2331,8 @@ footer {
 /* Multi-Exam Styles */
 .cert-multi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); /* Tighter grid */
+    gap: 6px;
     margin-top: 16px;
 }
 
@@ -2339,45 +2340,46 @@ footer {
 .cert-stack .exam-verify-btn {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    padding: 6px 14px !important;
+    gap: 4px !important; /* Smaller gap */
+    padding: 3px 10px !important; /* Even smaller padding */
     background: #ffffff !important;
-    border: 2px solid #fde047 !important; /* Vivid Yellow */
-    border-radius: 999px !important; /* Forced Pill Shape */
+    border: 1.5px solid #fde047 !important; /* Thinner border */
+    border-radius: 999px !important;
     color: #1e293b !important;
     font-family: var(--font-inter), sans-serif !important;
-    font-size: 10px !important;
+    font-size: 9.5px !important; /* Slightly smaller font */
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
     text-decoration: none !important;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    white-space: nowrap !important;
 }
 
 .cert-stack .exam-verify-btn:hover {
     background: #fde047 !important;
     color: #000 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 12px rgba(253, 224, 71, 0.4) !important;
+    transform: translateY(-1.5px) !important; /* Subtle lift */
+    box-shadow: 0 3px 8px rgba(253, 224, 71, 0.4) !important;
 }
 
 /* Alternate green accent for grid cards */
 .cert-card-modern:nth-child(even) .exam-verify-btn {
-    border-color: #86efac !important; /* Vivid Green */
+    border-color: #86efac !important;
 }
 
 .cert-card-modern:nth-child(even) .exam-verify-btn:hover {
     background: #86efac !important;
-    box-shadow: 0 4px 12px rgba(134, 239, 172, 0.4) !important;
+    box-shadow: 0 3px 8px rgba(134, 239, 172, 0.4) !important;
 }
 
 .cert-stack .exam-verify-btn i {
-    font-size: 14px !important;
+    font-size: 11px !important; /* Smaller icon */
     transition: transform 0.3s ease !important;
 }
 
 .cert-stack .exam-verify-btn:hover i {
-    transform: translate(2px, -2px) !important;
+    transform: translate(1.5px, -1.5px) !important;
 }
 
 /* Animations */
