@@ -141,46 +141,46 @@ export default function HeroSection({ isVisible }) {
         <div id="code-rain-container" className="code-rain-container" ref={rainContainerRef}></div>
       </div>
       <div className="hero-container">
-          <div className="hero-flex-container">
-            {/* TEXT CONTENT (LEFT) */}
-            <div className={`hero-content anim-slide-up ${isVisible ? "anim-active" : ""}`} ref={contentRef}>
-              <h1 className="hero-title">
-                <div className="code-line">
-                  <span className="code-font syntax-bracket">console.log("</span>
-                </div>
-                <div className="hero-main-text">
-                  <span className="hero-hello">Hello,</span>
-                  <br />
-                  <span className="hero-name">
-                    <span className="hero-im">I'm</span><span className="hero-tharuki">Tharuki</span><span className="code-font syntax-bracket">");</span>
-                  </span>
-                </div>
-              </h1>
-
-              <div className="hero-subtitle code-font">
-                <span className="keyword">const</span> <span className="variable">role</span> = <span className="string">"</span>
-                <span id="typing-role" className="string">
-                  {typedRole}
-                </span>
-                <span className="cursor">|</span>
-                <span className="string">"</span>;
+        <div className="hero-flex-container">
+          {/* TEXT CONTENT (LEFT) */}
+          <div className={`hero-content anim-slide-up ${isVisible ? "anim-active" : ""}`} ref={contentRef}>
+            <h1 className="hero-title">
+              <div className="code-line">
+                <span className="code-font syntax-bracket">console.log("</span>
               </div>
+              <div className="hero-main-text">
+                <span className="hero-hello">Hello,</span>
+                <br />
+                <span className="hero-name">
+                  <span className="hero-im">I'm</span><span className="hero-tharuki">Tharuki</span><span className="code-font syntax-bracket">");</span>
+                </span>
+              </div>
+            </h1>
 
-
+            <div className="hero-subtitle code-font">
+              <span className="keyword">const</span> <span className="variable">role</span> = <span className="string">"</span>
+              <span id="typing-role" className="string">
+                {typedRole}
+              </span>
+              <span className="cursor">|</span>
+              <span className="string">"</span>;
             </div>
 
-            {/* PERSONA IMAGE (RIGHT) */}
-            <div className={`hero-image-container anim-slide-up ${isVisible ? "anim-active" : ""}`}>
-              <div className="hero-image-wrapper">
-                <img
-                  src="/images/hero_person_transparent.png"
-                  alt="Tharuki Jayasuriya"
-                  className="hero-person-img"
-                />
-                <div className="image-accent-glow"></div>
-              </div>
+
+          </div>
+
+          {/* PERSONA IMAGE (RIGHT) */}
+          <div className={`hero-image-container anim-slide-up ${isVisible ? "anim-active" : ""}`}>
+            <div className="hero-image-wrapper">
+              <img
+                src="/images/hero_person_transparent.png"
+                alt="Tharuki Jayasuriya"
+                className="hero-person-img"
+              />
+              <div className="image-accent-glow"></div>
             </div>
           </div>
+        </div>
       </div>
       <div className="glow-sphere" ref={sphere1Ref}></div>
       <div className="glow-sphere secondary" ref={sphere2Ref}></div>
