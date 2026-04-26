@@ -130,8 +130,12 @@ export default function CertificationsSection() {
 
   return (
     <section id="certifications" className={`certifications section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
-      <div className="section-header">
-        <h2 className="section-title">CERTIFICATION & CREDENTIALS</h2>
+      <div className="section-header-modern">
+        <div className="section-title-group">
+          <h2 className="section-title-main">CERTIFICATION</h2>
+          <h2 className="section-title-sub">& CREDENTIALS</h2>
+          <div className="section-executing-functions">VERIFYING AUTHENTICITY [{CERTIFICATIONS.length}]</div>
+        </div>
       </div>
 
       <div className="cert-stack">
