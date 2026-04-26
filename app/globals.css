@@ -1214,7 +1214,8 @@ ul {
 }
 
 .skills-small-video {
-    max-width: 280px; /* Small size as requested */
+    max-width: 280px;
+    /* Small size as requested */
     width: 100%;
     height: auto;
     border-radius: 12px;
@@ -1940,64 +1941,185 @@ footer {
 }
 
 /* =========================================================================
-   PROJECT DRILLDOWN NAVIGATION STYLES
+   PROJECTS SECTION - FUTURISTIC GRID (DESIGN INSPIRED BY DEEGHAYUARANDARA.COM)
    ========================================================================= */
-.drilldown-container {
+.projects {
+    background-color: #0a0a0a !important; /* Force dark background */
+    padding: 120px 5%;
+    color: #ffffff;
+}
+
+.selected-work-header {
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
-    min-height: 500px;
-    position: relative;
-    padding: 2rem 0;
+    margin-bottom: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
 }
 
-.step-column {
+.selected-work-title-group {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    animation: fadeIn 0.4s ease-out forwards;
 }
 
-.drill-node {
-    border-radius: 12px;
-    padding: 1.5rem;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+.selected-work-title-main {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.selected-work-title-sub {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    color: rgba(255, 255, 255, 0.15); /* Muted gray text */
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.executing-functions {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.2em;
+    margin-top: 20px;
+}
+
+.projects-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+@media (max-width: 1100px) {
+    .projects-grid-modern {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid-modern {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project-card-premium {
     position: relative;
+    aspect-ratio: 4/5;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.05);
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-card-premium:hover {
+    transform: translateY(-8px);
+}
+
+.project-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.95) 100%);
+    backdrop-filter: blur(2px);
+    padding: 30px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+}
+
+.project-card-premium:hover .project-card-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+    backdrop-filter: blur(0px);
+}
+
+.project-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-type-badge {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 700;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.project-arrow-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #800020; /* Maroon border */
+    display: flex;
+    align-items: center;
     justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.drill-node:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+.project-card-premium:hover .project-arrow-btn {
+    background: #a52a2a; /* Vibrant Maroon */
+    border-color: #a52a2a;
+    box-shadow: 0 0 20px rgba(165, 42, 42, 0.6);
+    transform: rotate(45deg);
 }
 
-.drill-node.node-large {
-    width: 380px;
-    height: 220px;
+.project-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.drill-node.node-small {
-    width: 200px;
-    height: 120px;
-    padding: 1rem;
+.project-card-title {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1;
 }
 
-.drill-node.node-tiny {
-    width: 160px;
-    height: 80px;
-    padding: 0.8rem;
+.project-card-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 90%;
 }
 
-.drill-node.node-active {
-    border: 2px solid var(--accent);
-    background: #f9f9f9;
+.project-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.project-stack-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
 }
 
 .node-tag {
@@ -2028,10 +2150,22 @@ footer {
 }
 
 /* Category & Project Colors */
-.yellow-node { background-color: #f6d85d; }
-.gray-node { background-color: #d1d1d1; }
-.green-node { background-color: #5df69d; }
-.project-node { background-color: #fff; border: 1px solid rgba(0,0,0,0.1); }
+.yellow-node {
+    background-color: #f6d85d;
+}
+
+.gray-node {
+    background-color: #d1d1d1;
+}
+
+.green-node {
+    background-color: #5df69d;
+}
+
+.project-node {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
 
 /* Detail Box - Small Version */
 /* Modern Editorial Project Card Redesign */
@@ -2041,14 +2175,17 @@ footer {
     margin-left: 2rem;
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    border-left: 3.5px solid #6366f1; /* Vivid accent */
-    border-radius: 4px; /* Editorial feel */
+    border-left: 3.5px solid #6366f1;
+    /* Vivid accent */
+    border-radius: 4px;
+    /* Editorial feel */
     padding: 32px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: none; /* Flat design as requested */
+    box-shadow: none;
+    /* Flat design as requested */
     animation: slideRightIn 0.5s ease-out;
 }
 
@@ -2069,7 +2206,8 @@ footer {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: #64748b; /* Muted color */
+    color: #64748b;
+    /* Muted color */
 }
 
 .detail-external-link {
@@ -2098,7 +2236,8 @@ footer {
     font-size: 15px;
     font-weight: 400;
     line-height: 1.6;
-    color: #475569; /* Secondary text color */
+    color: #475569;
+    /* Secondary text color */
 }
 
 /* Pill Tags */
@@ -2119,11 +2258,30 @@ footer {
 }
 
 /* Pastel Tints */
-.tag-color-0 { background: #e0e7ff; color: #4338ca; }
-.tag-color-1 { background: #dcfce7; color: #15803d; }
-.tag-color-2 { background: #fef9c3; color: #a16207; }
-.tag-color-3 { background: #fee2e2; color: #b91c1c; }
-.tag-color-4 { background: #f3e8ff; color: #7e22ce; }
+.tag-color-0 {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.tag-color-1 {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.tag-color-2 {
+    background: #fef9c3;
+    color: #a16207;
+}
+
+.tag-color-3 {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.tag-color-4 {
+    background: #f3e8ff;
+    color: #7e22ce;
+}
 
 /* Image Preview */
 .detail-image-wrapper {
@@ -2137,7 +2295,8 @@ footer {
     height: 220px;
     background-size: cover;
     background-position: center;
-    border-radius: 12px; /* rounded-xl */
+    border-radius: 12px;
+    /* rounded-xl */
     position: relative;
     overflow: hidden;
 }
@@ -2147,7 +2306,8 @@ footer {
     position: absolute;
     inset: 0;
     border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Inner border overlay */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Inner border overlay */
     pointer-events: none;
 }
 
@@ -2178,7 +2338,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .reset-btn {
@@ -2186,7 +2346,7 @@ footer {
     font-size: 11px;
     font-weight: 700;
     padding: 6px 14px;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     color: #64748b;
     border-radius: 6px;
     cursor: pointer;
@@ -2200,14 +2360,22 @@ footer {
 }
 
 @keyframes slideRightIn {
-    from { opacity: 0; transform: translateX(20px); }
-    to { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @media (max-width: 1200px) {
     .drilldown-container {
         flex-direction: column;
     }
+
     .project-detail-box-right {
         margin-left: 0;
         width: 100%;
@@ -2218,7 +2386,8 @@ footer {
    CERTIFICATIONS SECTION - MODERN CARD REDESIGN
    ========================================================================= */
 .certifications {
-    max-width: 1200px; /* Increased to fit two columns comfortably */
+    max-width: 1200px;
+    /* Increased to fit two columns comfortably */
 }
 
 .cert-section-header {
@@ -2237,17 +2406,22 @@ footer {
 
 .cert-stack {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns (7 per side) */
+    grid-template-columns: 1fr 1fr;
+    /* Two columns (7 per side) */
     gap: 16px;
     grid-template-columns: 1fr 1fr;
-    gap: 20px; /* Increased gap to cut the length of cards */
-    max-width: 900px; /* Narrower section width */
-    margin: 0 auto; /* Center the grid */
+    gap: 20px;
+    /* Increased gap to cut the length of cards */
+    max-width: 900px;
+    /* Narrower section width */
+    margin: 0 auto;
+    /* Center the grid */
 }
 
 @media (max-width: 900px) {
     .cert-stack {
-        grid-template-columns: 1fr; /* Single column on mobile/smaller screens */
+        grid-template-columns: 1fr;
+        /* Single column on mobile/smaller screens */
     }
 }
 
@@ -2256,15 +2430,39 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    text-decoration: none !important; /* Ensure no underline */
+    text-decoration: none !important;
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 12px;
     padding: 10px 14px;
+    padding-left: 45px;
+    /* Space for the badge */
     position: relative;
     transition: all 0.3s ease;
-    cursor: pointer; /* Whole card is clickable */
+    cursor: pointer;
     overflow: hidden;
+}
+
+.cert-issuer-badge {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.cert-card-modern:hover .cert-issuer-badge {
+    background: #000000;
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 .cert-card-modern:hover {
@@ -2277,13 +2475,15 @@ footer {
 .cert-card-inner {
     display: flex;
     flex-direction: column;
-    gap: 4px; /* Tight spacing */
+    gap: 4px;
+    /* Tight spacing */
     flex: 1;
 }
 
 .cert-modern-title {
     font-family: var(--font-inter), sans-serif;
-    font-size: 12.5px; /* Ultra-small title */
+    font-size: 12.5px;
+    /* Ultra-small title */
     font-weight: 600;
     color: #1e293b;
     margin: 0;
@@ -2292,7 +2492,8 @@ footer {
 
 .cert-modern-issuer {
     font-family: var(--font-inter), sans-serif;
-    font-size: 10.5px; /* Ultra-small issuer */
+    font-size: 10.5px;
+    /* Ultra-small issuer */
     font-weight: 400;
     color: #64748b;
 }
@@ -2306,7 +2507,8 @@ footer {
 
 .cert-modern-tag {
     font-family: var(--font-inter), sans-serif;
-    font-size: 8.5px; /* Smaller than buttons (9.5px) */
+    font-size: 8.5px;
+    /* Smaller than buttons (9.5px) */
     font-weight: 500;
     color: #000000;
     background: rgba(0, 0, 0, 0.05);
@@ -2323,10 +2525,13 @@ footer {
 }
 
 .cert-verify-pill {
-    background: #121212; /* Matte Black */
-    color: #ffffff; /* Bright White */
+    background: #121212;
+    /* Matte Black */
+    color: #ffffff;
+    /* Bright White */
     font-family: var(--font-inter), sans-serif;
-    font-size: 8px; /* Ultra small */
+    font-size: 8px;
+    /* Ultra small */
     font-weight: 700;
     padding: 3px 10px;
     border-radius: 999px;
@@ -2346,7 +2551,8 @@ footer {
 /* Multi-Exam Styles */
 .cert-multi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); /* Tighter grid */
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    /* Tighter grid */
     gap: 6px;
     margin-top: 16px;
 }
@@ -2355,14 +2561,18 @@ footer {
 .cert-stack .exam-verify-btn {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 4px !important; /* Smaller gap */
-    padding: 3px 10px !important; /* Even smaller padding */
+    gap: 4px !important;
+    /* Smaller gap */
+    padding: 3px 10px !important;
+    /* Even smaller padding */
     background: #ffffff !important;
-    border: 1.5px solid #fde047 !important; /* Thinner border */
+    border: 1.5px solid #fde047 !important;
+    /* Thinner border */
     border-radius: 999px !important;
     color: #1e293b !important;
     font-family: var(--font-inter), sans-serif !important;
-    font-size: 9.5px !important; /* Slightly smaller font */
+    font-size: 9.5px !important;
+    /* Slightly smaller font */
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
@@ -2374,7 +2584,8 @@ footer {
 .cert-stack .exam-verify-btn:hover {
     background: #fde047 !important;
     color: #000 !important;
-    transform: translateY(-1.5px) !important; /* Subtle lift */
+    transform: translateY(-1.5px) !important;
+    /* Subtle lift */
     box-shadow: 0 3px 8px rgba(253, 224, 71, 0.4) !important;
 }
 
@@ -2389,7 +2600,8 @@ footer {
 }
 
 .cert-stack .exam-verify-btn i {
-    font-size: 11px !important; /* Smaller icon */
+    font-size: 11px !important;
+    /* Smaller icon */
     transition: transform 0.3s ease !important;
 }
 
@@ -2408,4 +2620,3 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
-
