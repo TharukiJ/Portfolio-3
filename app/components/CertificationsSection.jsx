@@ -126,9 +126,12 @@ export default function CertificationsSection() {
 
       <div className="cert-stack">
         {CERTIFICATIONS.map((cert, idx) => (
-          <div
+          <a
             key={idx}
-            className={`cert-card-modern ${cert.multi ? "multi-card" : ""}`}
+            href={cert.multi ? cert.exams[0].link : cert.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cert-card-modern"
           >
             <div className="cert-card-inner">
               <div className="cert-title-row">
@@ -146,30 +149,8 @@ export default function CertificationsSection() {
                   </span>
                 ))}
               </div>
-
-              {/* Multi-exam links rendered as clean pills */}
-              {cert.multi && (
-                <div className="cert-multi-grid">
-                  {cert.exams.map((exam, eIdx) => (
-                    <a
-                      key={eIdx}
-                      href={exam.link}
-                      className="exam-verify-btn"
-                      target="_self"
-                    >
-                      {exam.name} <i className="bx bx-right-top-arrow-circle"></i>
-                    </a>
-                  ))}
-                </div>
-              )}
             </div>
-
-            {!cert.multi && (
-              <a href={cert.link} className="cert-card-arrow" target="_self">
-                <i className="bx bx-chevron-right"></i>
-              </a>
-            )}
-          </div>
+          </a>
         ))}
       </div>
     </section>
