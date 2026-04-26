@@ -2316,16 +2316,31 @@ footer {
     letter-spacing: 0.05em;
 }
 
-.cert-card-arrow {
-    color: #cbd5e1;
-    font-size: 20px;
-    transition: all 0.2s ease;
+.cert-card-action {
+    display: flex;
+    align-items: center;
     margin-left: 1rem;
 }
 
-.cert-card-modern:hover .cert-card-arrow {
-    color: #000000;
-    transform: translateX(4px);
+.cert-verify-pill {
+    background: #121212; /* Matte Black */
+    color: #ffffff; /* Bright White */
+    font-family: var(--font-inter), sans-serif;
+    font-size: 8px; /* Ultra small */
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cert-card-modern:hover .cert-verify-pill {
+    background: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Multi-Exam Styles */
