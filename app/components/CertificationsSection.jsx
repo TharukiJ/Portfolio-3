@@ -118,18 +118,39 @@ export default function CertificationsSection() {
     return () => observer.disconnect();
   }, []);
 
+  const getIssuerBadge = (issuer) => {
+    const lower = issuer.toLowerCase();
+    if (lower.includes("linkedin")) return <i className="bx bxl-linkedin"></i>;
+    if (lower.includes("microsoft")) return <i className="bx bxl-microsoft"></i>;
+    if (lower.includes("pmi")) return <i className="bx bx-shield-quarter"></i>;
+    if (lower.includes("nasba")) return <i className="bx bx-award"></i>;
+    if (lower.includes("pearson")) return <i className="bx bx-book-open"></i>;
+    return <i className="bx bx-certification"></i>;
+  };
+
   return (
     <section id="certifications" className={`certifications section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
-      <div className="cert-section-header">
-        <h2 className="cert-section-label">CERTIFICATION & CREDENTIALS</h2>
+      <div className="section-header-modern">
+        <div className="section-title-group">
+          <h2 className="section-title-main">CERTIFICATION</h2>
+          <h2 className="section-title-sub">& CREDENTIALS</h2>
+          <div className="section-executing-functions">VERIFYING AUTHENTICITY [{CERTIFICATIONS.length}]</div>
+        </div>
       </div>
 
       <div className="cert-stack">
         {CERTIFICATIONS.map((cert, idx) => (
-          <div
+          <a
             key={idx}
-            className={`cert-card-modern ${cert.multi ? "multi-card" : ""}`}
+            href={cert.multi ? cert.exams[0].link : cert.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cert-card-modern"
           >
+            <div className="cert-issuer-badge">
+              {getIssuerBadge(cert.issuer)}
+            </div>
+
             <div className="cert-card-inner">
               <div className="cert-title-row">
                 <h3 className="cert-modern-title">{cert.title}</h3>
@@ -146,30 +167,12 @@ export default function CertificationsSection() {
                   </span>
                 ))}
               </div>
-
-              {/* Multi-exam links rendered as clean pills */}
-              {cert.multi && (
-                <div className="cert-multi-grid">
-                  {cert.exams.map((exam, eIdx) => (
-                    <a
-                      key={eIdx}
-                      href={exam.link}
-                      className="exam-verify-btn"
-                      target="_self"
-                    >
-                      {exam.name} <i className="bx bx-right-top-arrow-circle"></i>
-                    </a>
-                  ))}
-                </div>
-              )}
             </div>
 
-            {!cert.multi && (
-              <a href={cert.link} className="cert-card-arrow" target="_self">
-                <i className="bx bx-chevron-right"></i>
-              </a>
-            )}
-          </div>
+            <div className="cert-card-action">
+              <span className="cert-verify-pill">VERIFY</span>
+            </div>
+          </a>
         ))}
       </div>
     </section>

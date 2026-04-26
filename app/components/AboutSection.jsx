@@ -73,12 +73,16 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section id="about" className="about section-padding" ref={sectionRef}>
+    <section id="about" className={`about section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
+      <div className="section-header-modern">
+        <div className="section-title-group">
+          <h2 className="section-title-main">BIOGRAPHY</h2>
+          <h2 className="section-title-sub">& STORY</h2>
+          <div className="section-executing-functions">RECONSTRUCTING NARRATIVE [2026]</div>
+        </div>
+      </div>
       <div className="about-grid">
         <div className={`about-info anim-slide-left ${animActive ? "anim-active" : ""}`}>
-          <div className="section-header">
-            <h2 className="section-title">BEHIND THE CODE</h2>
-          </div>
           <div className="about-text">
             <p>
               I’m a computer science student with a strong passion for building modern digital experiences

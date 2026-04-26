@@ -96,15 +96,19 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="contact section-padding" ref={sectionRef}>
+    <section id="contact" className={`contact section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
+      <div className="section-header-modern">
+        <div className="section-title-group">
+          <h2 className="section-title-main">GET IN</h2>
+          <h2 className="section-title-sub">TOUCH</h2>
+          <div className="section-executing-functions">READY TO COLLABORATE [NOW]</div>
+        </div>
+      </div>
       <div
         className={`contact-card anim-fade-up ${animActive ? "anim-active" : ""}`}
         id="contact-main-card"
       >
         <div className="contact-header">
-          <h2 className="section-title" id="typing-contact-title" ref={titleRef}>
-            LET’S.CONNECT()
-          </h2>
           <p>
             Open to collaborations, project ideas, and new opportunities. Whether you want to discuss a
             build, share an idea, or simply connect, my inbox is always open.
