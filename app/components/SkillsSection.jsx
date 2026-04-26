@@ -3,8 +3,12 @@ export default function SkillsSection() {
     <section id="skills" className="skills section-padding">
       <div className="skills-split-container">
         <div className="skills-side-left">
-          <div className="section-header">
-            <h2 className="section-title">RUNTIME.SKILLS</h2>
+          <div className="section-header-modern">
+            <div className="section-title-group">
+              <h2 className="section-title-main">RUNTIME</h2>
+              <h2 className="section-title-sub">SKILLS</h2>
+              <div className="section-executing-functions">PARSING CAPABILITIES [6]</div>
+            </div>
           </div>
           <div className="marquee-container side-marquee">
             <div className="marquee-content">
@@ -63,8 +67,12 @@ export default function SkillsSection() {
         </div>
 
         <div className="skills-side-right anim-slide-right anim-active">
-          <div className="section-header">
-            <h2 className="section-title">GITHUB.ACTIVITY.MONTHLY</h2>
+          <div className="section-header-modern">
+            <div className="section-title-group">
+              <h2 className="section-title-main">GITHUB</h2>
+              <h2 className="section-title-sub">ACTIVITY</h2>
+              <div className="section-executing-functions">FETCHING CONTRIBUTIONS [ANNUAL]</div>
+            </div>
           </div>
           <div className="github-contribution-wrapper">
             <img
