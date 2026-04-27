@@ -381,18 +381,15 @@ ul {
 }
 
 .github-contribution-wrapper {
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(189, 189, 188, 0.4);
+    background: #eeeee6;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     padding: 1.5rem;
     border-radius: 12px;
     width: 100%;
-    transition: var(--transition-smooth);
 }
 
 .github-contribution-wrapper:hover {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: var(--accent);
-    transform: translateY(-5px);
+    /* Animations removed as requested */
 }
 
 .github-label {
@@ -421,12 +418,11 @@ ul {
     width: 100%;
     height: auto;
     display: block;
-    filter: grayscale(100%) opacity(0.8);
-    transition: var(--transition-smooth);
+    filter: none;
 }
 
 .github-contribution-wrapper:hover .github-chart-img {
-    filter: grayscale(0%) opacity(1);
+    filter: none;
 }
 
 @media (max-width: 1024px) {
@@ -1196,27 +1192,23 @@ ul {
 .github-contribution-wrapper {
     width: 100%;
     max-width: 100%;
-    /* Show full contribution bar */
     height: auto;
     min-height: 110px;
     overflow-x: auto;
-    /* Allow horizontal scroll on very small screens if needed */
     display: flex;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.03);
+    background: #eeeee6;
     border-radius: 8px;
     padding: 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .github-chart-img {
     height: auto;
     width: 100%;
     max-width: 1000px;
-    /* Standard GitHub chart width roughly */
     object-fit: contain;
-    filter: grayscale(1) contrast(1.1);
-    /* Match monochromatic theme */
+    filter: none;
 }
 
 .skills-video-container {
