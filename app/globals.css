@@ -703,7 +703,7 @@ ul {
 .hero-col-left .hero-label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #b9b9b1; /* Light Ash */
+    color: #333333; /* Dark Gray */
     letter-spacing: 0.3em;
     margin-bottom: 1.5rem;
 }
