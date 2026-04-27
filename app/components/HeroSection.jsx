@@ -152,7 +152,15 @@ export default function HeroSection({ isVisible }) {
                 <span className="hero-hello">Hello,</span>
                 <br />
                 <span className="hero-name">
-                  <span className="hero-im">I'm</span><span className="hero-tharuki">Tharuki</span><span className="code-font syntax-bracket">");</span>
+                  <span className="hero-im">I'm</span><span className="hero-tharuki">{'Tharuki'.split('').map((letter, idx) => (
+                    <span
+                      key={idx}
+                      className={`tharuki-letter ${isVisible ? 'tharuki-letter-active' : ''}`}
+                      style={{ animationDelay: isVisible ? `${0.4 + idx * 0.18}s` : '0s' }}
+                    >
+                      {letter}
+                    </span>
+                  ))}</span><span className="code-font syntax-bracket">");</span>
                 </span>
               </div>
             </h1>
