@@ -10,7 +10,6 @@ import GithubSection from "./components/GithubSection";
 import CertificationsSection from "./components/CertificationsSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import { DoodleOverlay } from "./components/DragMeSection";
 
 export default function Home() {
   const [preloaderComplete, setPreloaderComplete] = useState(false);
@@ -45,7 +44,6 @@ export default function Home() {
           <ContactSection />
         </main>
         <Footer />
-        <DoodleOverlay />
       </div>
     </>
   );
