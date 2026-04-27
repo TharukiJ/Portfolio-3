@@ -664,19 +664,19 @@ ul {
 /* Container */
 .hero-v4-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1500px; /* Slightly wider */
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 0 3%; /* Reduced padding to push content to edges */
     position: relative;
     z-index: 10;
 }
 
 .hero-v4-main-grid {
     display: grid;
-    grid-template-columns: 1fr 1.8fr 1fr;
+    grid-template-columns: 1.2fr 1.5fr 0.8fr; /* Pushes right column further right */
     align-items: center;
-    gap: 1rem;
-    min-height: 75vh;
+    gap: 1.5rem;
+    min-height: 70vh;
 }
 
 /* Columns */
@@ -719,7 +719,7 @@ ul {
 
 .hero-role-v4 {
     position: relative;
-    height: clamp(10rem, 18vw, 14rem); /* Increased for two lines */
+    height: clamp(6rem, 12vw, 10rem); /* Reduced height for smaller text */
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -734,13 +734,14 @@ ul {
 }
 
 .role-word-v4 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem); /* Slightly reduced to fit two lines better */
-    font-weight: 900;
-    line-height: 0.9;
+    font-family: var(--font-outfit);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.1;
     text-transform: uppercase;
-    letter-spacing: -2px;
+    letter-spacing: -0.5px;
     display: flex;
-    flex-wrap: nowrap; /* Keep on one line per h2 */
+    flex-wrap: nowrap;
     justify-content: flex-end;
 }
 
@@ -782,7 +783,7 @@ ul {
 .hero-img-wrapper-v4 {
     position: relative;
     width: 100%;
-    max-width: 750px; /* Increased size */
+    max-width: 550px; /* Balanced big size */
 }
 
 .hero-main-img-v4 {
@@ -865,7 +866,7 @@ ul {
 .hero-v4 .anim-slide-right { transform: translateX(60px); }
 .hero-v4 .anim-slide-right-delayed { transform: translateX(80px); }
 .hero-v4 .anim-slide-right-extra { transform: translateX(100px); }
-.hero-v4 .anim-scale-up { transform: scale(0.85); }
+.hero-v4 .anim-scale-up { transform: translateY(20px); }
 
 .hero-v4.active .anim-slide-left,
 .hero-v4.active .anim-slide-left-delayed,
@@ -875,7 +876,7 @@ ul {
 .hero-v4.active .anim-scale-up,
 .hero-v4.active .anim-fade-in {
     opacity: 1;
-    transform: translate(0) scale(1);
+    transform: translateY(0);
 }
 
 .hero-v4.active .anim-slide-left { transition-delay: 0.2s; }
