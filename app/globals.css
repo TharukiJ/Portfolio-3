@@ -673,10 +673,10 @@ ul {
 
 .hero-v4-main-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-columns: 1fr 1.8fr 1fr;
     align-items: center;
-    gap: 2rem;
-    min-height: 70vh;
+    gap: 1rem;
+    min-height: 75vh;
 }
 
 /* Columns */
@@ -782,7 +782,7 @@ ul {
 .hero-img-wrapper-v4 {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 750px; /* Increased size */
 }
 
 .hero-main-img-v4 {
