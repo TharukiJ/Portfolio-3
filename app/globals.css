@@ -591,7 +591,8 @@ ul {
     position: relative;
     overflow: clip;
     background-color: #eeeee6;
-    /* Reverted to Ash/Off-White Base */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .hero-dark-bg {
@@ -657,7 +658,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
+    min-height: 85vh; /* Reduced from 100vh for tighter feel */
     gap: 4rem;
     padding-top: 0;
     /* Removed nav-height padding to move up */
@@ -908,6 +909,10 @@ ul {
 /* =========================================================================
    ABOUT SECTION
    ========================================================================= */
+.about {
+    padding-top: 30px !important; /* Reduced gap from Hero */
+}
+
 .about-grid {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
