@@ -146,7 +146,7 @@ body::-webkit-scrollbar-thumb {
 /* Preloader Central Header Icon */
 .preloader-icon {
     font-size: 1.5rem;
-    color: #D391B0;
+    color: #000000;
     display: block;
     margin-bottom: 2rem;
     letter-spacing: 0.1em;
@@ -187,9 +187,9 @@ body::-webkit-scrollbar-thumb {
 .status-dot {
     width: 8px;
     height: 8px;
-    background-color: #D391B0;
+    background-color: #000000;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(211, 145, 176, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     animation: status-pulse-yellow 1.5s infinite alternate;
 }
 
@@ -208,13 +208,13 @@ body::-webkit-scrollbar-thumb {
 .status-text {
     font-size: 0.75rem;
     letter-spacing: 0.2em;
-    color: #BA6E8F;
+    color: #000000;
 }
 
 /* Main Terminal Logic Area */
 .boot-terminal {
     font-size: 0.85rem;
-    color: #BA6E8F;
+    color: #000000;
     line-height: 1.8;
     height: 450px;
     overflow: hidden;
@@ -225,12 +225,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .terminal-accent {
-    color: #D391B0;
+    color: #000000;
     font-weight: 500;
 }
 
 .terminal-index {
-    color: #9F6496;
+    color: #000000;
     margin-right: 1.2rem;
     display: inline-block;
     width: 30px;
@@ -239,7 +239,7 @@ body::-webkit-scrollbar-thumb {
 .loader-percent-v3 {
     margin-top: 1.5rem;
     font-size: 0.8rem;
-    color: #D391B0;
+    color: #000000;
     letter-spacing: 0.1em;
 }
 
@@ -2388,7 +2388,11 @@ footer {
    CERTIFICATIONS SECTION - MODERN CARD REDESIGN
    ========================================================================= */
 .certifications {
-    /* inherits max-width and centering from .section-padding */
+    padding-top: 30px !important;
+}
+
+.github-section {
+    padding-bottom: 30px !important;
 }
 
 .cert-section-header {
