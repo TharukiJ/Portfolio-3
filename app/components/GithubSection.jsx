@@ -60,11 +60,13 @@ export default function GithubSection() {
           <div className="github-stat-overlay">
             <span className="github-count-text">{totalContributions} Contributions in 2026</span>
           </div>
-          <img
-            src="https://ghchart.rshah.org/TharukiJ?year=2026"
-            alt="TharukiJ GitHub Contribution Chart 2026"
-            className="github-chart-img"
-          />
+          <div className="github-chart-container">
+            <img
+              src="https://ghchart.rshah.org/000000/TharukiJ?year=2026"
+              alt="TharukiJ GitHub Contribution Chart 2026"
+              className="github-chart-img"
+            />
+          </div>
         </div>
 
         <div className="skills-video-container">
