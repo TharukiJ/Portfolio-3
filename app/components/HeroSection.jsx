@@ -1,189 +1,109 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
+const ROLES = [
+  { l1: "UI/UX", l2: "DESIGNER" },
+  { l1: "FRONTEND", l2: "DESIGNER" },
+  { l1: "FULL-STACK", l2: "DEVELOPER" }
+];
+
 export default function HeroSection({ isVisible }) {
   const heroRef = useRef(null);
-  const contentRef = useRef(null);
-  const sphere1Ref = useRef(null);
-  const sphere2Ref = useRef(null);
-  const rainContainerRef = useRef(null);
-  const [typedRole, setTypedRole] = useState("");
+  const [animActive, setAnimActive] = useState(false);
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
 
-  // Role typing effect
   useEffect(() => {
-    if (!isVisible) return;
-    const roles = [
-      "CREATIVE DEVELOPER",
-      "FRONT END DEVELOPER",
-      "UI UX DESIGNER",
-      "PROJECT MANAGER",
-    ];
-    let roleIdx = 0;
-    let charIdx = 0;
-    let direction = 1; // 1 for typing, -1 for deleting
-    let timer;
-
-    const typeHero = () => {
-      const current = roles[roleIdx];
-      if (direction === 1) {
-        setTypedRole(current.substring(0, charIdx + 1));
-        charIdx++;
-        if (charIdx === current.length) {
-          direction = -1;
-          timer = setTimeout(typeHero, 2000); // Pause at full word
-          return;
-        }
-      } else {
-        setTypedRole(current.substring(0, charIdx - 1));
-        charIdx--;
-        if (charIdx === 0) {
-          direction = 1;
-          roleIdx = (roleIdx + 1) % roles.length;
-          timer = setTimeout(typeHero, 500); // Pause at empty
-          return;
-        }
-      }
-      const speed = direction === 1 ? 120 : 60;
-      timer = setTimeout(typeHero, speed);
-    };
-
-    typeHero();
-    return () => clearTimeout(timer);
-  }, [isVisible]);
-
-  // Floating background symbols and parallax
-  useEffect(() => {
-    if (!isVisible || !heroRef.current) return;
-
-    // Scroll parallax exit effect
-    const handleScroll = () => {
-      const rect = heroRef.current.getBoundingClientRect();
-      const heroHeight = heroRef.current.offsetHeight;
-      const exitDistance = -rect.top;
-      const progress = Math.min(Math.max(exitDistance / (heroHeight * 0.5), 0), 1);
-
-      if (contentRef.current) {
-        contentRef.current.style.opacity = 1 - progress;
-        contentRef.current.style.transform = `translateY(${progress * -50}px)`;
-        contentRef.current.style.pointerEvents = progress > 0.9 ? "none" : "";
-      }
-
-      if (sphere1Ref.current) sphere1Ref.current.style.opacity = 1 - progress;
-      if (sphere2Ref.current) sphere2Ref.current.style.opacity = 1 - progress;
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Mouse parallax for spheres
-    const handleMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 40;
-      const y = (e.clientY / window.innerHeight - 0.5) * 40;
-      if (sphere1Ref.current) {
-        sphere1Ref.current.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-      }
-      if (sphere2Ref.current) {
-        sphere2Ref.current.style.transform = `translate(calc(-50% + ${x * -1.2}px), calc(-50% + ${y * -1.2}px))`;
-      }
-    };
-    heroRef.current.addEventListener("mousemove", handleMouseMove);
-
-    // Floating Code Symbols
-    let animationFrame;
-    const rainContainer = rainContainerRef.current;
-    if (rainContainer) {
-      const symbols = ["{", "}", "<", ">", "/", ";", "[]", "()", "=>", "&&", "||", "!", "?;"];
-      const particles = [];
-      const count = window.innerWidth < 768 ? 20 : 45;
-
-      for (let i = 0; i < count; i++) {
-        const el = document.createElement("div");
-        el.className = "floating-code-symbol";
-        el.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-
-        const p = {
-          el: el,
-          x: Math.random() * 100,
-          y: Math.random() * 100,
-          vx: (Math.random() - 0.5) * 0.01,
-          vy: (Math.random() - 0.5) * 0.01,
-          size: 0.8 + Math.random() * 0.4,
-        };
-        rainContainer.appendChild(el);
-        particles.push(p);
-      }
-
-      const animateRain = () => {
-        particles.forEach((p) => {
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < -5) p.x = 105;
-          if (p.x > 105) p.x = -5;
-          if (p.y < -5) p.y = 105;
-          if (p.y > 105) p.y = -5;
-          p.el.style.transform = `translate(${p.x}vw, ${p.y}vh) scale(${p.size})`;
-        });
-        animationFrame = requestAnimationFrame(animateRain);
-      };
-      animateRain();
+    if (isVisible) {
+      setTimeout(() => setAnimActive(true), 100);
     }
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (heroRef.current) heroRef.current.removeEventListener("mousemove", handleMouseMove);
-      cancelAnimationFrame(animationFrame);
-      if (rainContainer) rainContainer.innerHTML = "";
-    };
   }, [isVisible]);
+
+  useEffect(() => {
+    if (!animActive) return;
+
+    const interval = setInterval(() => {
+      setIsExiting(true);
+      setTimeout(() => {
+        setRoleIndex((prev) => (prev + 1) % ROLES.length);
+        setIsExiting(false);
+      }, 600);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [animActive]);
+
+  const splitText = (text, startDelay = 0) => {
+    return text.split("").map((char, i) => (
+      <span
+        key={i}
+        className="char"
+        style={{ transitionDelay: `${startDelay + i * 0.03}s` }}
+      >
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ));
+  };
 
   return (
-    <section id="home" className="hero section-padding" ref={heroRef}>
-      <div className="hero-dark-bg">
-        <div className="hero-grid-overlay"></div>
-        <div id="code-rain-container" className="code-rain-container" ref={rainContainerRef}></div>
+    <section id="home" className={`hero-v4 ${animActive ? "active" : ""}`} ref={heroRef}>
+      <div className="mesh-glows">
+        <div className="glow glow-1"></div>
+        <div className="glow glow-2"></div>
+        <div className="glow glow-3"></div>
       </div>
-      <div className="hero-container">
-        <div className="hero-flex-container">
-          {/* TEXT CONTENT (LEFT) */}
-          <div className={`hero-content anim-slide-up ${isVisible ? "anim-active" : ""}`} ref={contentRef}>
-            <h1 className="hero-title">
-              <div className="code-line">
-                <span className="code-font syntax-bracket">console.log("</span>
-              </div>
-              <div className="hero-main-text">
-                <span className="hero-hello">Hello,</span>
-                <br />
-                <span className="hero-name">
-                  <span className="hero-im">I'm</span><span className="hero-tharuki">Tharuki</span><span className="code-font syntax-bracket">");</span>
-                </span>
-              </div>
+
+      <div className="hero-v4-container">
+        <div className="hero-v4-main-grid">
+          
+          <div className="hero-col hero-col-left">
+            <span className="hero-label anim-slide-left">HELLO, I'M</span>
+            <h1 className="hero-name-v4 anim-slide-left-delayed">
+              Tharuki<br />Jayasuriya
             </h1>
-
-            <div className="hero-subtitle code-font">
-              <span className="keyword">const</span> <span className="variable">role</span> = <span className="string">"</span>
-              <span id="typing-role" className="string">
-                {typedRole}
-              </span>
-              <span className="cursor">|</span>
-              <span className="string">"</span>;
-            </div>
-
-
           </div>
 
-          {/* PERSONA IMAGE (RIGHT) */}
-          <div className={`hero-image-container anim-slide-up ${isVisible ? "anim-active" : ""}`}>
-            <div className="hero-image-wrapper">
+          <div className="hero-col hero-col-center">
+            <div className="hero-img-wrapper-v4 anim-scale-up">
               <img
                 src="/images/hero_person_transparent.png"
                 alt="Tharuki Jayasuriya"
-                className="hero-person-img"
+                className="hero-main-img-v4"
               />
-              <div className="image-accent-glow"></div>
+              <div className="img-backdrop-glow"></div>
             </div>
+          </div>
+
+          <div className="hero-col hero-col-right">
+            <span className="hero-label anim-slide-right">CREATIVE</span>
+            <div className={`hero-role-v4 ${isExiting ? "exiting" : "entering"}`}>
+              <div className="role-lines-v4">
+                <h2 className="role-word-v4 role-gradient">
+                  {splitText(ROLES[roleIndex].l1)}
+                </h2>
+                <h2 className="role-word-v4 role-black-v4">
+                  {splitText(ROLES[roleIndex].l2, ROLES[roleIndex].l1.length * 0.03)}
+                </h2>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="hero-v4-footer">
+          <div className="hero-socials anim-fade-in">
+            <a href="#" className="social-link"><i className='bx bxl-linkedin'></i></a>
+            <a href="#" className="social-link"><i className='bx bxl-github'></i></a>
+            <a href="#" className="social-link"><i className='bx bxl-instagram'></i></a>
+          </div>
+          
+          <div className="hero-actions anim-fade-in">
+            <a href="/resume.pdf" className="resume-btn-v4">
+              RESUME <i className='bx bx-right-arrow-alt'></i>
+            </a>
           </div>
         </div>
       </div>
-      <div className="glow-sphere" ref={sphere1Ref}></div>
-      <div className="glow-sphere secondary" ref={sphere2Ref}></div>
     </section>
   );
 }
