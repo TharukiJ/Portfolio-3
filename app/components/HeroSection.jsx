@@ -61,6 +61,11 @@ export default function HeroSection({ isVisible }) {
             <h1 className="hero-name-v4 anim-slide-left-delayed">
               Tharuki<br />Jayasuriya
             </h1>
+            <div className="hero-socials-v4 anim-fade-in">
+              <a href="https://www.linkedin.com/in/tharuki-jayasuriya" target="_blank" rel="noopener noreferrer" className="social-link"><i className='bx bxl-linkedin'></i></a>
+              <a href="https://github.com/TharukiJ" target="_blank" rel="noopener noreferrer" className="social-link"><i className='bx bxl-github'></i></a>
+              <a href="https://www.instagram.com/tharuk_yy?igsh=Zjl3MmM4OHJsbjRz&utm_source=qr" target="_blank" rel="noopener noreferrer" className="social-link"><i className='bx bxl-instagram'></i></a>
+            </div>
           </div>
 
           <div className="hero-col hero-col-center">
@@ -91,12 +96,6 @@ export default function HeroSection({ isVisible }) {
         </div>
 
         <div className="hero-v4-footer">
-          <div className="hero-socials anim-fade-in">
-            <a href="#" className="social-link"><i className='bx bxl-linkedin'></i></a>
-            <a href="#" className="social-link"><i className='bx bxl-github'></i></a>
-            <a href="#" className="social-link"><i className='bx bxl-instagram'></i></a>
-          </div>
-          
           <div className="hero-actions anim-fade-in">
             <a href="/tharuki.jayasuriya CV.pdf" download="tharuki.jayasuriya CV.pdf" className="resume-btn-v4">
               RESUME <i className='bx bx-right-arrow-alt'></i>
