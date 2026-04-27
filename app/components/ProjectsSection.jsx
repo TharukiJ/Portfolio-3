@@ -3,15 +3,12 @@ import { useEffect, useRef, useState } from "react";
 
 const PROJECTS = [
   {
-    title: "TECHZAZ EDR",
+    title: "TACHZAZ EDR",
     category: "EDR PLATFORM",
     type: "main",
     desc: "A modern, high-performance Endpoint Detection and Response orchestration hub. Built with a decoupled architecture, it provides real-time monitoring, threat hunting, and fleet management for the TechzazEDR ecosystem.",
-
-
     bg: "/images/techzaz_dashboard.png",
-    link: "https://techzazedrdashboard-frontend-production.up.railway.app/",
-
+    link: "https://techzazedr-frontend-production.up.railway.app",
     tags: ["ANGULAR", "FASTAPI", "PYTHON", "FIREBASE", "GSAP", "FIRESTORE"],
   },
   {

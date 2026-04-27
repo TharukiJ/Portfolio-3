@@ -33,17 +33,18 @@ export default function Home() {
       
       <Navbar />
       
-      <main>
-        <HeroSection isVisible={preloaderComplete} />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <GithubSection />
-        <CertificationsSection />
-        <ContactSection />
-      </main>
-
-      <Footer />
+      <div style={{ position: "relative" }}>
+        <main>
+          <HeroSection isVisible={preloaderComplete} />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <GithubSection />
+          <CertificationsSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }
