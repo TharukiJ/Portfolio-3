@@ -810,14 +810,15 @@ ul {
 /* Footer elements */
 .hero-v4-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Pushes the remaining button to the right */
     align-items: flex-end;
     margin-top: 4rem;
 }
 
-.hero-socials {
+.hero-socials-v4 {
     display: flex;
     gap: 1.5rem;
+    margin-top: 2.5rem;
 }
 
 .social-link {
