@@ -402,6 +402,21 @@ ul {
     margin-bottom: 1rem;
 }
 
+.github-stat-overlay {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.github-count-text {
+    font-family: var(--font-mono);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
 .github-chart-img {
     width: 100%;
     height: auto;
