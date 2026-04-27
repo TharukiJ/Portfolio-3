@@ -589,7 +589,7 @@ ul {
     display: flex;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow: clip;
     background-color: #eeeee6;
     /* Reverted to Ash/Off-White Base */
 }
@@ -609,6 +609,7 @@ ul {
     background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 35px 35px;
     z-index: 1;
+    pointer-events: none;
 }
 
 /* Cursor-Reactive Glow Trail (Subtle shadow/light) */
@@ -809,7 +810,6 @@ ul {
 /* Image styling */
 .hero-image-container {
     flex: 1.5;
-    /* Increased to give image more room */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -2610,3 +2610,120 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* =========================================================================
+   DRAG ME SECTION (FULL PLAYGROUND)
+   ========================================================================= */
+.doodle-playground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: 15;
+    pointer-events: none;
+}
+
+/* Drag Me instruction — top-right corner */
+.dragme-instruction-topright {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    z-index: 5;
+    animation: pointer-float 3s ease-in-out infinite;
+    pointer-events: auto;
+}
+
+.dragme-text {
+    font-family: var(--font-caveat), cursive;
+    font-size: 26px;
+    font-weight: 500;
+    color: #000000;
+    text-transform: capitalize;
+    margin-top: -5px;
+}
+
+.dragme-arrow-curved {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes pointer-float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+}
+
+/* Scattered icons — absolutely positioned */
+.dragme-item-scattered {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    cursor: grab;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0.75;
+    user-select: none;
+    pointer-events: auto;
+}
+
+.dragme-item-scattered:hover {
+    opacity: 1;
+    transform: scale(1.5) rotate(0deg) !important;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.15));
+    z-index: 10;
+}
+
+.dragme-item-scattered:active {
+    cursor: grabbing;
+    transform: scale(0.85) !important;
+    opacity: 0.5;
+}
+
+.dragme-item-scattered svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ── Overlay for dropped icons ── */
+.dragme-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.dragme-dropped {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+    color: #000000;
+    animation: dragme-popin 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    cursor: pointer;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.15));
+    transition: all 0.3s ease;
+    width: 30px;
+    height: 30px;
+}
+
+.dragme-dropped:hover {
+    transform: translate(-50%, -50%) scale(1.4) rotate(12deg);
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes dragme-popin {
+    0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.3) rotate(-30deg); }
+    70%  { transform: translate(-50%, -50%) scale(1.15) rotate(5deg); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+}
+
+@media (max-width: 768px) {
+    .doodle-playground {
+        display: none;
+    }
+}
+
