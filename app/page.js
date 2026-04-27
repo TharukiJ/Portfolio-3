@@ -10,6 +10,7 @@ import GithubSection from "./components/GithubSection";
 import CertificationsSection from "./components/CertificationsSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import { DoodleOverlay } from "./components/DragMeSection";
 
 export default function Home() {
   const [preloaderComplete, setPreloaderComplete] = useState(false);
@@ -33,17 +34,19 @@ export default function Home() {
       
       <Navbar />
       
-      <main>
-        <HeroSection isVisible={preloaderComplete} />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <GithubSection />
-        <CertificationsSection />
-        <ContactSection />
-      </main>
-
-      <Footer />
+      <div style={{ position: "relative" }}>
+        <main>
+          <HeroSection isVisible={preloaderComplete} />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <GithubSection />
+          <CertificationsSection />
+          <ContactSection />
+        </main>
+        <Footer />
+        <DoodleOverlay />
+      </div>
     </>
   );
 }
