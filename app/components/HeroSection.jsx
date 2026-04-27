@@ -98,7 +98,7 @@ export default function HeroSection({ isVisible }) {
           </div>
           
           <div className="hero-actions anim-fade-in">
-            <a href="/resume.pdf" className="resume-btn-v4">
+            <a href="/tharuki.jayasuriya CV.pdf" download="tharuki.jayasuriya CV.pdf" className="resume-btn-v4">
               RESUME <i className='bx bx-right-arrow-alt'></i>
             </a>
           </div>
