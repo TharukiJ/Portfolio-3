@@ -2059,8 +2059,8 @@ footer {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1.5px solid #800020;
-    /* Maroon border */
+    border: 1.5px solid #B8860B;
+    background: #B8860B;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2070,10 +2070,9 @@ footer {
 }
 
 .project-card-premium:hover .project-arrow-btn {
-    background: #a52a2a;
-    /* Vibrant Maroon */
-    border-color: #a52a2a;
-    box-shadow: 0 0 20px rgba(165, 42, 42, 0.6);
+    background: #DAA520;
+    border-color: #DAA520;
+    box-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
     transform: rotate(45deg);
 }
 
