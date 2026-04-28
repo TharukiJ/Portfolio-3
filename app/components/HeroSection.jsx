@@ -59,7 +59,8 @@ export default function HeroSection({ isVisible }) {
           <div className="hero-col hero-col-left">
             <span className="hero-label anim-slide-left">HELLO, I'M</span>
             <h1 className="hero-name-v4 anim-slide-left-delayed">
-              Tharuki<br />Jayasuriya
+              <div className="name-line">{splitText("Tharuki")}</div>
+              <div className="name-line">{splitText("Jayasuriya", 0.2)}</div>
             </h1>
             <div className="hero-socials-v4 anim-fade-in">
               <a href="https://www.linkedin.com/in/tharuki-jayasuriya" target="_blank" rel="noopener noreferrer" className="social-link"><i className='bx bxl-linkedin'></i></a>
