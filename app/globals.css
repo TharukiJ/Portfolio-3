@@ -1357,13 +1357,13 @@ ul {
 .skill-icon-box-v5 {
     width: 65px;
     height: 65px;
-    background: #676f9d;
+    background: rgba(103, 111, 157, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.4rem;
-    color: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.4s ease;
 }
@@ -1371,12 +1371,12 @@ ul {
 .skill-name-v5 {
     font-size: 1.6rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(20px);
+    opacity: 0.6;
+    visibility: visible;
+    transform: translateX(0);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     pointer-events: none;
 }
@@ -1392,16 +1392,15 @@ ul {
 }
 
 .skill-item-v5:hover .skill-icon-box-v5 {
-    background: var(--text-primary);
-    color: var(--bg-main);
+    background: rgba(255, 255, 255, 0.1);
     transform: rotate(10deg);
 }
 
 .skill-item-v5:hover .skill-name-v5 {
     opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
+    color: var(--text-primary);
 }
+
 
 /* Glow backdrop */
 .skills-glow-v5 {
