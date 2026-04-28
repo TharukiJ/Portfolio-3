@@ -47,11 +47,7 @@ export default function HeroSection({ isVisible }) {
 
   return (
     <section id="home" className={`hero-v4 ${animActive ? "active" : ""}`} ref={heroRef}>
-      <div className="mesh-glows">
-        <div className="glow glow-1"></div>
-        <div className="glow glow-2"></div>
-        <div className="glow glow-3"></div>
-      </div>
+
 
       <div className="hero-v4-container">
         <div className="hero-v4-main-grid">
@@ -76,7 +72,6 @@ export default function HeroSection({ isVisible }) {
                 alt="Tharuki Jayasuriya"
                 className="hero-main-img-v4"
               />
-              <div className="img-backdrop-glow"></div>
             </div>
           </div>
 
