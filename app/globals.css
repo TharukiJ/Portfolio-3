@@ -697,7 +697,7 @@ ul {
 .hero-col-right {
     align-items: flex-end;
     text-align: right;
-    margin-top: -5rem; /* Pushed up as requested */
+    margin-top: -9rem; /* Pushed up more */
 }
 
 /* Typography */
