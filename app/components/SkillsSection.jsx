@@ -2,18 +2,18 @@
 import { useEffect, useRef, useState } from "react";
 
 const SKILLS = [
-  { name: "React.js", icon: "bx bxl-react" },
-  { name: "Next.js", icon: "bx bxl-visual-studio" }, // Vscode icon as placeholder or bxl-tailwind-css etc
-  { name: "Node.js", icon: "bx bxl-nodejs" },
-  { name: "Python", icon: "bx bxl-python" },
-  { name: "FastAPI", icon: "bx bxs-zap" },
-  { name: "SQL", icon: "bx bxs-data" },
-  { name: "Java", icon: "bx bxl-java" },
-  { name: "JavaScript", icon: "bx bxl-javascript" },
-  { name: "TypeScript", icon: "bx bxl-typescript" },
-  { name: "Tailwind", icon: "bx bxl-tailwind-css" },
-  { name: "Git", icon: "bx bxl-git" },
-  { name: "Firebase", icon: "bx bxl-firebase" },
+  { name: "React.js", icon: "bx bxl-react", color: "#61DAFB" },
+  { name: "Next.js", icon: "bx bxl-visual-studio", color: "#ffffff" }, 
+  { name: "Node.js", icon: "bx bxl-nodejs", color: "#339933" },
+  { name: "Python", icon: "bx bxl-python", color: "#3776AB" },
+  { name: "FastAPI", icon: "bx bxs-zap", color: "#05998B" },
+  { name: "SQL", icon: "bx bxs-data", color: "#4479A1" },
+  { name: "Java", icon: "bx bxl-java", color: "#007396" },
+  { name: "JavaScript", icon: "bx bxl-javascript", color: "#F7DF1E" },
+  { name: "TypeScript", icon: "bx bxl-typescript", color: "#3178C6" },
+  { name: "Tailwind", icon: "bx bxl-tailwind-css", color: "#06B6D4" },
+  { name: "Git", icon: "bx bxl-git", color: "#F05032" },
+  { name: "Firebase", icon: "bx bxl-firebase", color: "#FFCA28" },
 ];
 
 export default function SkillsSection() {
@@ -40,7 +40,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" className={`skills-v5 section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
       <div className="skills-container-v5">
-
+        
         {/* Left Column: Heading */}
         <div className="skills-left-v5">
           <div className="section-header-v5">
@@ -56,23 +56,21 @@ export default function SkillsSection() {
         <div className="skills-right-v5">
           <div className="vertical-3d-wrapper">
             <div className="vertical-marquee-v5">
-              {/* Double items for seamless loop */}
+              {/* Using double items for a full 360 loop */}
               {[...SKILLS, ...SKILLS].map((skill, idx) => (
                 <div 
                   className="skill-item-v5" 
                   key={idx}
                   style={{ "--idx": idx, "--total": SKILLS.length * 2 }}
                 >
-                  <div className="skill-icon-box-v5">
+                  <div className="skill-icon-box-v5" style={{ color: skill.color, borderColor: `${skill.color}33` }}>
                     <i className={skill.icon}></i>
                   </div>
                   <span className="skill-name-v5">{skill.name}</span>
                 </div>
               ))}
             </div>
-
-            {/* Overlay for focus effect */}
-            <div className="focus-overlay-v5"></div>
+            
             {/* Glow backdrop */}
             <div className="skills-glow-v5"></div>
           </div>
