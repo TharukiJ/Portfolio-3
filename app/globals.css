@@ -710,12 +710,24 @@ ul {
 }
 
 .hero-name-v4 {
-    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-size: clamp(2.8rem, 4.8vw, 4.2rem); /* Slightly smaller as requested */
     font-weight: 800;
     line-height: 0.9;
     color: #000000; /* Dark Black */
     text-transform: uppercase;
     letter-spacing: -2px;
+}
+
+.hero-name-v4 .char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-v4.active .hero-name-v4 .char {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-role-v4 {
@@ -784,7 +796,7 @@ ul {
 .hero-img-wrapper-v4 {
     position: relative;
     width: 100%;
-    max-width: 550px; /* Balanced big size */
+    max-width: 480px; /* Slightly smaller for better balance */
 }
 
 .hero-main-img-v4 {
