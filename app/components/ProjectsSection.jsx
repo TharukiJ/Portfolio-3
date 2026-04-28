@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 const PROJECTS = [
   {
-    title: "TACHZAZ EDR",
+    title: "TECHZAZ EDR",
     category: "EDR PLATFORM",
     type: "main",
     desc: "A modern, high-performance Endpoint Detection and Response orchestration hub. Built with a decoupled architecture, it provides real-time monitoring, threat hunting, and fleet management for the TechzazEDR ecosystem.",
@@ -16,7 +16,7 @@ const PROJECTS = [
     category: "BOOKING SYSTEM",
     type: "main",
     desc: "Customizable appointment scheduling system for flexible booking workflows.",
-    bg: "/images/flex_slot_premium.png",
+    bg: "/images/coustom-flex-slot_bg.png",
     link: "https://flex-slot-custom.vercel.app/",
     tags: ["SUPABASE", "NEXT.JS", "CLERK"],
   },
@@ -25,19 +25,11 @@ const PROJECTS = [
     category: "TECH SOLUTIONS",
     type: "main",
     desc: "Enterprise-grade technology consultancy platform for digital transformation.",
-    bg: "/images/it_wadura_bg.png",
+    bg: "/images/IT wadura_bg.png",
     link: "https://www.itwadura.com/",
     tags: ["WORDPRESS", "AWS", "PHP"],
   },
-  {
-    title: "REAL-TIME CHAT",
-    category: "MESSAGING APP",
-    type: "main",
-    desc: "A sleek, modern real-time messaging web application. Features live typing indicators, instant message delivery, and secure authentication to keep conversations private and fast.",
-    bg: "/images/chat_app_bg.png",
-    link: "https://real-time-chat-app-six-rho.vercel.app/",
-    tags: ["REACT", "NODE.JS", "SOCKET.IO", "CSS"],
-  },
+
   {
     title: "OK MEME STUDIO",
     category: "CREATIVE TOOL",
@@ -52,7 +44,7 @@ const PROJECTS = [
     category: "SEO ANALYTICS",
     type: "mini",
     desc: "Comprehensive SEO auditing tool for website performance and rankings.",
-    bg: "/images/seo_lens_bg.png",
+    bg: "/images/SEO Lens_bg.png",
     link: "https://seo-lens-ud2o.vercel.app/",
     tags: ["REACT", "NEXT.JS", "SEO API"],
   },
@@ -61,11 +53,10 @@ const PROJECTS = [
     category: "FINANCIAL DASHBOARD",
     type: "mini",
     desc: "Specialized financial auditing platform for transaction tracking.",
-    bg: "/images/flux_audit_bg.png",
+    bg: "/images/Flux Audit_bg.png",
     link: "https://flux-audit-roan.vercel.app/",
     tags: ["TYPESCRIPT", "D3.JS"],
   },
-
 ];
 
 export default function ProjectsSection() {
@@ -107,7 +98,7 @@ export default function ProjectsSection() {
             target="_blank" 
             rel="noopener noreferrer" 
             className="project-card-premium"
-            style={{ backgroundImage: `url(${project.bg})` }}
+            style={{ backgroundImage: `url("${project.bg}")` }}
           >
             <div className="project-card-overlay">
               <div className="project-card-top">

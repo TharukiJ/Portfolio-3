@@ -85,7 +85,7 @@ export default function AboutSection() {
         <div className={`about-info anim-slide-left ${animActive ? "anim-active" : ""}`}>
           <div className="about-text">
             <p>
-              I’m a computer science student with a strong passion for building modern digital experiences
+              <strong>I’m a computer science student</strong> with a strong passion for building modern digital experiences
               where design meets functionality. I enjoy transforming ideas into polished, user-centered
               products through thoughtful development and creative problem-solving.
             </p>
