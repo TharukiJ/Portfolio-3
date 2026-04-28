@@ -383,7 +383,8 @@ ul {
 .github-contribution-wrapper {
     background: transparent;
     border: none;
-    padding: 0; /* Removed padding to let chart container handle spacing if needed, or keep it for the overlay */
+    padding: 0;
+    /* Removed padding to let chart container handle spacing if needed, or keep it for the overlay */
     width: 100%;
 }
 
@@ -414,7 +415,8 @@ ul {
 }
 
 .github-chart-container {
-    background: transparent; /* Background removed as requested */
+    background: transparent;
+    /* Background removed as requested */
     padding: 1.5rem;
     border-radius: 12px;
     width: 100%;
@@ -426,7 +428,8 @@ ul {
     width: 100%;
     height: auto;
     display: block;
-    filter: brightness(0.92); /* Makes white pixels light gray without affecting black */
+    filter: brightness(0.92);
+    /* Makes white pixels light gray without affecting black */
 }
 
 .github-contribution-wrapper:hover .github-chart-img {
@@ -605,13 +608,14 @@ ul {
 .hero-v4 {
     min-height: 100vh;
     width: 100%;
-    background-color: #eeeee6;
+    background-color: var(--bg-main);
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 80px; /* Nav space */
+    padding-top: 80px;
+    /* Nav space */
 }
 
 /* Mesh Glows Background */
@@ -657,23 +661,31 @@ ul {
 }
 
 @keyframes glowFloat {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(5%, 5%) scale(1.1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(5%, 5%) scale(1.1);
+    }
 }
 
 /* Container */
 .hero-v4-container {
     width: 100%;
-    max-width: 1500px; /* Slightly wider */
+    max-width: 1500px;
+    /* Slightly wider */
     margin: 0 auto;
-    padding: 0 3%; /* Reduced padding to push content to edges */
+    padding: 0 3%;
+    /* Reduced padding to push content to edges */
     position: relative;
     z-index: 10;
 }
 
 .hero-v4-main-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1.5fr 0.8fr; /* Pushes right column further right */
+    grid-template-columns: 1.2fr 1.5fr 0.8fr;
+    /* Pushes right column further right */
     align-items: center;
     gap: 1.5rem;
     min-height: 70vh;
@@ -697,23 +709,27 @@ ul {
 .hero-col-right {
     align-items: flex-end;
     text-align: right;
-    margin-top: -9rem; /* Pushed up more */
+    margin-top: -9rem;
+    /* Pushed up more */
 }
 
 /* Typography */
 .hero-col-left .hero-label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #333333; /* Dark Gray */
+    color: #333333;
+    /* Dark Gray */
     letter-spacing: 0.3em;
     margin-bottom: 1.5rem;
 }
 
 .hero-name-v4 {
-    font-size: clamp(2.8rem, 4.8vw, 4.2rem); /* Slightly smaller as requested */
+    font-size: clamp(2.8rem, 4.8vw, 4.2rem);
+    /* Slightly smaller as requested */
     font-weight: 800;
     line-height: 0.9;
-    color: #000000; /* Dark Black */
+    color: #000000;
+    /* Dark Black */
     text-transform: uppercase;
     letter-spacing: -2px;
 }
@@ -732,7 +748,8 @@ ul {
 
 .hero-role-v4 {
     position: relative;
-    height: clamp(6rem, 12vw, 10rem); /* Reduced height for smaller text */
+    height: clamp(6rem, 12vw, 10rem);
+    /* Reduced height for smaller text */
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -763,7 +780,8 @@ ul {
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
     transform: translateY(100%);
-    color: #c4a484; /* Light Brown */
+    color: #c4a484;
+    /* Light Brown */
 }
 
 .hero-role-v4.entering .char {
@@ -777,17 +795,20 @@ ul {
 }
 
 .role-gradient {
-    color: #c4a484; /* Light Brown */
+    color: #c4a484;
+    /* Light Brown */
 }
 
 .role-black-v4 .char {
-    color: #4a4a44; /* Dark Ash */
+    color: #4a4a44;
+    /* Dark Ash */
 }
 
 .hero-col-right .hero-label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #4a4a44; /* Dark Ash */
+    color: #4a4a44;
+    /* Dark Ash */
     letter-spacing: 0.3em;
     margin-bottom: 1.5rem;
 }
@@ -796,14 +817,14 @@ ul {
 .hero-img-wrapper-v4 {
     position: relative;
     width: 100%;
-    max-width: 480px; /* Slightly smaller for better balance */
+    max-width: 480px;
+    /* Slightly smaller for better balance */
 }
 
 .hero-main-img-v4 {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.12));
     position: relative;
     z-index: 2;
 }
@@ -823,7 +844,8 @@ ul {
 /* Footer elements */
 .hero-v4-footer {
     display: flex;
-    justify-content: flex-end; /* Pushes the remaining button to the right */
+    justify-content: flex-end;
+    /* Pushes the remaining button to the right */
     align-items: flex-end;
     margin-top: -6rem;
 }
@@ -876,12 +898,29 @@ ul {
     transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-v4 .anim-slide-left { transform: translateX(-60px); }
-.hero-v4 .anim-slide-left-delayed { transform: translateX(-80px); }
-.hero-v4 .anim-slide-right { transform: translateX(60px); }
-.hero-v4 .anim-slide-right-delayed { transform: translateX(80px); }
-.hero-v4 .anim-slide-right-extra { transform: translateX(100px); }
-.hero-v4 .anim-scale-up { transform: translateY(20px); }
+.hero-v4 .anim-slide-left {
+    transform: translateX(-60px);
+}
+
+.hero-v4 .anim-slide-left-delayed {
+    transform: translateX(-80px);
+}
+
+.hero-v4 .anim-slide-right {
+    transform: translateX(60px);
+}
+
+.hero-v4 .anim-slide-right-delayed {
+    transform: translateX(80px);
+}
+
+.hero-v4 .anim-slide-right-extra {
+    transform: translateX(100px);
+}
+
+.hero-v4 .anim-scale-up {
+    transform: translateY(20px);
+}
 
 .hero-v4.active .anim-slide-left,
 .hero-v4.active .anim-slide-left-delayed,
@@ -894,13 +933,33 @@ ul {
     transform: translateY(0);
 }
 
-.hero-v4.active .anim-slide-left { transition-delay: 0.2s; }
-.hero-v4.active .anim-slide-left-delayed { transition-delay: 0.4s; }
-.hero-v4.active .anim-slide-right { transition-delay: 0.3s; }
-.hero-v4.active .anim-slide-right-delayed { transition-delay: 0.5s; }
-.hero-v4.active .anim-slide-right-extra { transition-delay: 0.7s; }
-.hero-v4.active .anim-scale-up { transition-delay: 0.6s; }
-.hero-v4.active .anim-fade-in { transition-delay: 1s; }
+.hero-v4.active .anim-slide-left {
+    transition-delay: 0.2s;
+}
+
+.hero-v4.active .anim-slide-left-delayed {
+    transition-delay: 0.4s;
+}
+
+.hero-v4.active .anim-slide-right {
+    transition-delay: 0.3s;
+}
+
+.hero-v4.active .anim-slide-right-delayed {
+    transition-delay: 0.5s;
+}
+
+.hero-v4.active .anim-slide-right-extra {
+    transition-delay: 0.7s;
+}
+
+.hero-v4.active .anim-scale-up {
+    transition-delay: 0.6s;
+}
+
+.hero-v4.active .anim-fade-in {
+    transition-delay: 1s;
+}
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -909,10 +968,13 @@ ul {
         text-align: center;
         gap: 3rem;
     }
-    .hero-col-left, .hero-col-right {
+
+    .hero-col-left,
+    .hero-col-right {
         align-items: center;
         text-align: center;
     }
+
     .hero-v4-footer {
         flex-direction: column;
         align-items: center;
@@ -927,7 +989,8 @@ ul {
    ABOUT SECTION
    ========================================================================= */
 .about {
-    padding-top: 30px !important; /* Reduced gap from Hero */
+    padding-top: 30px !important;
+    /* Reduced gap from Hero */
 }
 
 .about-grid {
@@ -2681,8 +2744,15 @@ footer {
 }
 
 @keyframes pointer-float {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-8px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 /* Scattered icons — absolutely positioned */
@@ -2746,9 +2816,19 @@ footer {
 }
 
 @keyframes dragme-popin {
-    0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.3) rotate(-30deg); }
-    70%  { transform: translate(-50%, -50%) scale(1.15) rotate(5deg); }
-    100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3) rotate(-30deg);
+    }
+
+    70% {
+        transform: translate(-50%, -50%) scale(1.15) rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
 }
 
 @media (max-width: 768px) {
@@ -2756,4 +2836,3 @@ footer {
         display: none;
     }
 }
-
