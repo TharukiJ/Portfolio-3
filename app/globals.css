@@ -1254,172 +1254,161 @@ ul {
 
 /* Skills section spacing */
 /* =========================================================================
-   SKILLS SECTION V5 (3D REEL STYLE)
+   SKILLS SECTION V7 (STRAIGHT VERTICAL MARQUEE)
    ========================================================================= */
-.skills-v5 {
+.skills-v7 {
     background-color: var(--bg-main);
-    padding: 120px 5%;
+    padding: 100px 5%;
     overflow: hidden;
-}
-
-.skills-container-v5 {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 8rem;
+    position: relative;
+    min-height: 90vh;
+    display: flex;
     align-items: center;
 }
 
-/* Left Column: Heading */
-.skills-title-v5 {
-    font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: 900;
-    line-height: 0.85;
-    color: var(--text-primary);
-    text-transform: uppercase;
-    letter-spacing: -4px;
+.skills-container-v7 {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
-.skills-title-v5 .outline-text {
+.skills-info-v7 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills-title-v7 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    margin-bottom: 3rem;
+}
+
+.skills-title-v7 .outline-text {
     -webkit-text-stroke: 1.5px var(--text-primary);
     color: transparent;
 }
 
-.skills-count-v5 {
-    margin-top: 2rem;
-    font-family: var(--font-mono);
-    color: rgba(249, 177, 122, 0.6);
-    letter-spacing: 0.2em;
-    font-size: 0.8rem;
-}
-
-/* Right Column: 3D Vertical Marquee */
-.skills-right-v5 {
-    position: relative;
-    height: 650px;
+.skill-focus-v7 {
+    height: 120px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    overflow: visible;
+    gap: 1rem;
 }
 
-.vertical-3d-wrapper {
+.focus-name-v7 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.focus-line-v7 {
+    width: 60px;
+    height: 4px;
+    background: var(--text-primary);
+    border-radius: 2px;
+}
+
+/* Right Side: Straight Track */
+.skills-track-v7 {
     position: relative;
-    width: 100%;
-    height: 100%;
-    perspective: 2000px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 600px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: 10%;
+    overflow: hidden;
 }
 
-.vertical-marquee-v5 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    animation: cylinder-rotate 30s linear infinite;
+.marquee-vertical-v7 {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    animation: scroll-v-down 20s linear infinite;
 }
 
-@keyframes cylinder-rotate {
+@keyframes scroll-v-down {
     0% {
-        transform: rotateX(0deg) rotateY(-15deg);
+        transform: translateY(-50%);
     }
     100% {
-        transform: rotateX(-360deg) rotateY(-15deg);
+        transform: translateY(0);
     }
 }
 
-.skill-item-v5 {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 10px;
-    background: transparent;
-    border: 1px solid transparent;
-    border-radius: 12px;
-    /* Circular position logic */
-    transform: 
-        rotateX(calc(var(--idx) * (360deg / var(--total)))) 
-        translateZ(380px); /* Radius */
-    backface-visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    width: auto;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-.skill-icon-box-v5 {
-    width: 65px;
-    height: 65px;
-    background: rgba(103, 111, 157, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+.skill-card-v7 {
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.4rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s ease;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.4s ease;
 }
 
-.skill-name-v5 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.6;
-    visibility: visible;
-    transform: translateX(0);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    pointer-events: none;
-}
-
-/* Hover effect */
-.skill-item-v5:hover {
+.icon-wrapper-v7 {
+    width: 100%;
+    height: 100%;
     background: rgba(103, 111, 157, 0.1);
-    border-color: rgba(249, 177, 122, 0.2);
-    transform: 
-        rotateX(calc(var(--idx) * (360deg / var(--total)))) 
-        translateZ(420px) scale(1.1); /* Pop out more on hover */
-    z-index: 100;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.skill-item-v5:hover .skill-icon-box-v5 {
-    background: rgba(255, 255, 255, 0.1);
-    transform: rotate(10deg);
+.skill-card-v7:hover .icon-wrapper-v7 {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent);
+    transform: scale(1.1) rotate(5deg);
 }
 
-.skill-item-v5:hover .skill-name-v5 {
-    opacity: 1;
-    color: var(--text-primary);
-}
-
-
-/* Glow backdrop */
-.skills-glow-v5 {
+/* Fading Overlays */
+.track-overlay-top,
+.track-overlay-bottom {
     position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(103, 111, 157, 0.3) 0%, transparent 70%);
-    filter: blur(80px);
-    z-index: -1;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 2;
     pointer-events: none;
 }
+
+.track-overlay-top {
+    top: 0;
+    background: linear-gradient(to bottom, var(--bg-main) 0%, transparent 100%);
+}
+
+.track-overlay-bottom {
+    bottom: 0;
+    background: linear-gradient(to top, var(--bg-main) 0%, transparent 100%);
+}
+
+/* Ambient Glow removed for a cleaner look */
+.skills-ambient-v7 {
+    display: none;
+}
+
 
 
 /* Mobile Adjustments */
 @media (max-width: 992px) {
-    .skills-container-v5 {
+    .skills-container-v6 {
         grid-template-columns: 1fr;
         gap: 4rem;
         text-align: center;
