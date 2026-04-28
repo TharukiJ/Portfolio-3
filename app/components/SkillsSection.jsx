@@ -39,43 +39,45 @@ export default function SkillsSection() {
   }, []);
 
   return (
-    <section id="skills" className={`skills-v8 section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
-      <div className="skills-container-v8">
+    <section id="skills" className={`skills-v9 section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
+      <div className="skills-container-v9">
         
-        {/* Left: Heading */}
-        <div className="skills-left-v8">
-          <h2 className="skills-title-v8">
-            RUNTIME<br />
-            <span className="outline-text">SKILLS</span>
-          </h2>
-        </div>
-
-        {/* Center: Vertical Marquee */}
-        <div className="skills-center-v8">
-          <div className="marquee-track-v8">
-            {[...SKILLS, ...SKILLS].map((skill, idx) => (
-              <div 
-                className="skill-card-v8" 
-                key={idx}
-                onMouseEnter={() => setActiveSkill(skill.name)}
-                onMouseLeave={() => setActiveSkill("")}
-              >
-                <div className="icon-box-v8" style={{ backgroundColor: `${skill.color}15`, color: skill.color }}>
-                  <i className={skill.icon}></i>
-                </div>
-              </div>
-            ))}
+        {/* Left Column: Heading */}
+        <div className="skills-left-v9">
+          <div className="section-header-modern">
+            <div className="section-title-group">
+              <h2 className="section-title-main">RUNTIME</h2>
+              <h2 className="section-title-sub">SKILLS</h2>
+              <div className="section-executing-functions">EXECUTING FUNCTIONS [12]</div>
+            </div>
           </div>
-          {/* Overlays */}
-          <div className="track-fade-top"></div>
-          <div className="track-fade-bottom"></div>
         </div>
+          
+        {/* Right Column: Big Vertical Marquee + Dynamic Name Side-by-Side */}
+        <div className="skills-right-v9">
+          <div className="marquee-wrapper-v9">
+            <div className="marquee-track-v9">
+              {[...SKILLS, ...SKILLS].map((skill, idx) => (
+                <div 
+                  className="skill-card-v9" 
+                  key={idx}
+                  onMouseEnter={() => setActiveSkill(skill.name)}
+                  onMouseLeave={() => setActiveSkill("")}
+                >
+                  <div className="icon-box-v9" style={{ backgroundColor: `${skill.color}15`, color: skill.color }}>
+                    <i className={skill.icon}></i>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Overlays */}
+            <div className="track-fade-v9 top"></div>
+            <div className="track-fade-v9 bottom"></div>
+          </div>
 
-        {/* Right: Dynamic Info */}
-        <div className="skills-right-v8">
-          <div className="active-display-v8">
-            <span className="focus-name-v8">{activeSkill || "Technologies"}</span>
-            <div className="focus-accent-v8"></div>
+          <div className={`skills-focus-v9 ${activeSkill ? "visible" : ""}`}>
+             <span className="focus-name-v9">{activeSkill}</span>
+             <div className="focus-accent-v9"></div>
           </div>
         </div>
 
