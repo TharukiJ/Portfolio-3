@@ -19,6 +19,7 @@ const SKILLS = [
 export default function SkillsSection() {
   const sectionRef = useRef(null);
   const [animActive, setAnimActive] = useState(false);
+  const [activeSkill, setActiveSkill] = useState("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,44 +39,46 @@ export default function SkillsSection() {
   }, []);
 
   return (
-    <section id="skills" className={`skills-v5 section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
-      <div className="skills-container-v5">
+    <section id="skills" className={`skills-v7 section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
+      <div className="skills-container-v7">
         
-        {/* Left Column: Heading */}
-        <div className="skills-left-v5">
-          <div className="section-header-v5">
-            <h2 className="skills-title-v5">
+        {/* Left Side: Dynamic Info */}
+        <div className="skills-info-v7">
+          <div className="section-header-v7">
+            <h2 className="skills-title-v7">
               RUNTIME<br />
               <span className="outline-text">SKILLS</span>
             </h2>
-            <div className="skills-count-v5">EXECUTING FUNCTIONS [{SKILLS.length}]</div>
+          </div>
+          
+          <div className="skill-focus-v7">
+            <span className="focus-name-v7">{activeSkill || "Technologies"}</span>
+            <div className="focus-line-v7"></div>
           </div>
         </div>
 
-        {/* Right Column: 3D Vertical Scrolling */}
-        <div className="skills-right-v5">
-          <div className="vertical-3d-wrapper">
-            <div className="vertical-marquee-v5">
-              {/* Using double items for a full 360 loop */}
-              {[...SKILLS, ...SKILLS].map((skill, idx) => (
-                <div 
-                  className="skill-item-v5" 
-                  key={idx}
-                  style={{ "--idx": idx, "--total": SKILLS.length * 2 }}
-                >
-                  <div className="skill-icon-box-v5" style={{ color: skill.color, borderColor: `${skill.color}33` }}>
-                    <i className={skill.icon}></i>
-                  </div>
-                  <span className="skill-name-v5">{skill.name}</span>
+        {/* Right Side: Straight Vertical Marquee */}
+        <div className="skills-track-v7">
+          <div className="marquee-vertical-v7">
+            {/* Doubled for seamless scroll */}
+            {[...SKILLS, ...SKILLS].map((skill, idx) => (
+              <div 
+                className="skill-card-v7" 
+                key={idx}
+                onMouseEnter={() => setActiveSkill(skill.name)}
+                onMouseLeave={() => setActiveSkill("")}
+              >
+                <div className="icon-wrapper-v7" style={{ backgroundColor: `${skill.color}15`, color: skill.color }}>
+                  <i className={skill.icon}></i>
                 </div>
-              ))}
-            </div>
-            
-            {/* Glow backdrop */}
-            <div className="skills-glow-v5"></div>
+              </div>
+            ))}
           </div>
+          
+          {/* Fading Overlays */}
+          <div className="track-overlay-top"></div>
+          <div className="track-overlay-bottom"></div>
         </div>
-
       </div>
     </section>
   );
