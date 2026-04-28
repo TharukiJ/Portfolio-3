@@ -29,15 +29,7 @@ const PROJECTS = [
     link: "https://www.itwadura.com/",
     tags: ["WORDPRESS", "AWS", "PHP"],
   },
-  {
-    title: "LEARNING SAAS",
-    category: "ED-TECH PLATFORM",
-    type: "main",
-    desc: "A comprehensive SaaS platform for online learning and course management, featuring interactive modules and progress tracking.",
-    bg: "/images/learning_saas_bg.png",
-    link: "#",
-    tags: ["REACT", "NODE.JS", "MONGODB", "CSS"],
-  },
+
   {
     title: "OK MEME STUDIO",
     category: "CREATIVE TOOL",
