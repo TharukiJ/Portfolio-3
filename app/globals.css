@@ -825,7 +825,7 @@ ul {
     display: flex;
     justify-content: flex-end; /* Pushes the remaining button to the right */
     align-items: flex-end;
-    margin-top: -2rem;
+    margin-top: -6rem;
 }
 
 .hero-socials-v4 {
