@@ -39,46 +39,46 @@ export default function SkillsSection() {
   }, []);
 
   return (
-    <section id="skills" className={`skills-v7 section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
-      <div className="skills-container-v7">
+    <section id="skills" className={`skills-v8 section-padding reveal ${animActive ? "active" : ""}`} ref={sectionRef}>
+      <div className="skills-container-v8">
         
-        {/* Left Side: Dynamic Info */}
-        <div className="skills-info-v7">
-          <div className="section-header-v7">
-            <h2 className="skills-title-v7">
-              RUNTIME<br />
-              <span className="outline-text">SKILLS</span>
-            </h2>
-          </div>
-          
-          <div className="skill-focus-v7">
-            <span className="focus-name-v7">{activeSkill || "Technologies"}</span>
-            <div className="focus-line-v7"></div>
-          </div>
+        {/* Left: Heading */}
+        <div className="skills-left-v8">
+          <h2 className="skills-title-v8">
+            RUNTIME<br />
+            <span className="outline-text">SKILLS</span>
+          </h2>
         </div>
 
-        {/* Right Side: Straight Vertical Marquee */}
-        <div className="skills-track-v7">
-          <div className="marquee-vertical-v7">
-            {/* Doubled for seamless scroll */}
+        {/* Center: Vertical Marquee */}
+        <div className="skills-center-v8">
+          <div className="marquee-track-v8">
             {[...SKILLS, ...SKILLS].map((skill, idx) => (
               <div 
-                className="skill-card-v7" 
+                className="skill-card-v8" 
                 key={idx}
                 onMouseEnter={() => setActiveSkill(skill.name)}
                 onMouseLeave={() => setActiveSkill("")}
               >
-                <div className="icon-wrapper-v7" style={{ backgroundColor: `${skill.color}15`, color: skill.color }}>
+                <div className="icon-box-v8" style={{ backgroundColor: `${skill.color}15`, color: skill.color }}>
                   <i className={skill.icon}></i>
                 </div>
               </div>
             ))}
           </div>
-          
-          {/* Fading Overlays */}
-          <div className="track-overlay-top"></div>
-          <div className="track-overlay-bottom"></div>
+          {/* Overlays */}
+          <div className="track-fade-top"></div>
+          <div className="track-fade-bottom"></div>
         </div>
+
+        {/* Right: Dynamic Info */}
+        <div className="skills-right-v8">
+          <div className="active-display-v8">
+            <span className="focus-name-v8">{activeSkill || "Technologies"}</span>
+            <div className="focus-accent-v8"></div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
